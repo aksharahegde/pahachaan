@@ -1,0 +1,10 @@
+{
+    "url": "https://simpleposty.vercel.app/",
+    "thumbnail": "/projects/logo/simpleposty.svg",
+    "thumbnailAlt": "simpleposty landing page",
+    "category": "development",
+    "heading": "Simpleposty",
+    "description": "Create beautiful social media images with just a few clicks for free.",
+    "role": "Author",
+    "status": "active"
+}

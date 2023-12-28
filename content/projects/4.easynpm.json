@@ -1,0 +1,10 @@
+{
+    "url": "https://easynpm.netlify.app/",
+    "thumbnail": "/projects/logo/easynpm.svg",
+    "thumbnailAlt": "easynpm landing page",
+    "category": "development",
+    "heading": "EasyNPM",
+    "description": "Focus on building your application, not hours on searching packages.",
+    "role": "Author",
+    "status": "active"
+}

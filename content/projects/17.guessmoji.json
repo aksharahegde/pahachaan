@@ -1,0 +1,10 @@
+{
+    "url": "https://guessmoji.vercel.app/",
+    "thumbnail": "/projects/logo/guessmoji.png",
+    "thumbnailAlt": "guessmoji screenshot",
+    "category": "fun",
+    "heading": "Guessmoji",
+    "description": "Guess the right emoji.",
+    "role": "Contributor",
+    "status": "completed"
+}
