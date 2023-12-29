@@ -1,6 +1,6 @@
 # Personal Site of Akshara Hegde
 
-![Landing page][https://aksharahegde.xyz/screenshot.png])
+![Landing page](https://aksharahegde.xyz/screenshot.png)
 
 ## Features
 Its a minimal template for personal site and free to use.
