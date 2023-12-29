@@ -1,23 +1,25 @@
 <template>
-  <a
-    class="inline-flex gap-2 items-center px-3 py-1 text-xs rounded-md border border-border dark:text-white/70 dark:hover:bg-muted dark:hover:text-primary-500 max-w-fit"
-    :href="statusSiteUrl"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <span class="flex relative w-2 h-2">
-      <span
-        v-if="status.label === 'Operational'"
-        class="inline-flex absolute w-full h-full rounded-full opacity-75 duration-1000 animate-ping"
-        :class="status.color"
-      />
-      <span
-        class="inline-flex relative w-2 h-2 rounded-full"
-        :class="status.color"
-      />
-    </span>
-    {{ status.label }}
-  </a>
+  <ClientOnly>
+    <a
+      class="inline-flex gap-2 items-center px-3 py-1 text-xs rounded-md border border-border dark:text-white/70 dark:hover:bg-muted dark:hover:text-primary-500 max-w-fit"
+      :href="statusSiteUrl"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <span class="flex relative w-2 h-2">
+        <span
+          v-if="status.label === 'Operational'"
+          class="inline-flex absolute w-full h-full rounded-full opacity-75 duration-1000 animate-ping"
+          :class="status.color"
+        />
+        <span
+          class="inline-flex relative w-2 h-2 rounded-full"
+          :class="status.color"
+        />
+      </span>
+      {{ status.label }}
+    </a>
+  </ClientOnly>
 </template>
 <script setup lang="ts">
 const config = useRuntimeConfig();
@@ -35,7 +37,7 @@ const statusEnum = [
   "major_outage",
   "under_maintenance",
   "unknown",
-]
+];
 
 const dictionary: any = {
   operational: {
@@ -65,6 +67,8 @@ const dictionary: any = {
 } as const;
 
 const { data } = await useFetch("/api/site-status");
-const key = statusEnum.includes(data.value?.status) ? data.value?.status : "unknown";
+const key = statusEnum.includes(data.value?.status)
+  ? data.value?.status
+  : "unknown";
 status.value = dictionary[key];
 </script>
