@@ -31,37 +31,12 @@
 <script setup>
 const route = useRoute();
 const { slug } = route.params;
-
+const links = useBreadcrumbItems()
 const config = useRuntimeConfig();
 useSeoMeta({
   ogImage: `${config.public.baseURL}/blog/${slug}.png`,
   twitterCard: "summary_large_image",
   articleAuthor: config.public.ownerName,
-});
-
-const links = computed(() => {
-  const fullPath = route.fullPath;
-  const params = fullPath.startsWith("/")
-    ? fullPath.substring(1).split("/")
-    : fullPath.split("/");
-
-  const crumbs = [{
-    label: "Home",
-    to: "/",
-  }];
-
-  let path = "";
-  params.forEach((param, index) => {
-    path = `${path}/${param}`;
-    const match = route.fullPath.match(path);
-    if (match.name !== null) {
-      crumbs.push({
-        label: param.replace(/-/g, " "),
-        to: match[0],
-      });
-    }
-  });
-  return crumbs;
 });
 </script>
 <style>

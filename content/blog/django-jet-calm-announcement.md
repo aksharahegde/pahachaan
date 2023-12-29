@@ -1,7 +1,7 @@
 ---
 title: Silent reboot of Django JET
 description: Rebooted with Calm for Django 4 and latest jQuery and jQuery-UI
-path: django-jet-calm-announcement
+path: /blog/django-jet-calm-announcement
 published: 2022-11-12T10:12:15.170Z
 cover: /blog/silent-reboot-of-django-jet.png
 ---

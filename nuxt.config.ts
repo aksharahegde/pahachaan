@@ -1,18 +1,34 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
     "@nuxt/content",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
+    "@nuxtseo/module",
+    "nuxt-simple-sitemap",
   ],
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      bodyAttrs: {
+        class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
+      },
+    },
+  },
   ui: {
     icons: ["simple-icons", "solar"],
   },
   content: {
     highlight: {
-      theme: "github-dark",
+      theme: "slack-dark",
+    },
+    experimental: {
+      search: true as any,
     },
   },
   googleFonts: {
@@ -24,8 +40,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       statusSiteSlug: process.env.STATUS_SITE_SLUG,
-      baseURL: process.env.DOMAIN_URL,
+      baseURL: process.env.NUXT_PUBLIC_SITE_URL,
       ownerName: process.env.OWNER_NAME,
-    }
-  }
+    },
+  },
+  site: {
+    name: process.env.OWNER_NAME,
+  },
+  // sitemap: { sources: ["/api/__sitemap__/urls"] },
 });

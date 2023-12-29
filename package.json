@@ -11,9 +11,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtseo/module": "^2.0.0-beta.51",
     "@vueuse/core": "^10.7.0",
     "@vueuse/nuxt": "^10.7.0",
     "nuxt": "^3.9.0",
+    "nuxt-simple-sitemap": "^4.2.0",
     "vue": "^3.3.13",
     "vue-router": "^4.2.5"
   },

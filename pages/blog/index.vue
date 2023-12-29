@@ -2,7 +2,7 @@
   <main class="min-h-screen">
     <ContentDoc v-slot="{ doc }">
       <Header class="mb-4" :title="doc.title" :description="doc.description" />
-      <div class="flex flex-col">
+      <div class="flex flex-col space-y-4">
         <BlogCard
           v-for="article in articles"
           :key="article._path"

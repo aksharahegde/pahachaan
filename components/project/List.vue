@@ -10,7 +10,7 @@
         :project="project"
       />
     </div>
-    <div class="flex items-center justify-end mt-6 text-sm">
+    <div class="flex items-center justify-end mt-4 text-sm">
       <UButton
         label="All Projects &rarr;"
         to="/projects"

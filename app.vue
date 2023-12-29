@@ -1,7 +1,7 @@
 <template>
   <NuxtLoadingIndicator color="primary" />
   <SharedNavbar />
-  <div class="h-4 md:h-32" />
+  <div class="h-4 md:h-24" />
   <UContainer>
     <NuxtPage />
   </UContainer>
@@ -13,8 +13,20 @@
 const config = useRuntimeConfig();
 useSeoMeta({
   ogImage: `${config.public.baseURL}/og_me.png`,
-  twitterCard: 'summary_large_image',
-})
+  twitterCard: "summary_large_image",
+});
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/icon.png",
+    },
+  ],
+});
 </script>
 <style>
 * {
