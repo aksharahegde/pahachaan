@@ -18,7 +18,7 @@
                 <Icon
                   aria-hidden="true"
                   :name="item.icon"
-                  class="w-6 h-6 md:w-5 md:h-5 z-10"
+                  class="w-7 h-7 md:w-5 md:h-5 z-10"
                 />
                 <span
                   v-if="$route.path === item.path"

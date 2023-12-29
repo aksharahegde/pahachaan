@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtseo/module",
     "nuxt-simple-sitemap",
+    "@nuxthq/studio",
   ],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
