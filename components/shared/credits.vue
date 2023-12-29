@@ -9,7 +9,7 @@
         target="_blank"
         v-for="(item, index) in uses"
         :key="index"
-        class="flex justify-center items-center p-4 md:justify-start grayscale invert dark:invert-0 opacity-60"
+        class="flex justify-center items-center p-4 md:justify-start grayscale invert dark:invert-0 opacity-60 hover:grayscale-0 hover:opacity-100"
       >
         <img
           class="w-32"
