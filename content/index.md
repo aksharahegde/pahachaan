@@ -1,5 +1,5 @@
 ---
-title: 'Akshara Hegde | Full Stack Engineer | Writer'
+title: 'Full Stack Engineer | Writer'
 description: 'Explore the work of a skilled fullstack developer. View a diverse range of projects showcasing expertise in front-end, back-end, and database development. Discover how this developer can bring your ideas to life with clean code, intuitive design, and seamless functionality'
 ---
 
