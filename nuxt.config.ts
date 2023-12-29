@@ -47,5 +47,4 @@ export default defineNuxtConfig({
   site: {
     name: process.env.OWNER_NAME,
   },
-  // sitemap: { sources: ["/api/__sitemap__/urls"] },
 });

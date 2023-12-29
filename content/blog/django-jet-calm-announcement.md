@@ -1,12 +1,12 @@
 ---
-title: Silent reboot of Django JET
+title: Django JET Calm announcement
 description: Rebooted with Calm for Django 4 and latest jQuery and jQuery-UI
 path: /blog/django-jet-calm-announcement
 published: 2022-11-12T10:12:15.170Z
-cover: /blog/silent-reboot-of-django-jet.png
+cover: /blog/django-jet-calm-announcement.png
 ---
 
-<img src="/blog/silent-reboot-of-django-jet.png">
+<img src="/blog/django-jet-calm-announcement.png">
 
 
 Django JET is a open-source project of django admin started by **Denis Kildishev.** It disrupted the traditional admin theme with it's new fresh look and awesome features like Autocompletion, Bookmarks, Ajax based object edit form and many more. However, the founders announced a SaaS product [Jet Admin](https://app.jetadmin.io/demo) in 2019; and frozen the feature development in Django JET project.

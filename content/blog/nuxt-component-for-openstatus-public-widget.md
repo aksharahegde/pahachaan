@@ -1,7 +1,7 @@
 ---
 title: Nuxt component for Openstatus public widget
 description: Component for adding Openstatus public widget to Nuxt 2 and Nuxt 3
-path: /blog/openstatus-public-widget-nuxt
+path: /blog/nuxt-component-for-openstatus-public-widget
 published: 2023-10-05T23:00:08.602Z
 cover: /blog/nuxt-component-for-openstatus-public-widget.png
 ---
