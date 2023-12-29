@@ -8,6 +8,10 @@ Its a minimal template for personal site and free to use.
 - 100% support for [Nuxt Studio](https://nuxt.studio/).
 - Fully responsive with navbar adaptivity according to device.
 - Automatically displayes latest blog articles on homepage.
+- Dynamic social media profile links.
+- Light & Dark mode support.
+- 100% SEO compatibile.
+
 
 ## Use this template
 1. `git clone` this repo or click on `Use this template` button.
