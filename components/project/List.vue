@@ -15,7 +15,7 @@
         label="All Projects &rarr;"
         to="/projects"
         variant="link"
-        color="gray"
+        color="black"
       />
     </div>
   </div>

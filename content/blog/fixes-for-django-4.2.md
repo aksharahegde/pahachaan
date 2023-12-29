@@ -14,4 +14,4 @@ cover: /blog/fixes-for-django-4-2-and-js-package-updates.png
 - **Updated** *caniuse-lite*
 
 ### Repository Details
-Link: https://github.com/aksharahegde/django-jet-3-calm
+Link: [Github](https://dub.sh/djangocalm)

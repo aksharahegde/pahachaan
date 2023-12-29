@@ -18,7 +18,7 @@
                 <Icon
                   aria-hidden="true"
                   :name="item.icon"
-                  class="w-5 h-5 z-10"
+                  class="w-6 h-6 md:w-5 md:h-5 z-10"
                 />
                 <span
                   v-if="$route.path === item.path"
@@ -32,8 +32,8 @@
               </ULink>
             </UTooltip>
           </li>
-          <li class="flex-1"></li>
-          <li>
+          <li class="flex-1 hidden md:flex"></li>
+          <li class="ml-auto md:ml-0">
             <SharedColorMode />
           </li>
         </ul>

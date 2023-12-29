@@ -15,7 +15,7 @@
           label="All articles &rarr;"
           to="/blog"
           variant="link"
-          color="gray"
+          color="black"
         />
       </div>
     </div>

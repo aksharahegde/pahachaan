@@ -21,7 +21,7 @@ Special thanks to,
 
 
 ### Repository Details
-Link: https://github.com/aksharahegde/django-jet-3-calm
+Link: [Github](https://dub.sh/djangocalm)
 
 ### Changelog
 -   Upgraded to latest **jQuery (v3.6.1)** and **jQuery UI (v1.13.2)**.
