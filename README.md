@@ -1,4 +1,4 @@
-# Personal Site of Akshara Hegde
+# Pahachaan - Personal portfolio site template
 
 ![Landing page](https://aksharahegde.xyz/screenshot.png)
 
