@@ -37,3 +37,6 @@ Nuxt supports a lot of hosting services. Visit [Nuxt hosting](https://nuxt.com/d
 - Follow the steps from (1-5) mentioned under `Use this template` section.
 - Raise PR directly to `main` branch for small fixes.
 - Open an issue and raise a PR for adding new features.
+
+## Credits
+- [Fayaz Ahmed](https://github.com/fayazara) for his awesome zooper template.
