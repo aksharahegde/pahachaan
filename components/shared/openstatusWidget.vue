@@ -1,6 +1,7 @@
 <template>
   <ClientOnly>
     <a
+      v-if="config.public.statusSiteSlug"
       class="inline-flex gap-2 items-center px-3 py-1 text-xs rounded-md border border-border dark:text-white/70 dark:hover:bg-muted dark:hover:text-primary-500 max-w-fit"
       :href="statusSiteUrl"
       target="_blank"
@@ -66,9 +67,11 @@ const dictionary: any = {
   },
 } as const;
 
-const { data } = await useFetch("/api/site-status");
-const key = statusEnum.includes(data.value?.status)
-  ? data.value?.status
-  : "unknown";
-status.value = dictionary[key];
+if (config.public.statusSiteSlug) {
+  const { data } = await useFetch("/api/site-status");
+  const key = statusEnum.includes(data.value?.status)
+    ? data.value?.status
+    : "unknown";
+  status.value = dictionary[key];
+}
 </script>

@@ -47,12 +47,14 @@ description: 'My day-to-day setup. what I use to get stuff done.'
 
 
 ##### Notes
-- Obsidien
-- Notion
+- Obsidien [(for tech)]{style="font-size: 11px;"}
+- Notion [(for tech)]{style="font-size: 11px;"}
+- Appflowy [(for tech)]{style="font-size: 11px;"}
+- Superlist [(for personal)]{style="font-size: 11px;"}
 
 ##### Audio
-- boAt Rockerz 510
-- Boult Audio Probass
-- Mi portable BT Speaker 16W
-- Philips 2.1 amplifier system
-    - Customized with YMX-809BT board to support bluetooth connection
+- Boult Audio Probass [(meetings & calls)]{style="font-size: 11px;"}
+- boAt Rockerz 510 [(songs & movies tech)]{style="font-size: 11px;"}
+- Mi portable BT Speaker 16W [(outdoor fun)]{style="font-size: 11px;"}
+- Philips 2.1 amplifier system [(home theatre)]{style="font-size: 11px;"}
+    - Customized with YMX-809BT board to support bluetooth connection.

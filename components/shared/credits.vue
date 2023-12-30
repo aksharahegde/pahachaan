@@ -50,5 +50,10 @@ const uses = [
     label: "Openstatus",
     link: "https://www.openstatus.dev/",
   },
+  {
+    icon: '/credits/calcom.svg',
+    label: "Cal.com",
+    link: "https://cal.com/",
+  },
 ];
 </script>
