@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@nuxtseo/module",
-    "nuxt-simple-sitemap",
     "@nuxthq/studio",
   ],
   app: {
@@ -31,6 +30,14 @@ export default defineNuxtConfig({
     experimental: {
       search: true as any,
     },
+  },
+  ogImage: {
+    defaults: {
+      cacheMaxAgeSeconds: 60 * 60 * 24 * 7 * 1000 // 7 days
+    },
+    componentOptions: {
+      global: true,
+    }
   },
   googleFonts: {
     display: "swap",

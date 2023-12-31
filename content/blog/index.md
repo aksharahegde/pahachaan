@@ -1,6 +1,7 @@
 ---
 title: 'Blog'
 description: 'I love to write on technology and short stories'
+icon: 'solar:document-add-outline'
 ---
 
-sample
+this text wont render

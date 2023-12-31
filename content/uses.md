@@ -1,6 +1,7 @@
 ---
 title: 'Uses'
 description: 'My day-to-day setup. what I use to get stuff done.'
+icon: 'solar:monitor-smartphone-outline'
 ---
 
 

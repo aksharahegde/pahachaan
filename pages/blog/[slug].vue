@@ -5,17 +5,15 @@
     >
       <article>
         <UBreadcrumb :links="links" />
-        <ContentDoc v-slot="{ doc }" tag="article">
-          <h1
-            class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
-          >
-            {{ doc.title }}
-          </h1>
-          <div class="text-gray-600 dark:text-gray-300 text-sm">
-            Published on {{ useDateFormat(doc.published, "DD MMM YYYY").value }}
-          </div>
-          <ContentRenderer :value="doc" />
-        </ContentDoc>
+        <h1
+          class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
+        >
+          {{ doc.title }}
+        </h1>
+        <div class="text-gray-600 dark:text-gray-300 text-sm">
+          Published on {{ useDateFormat(doc.published, "DD MMM YYYY").value }}
+        </div>
+        <ContentDoc :value="doc" />
       </article>
       <div class="flex items-center justify-end mt-6 text-sm">
         <UButton
@@ -31,12 +29,27 @@
 <script setup>
 const route = useRoute();
 const { slug } = route.params;
-const links = useBreadcrumbItems()
+const links = useBreadcrumbItems();
 const config = useRuntimeConfig();
+
+const ogImage =  `${config.public.baseURL}/blog/${slug}.png`
 useSeoMeta({
-  ogImage: `${config.public.baseURL}/blog/${slug}.png`,
+  ogImage: ogImage,
   twitterCard: "summary_large_image",
   articleAuthor: config.public.ownerName,
+});
+
+const { data: doc } = await useAsyncData("doc", () =>
+  queryContent(route.path).findOne()
+);
+
+defineOgImageComponent("BlogOgImage", {
+  headline: config.public.ownerName,
+  title: doc.value.title,
+  description: doc.value.description,
+  url: route.fullPath,
+  coverImage: ogImage,
+  colorMode: 'dark'
 });
 </script>
 <style>

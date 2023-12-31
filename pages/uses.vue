@@ -15,3 +15,19 @@
     <SharedCredits />
   </main>
 </template>
+<script setup>
+const route = useRoute();
+const config = useRuntimeConfig();
+
+const { data: doc } = await useAsyncData("doc", () =>
+  queryContent(route.path).findOne()
+);
+
+defineOgImageComponent("MyOg", {
+  headline: config.public.ownerName,
+  title: doc.value.title,
+  description: doc.value.description,
+  icon: doc.value.icon,
+  url: route.fullPath,
+});
+</script>

@@ -1,7 +1,9 @@
 {
-    "headline": "Greetings",
+    "headline": "Hello, I'm",
     "title": "Akshara Hegde",
-    "description": "Explore the work of a skilled fullstack developer",
-    "icon": "carbon:bot",
-    "siteLogo": "carbon:bot" 
+    "description": "Fullstack Developer, Opensource Contributor & Writer",
+    "siteLogo": "https://aksharahegde.xyz/icon.png",
+    "coverImage": "https://aksharahegde.xyz/avatar.jpg",
+    "theme": "#374151",
+    "colorMode": "dark"
 }
