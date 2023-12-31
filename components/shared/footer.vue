@@ -2,7 +2,7 @@
   <footer class="body-font max-w-5xl mx-auto">
     <div class="flex justify-end">
       <NuxtLink
-        to="https://github.com/aksharahegde/aksharahegde-portfolio"
+        :to="footer.github"
         target="_blank"
         class="px-4 py-2 text-xs hover:text-primary-500 transition-all duration-300 hover:underline flex items-center justify-center gap-2"
         external
