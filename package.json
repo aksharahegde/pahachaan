@@ -1,5 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "pahachaan",
+  "version": "1.0.0",
+  "description": "a minimal template for personal site and free to use",
   "private": true,
   "type": "module",
   "scripts": {
