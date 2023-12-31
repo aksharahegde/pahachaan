@@ -10,8 +10,7 @@ Its a minimal template for personal site and free to use.
 - Automatically displayes latest blog articles on homepage.
 - Dynamic social media profile links.
 - Light & Dark mode support.
-- 100% SEO compatibile.
-
+- 100% SEO compatibile with dynamic post preview for populating social media.
 
 ## Use this template
 1. `git clone` this repo or click on `Use this template` button.
