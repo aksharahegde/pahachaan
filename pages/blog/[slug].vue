@@ -3,7 +3,7 @@
     <div
       class="prose text-sm md:text-base dark:prose-invert prose-blockquote:not-italic max-w-none md:max-w-4xl prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
     >
-      <article>
+      <ContentDoc v-slot="{ doc }" tag="article">
         <UBreadcrumb :links="links" />
         <h1
           class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
@@ -13,8 +13,8 @@
         <div class="text-gray-600 dark:text-gray-300 text-sm">
           Published on {{ useDateFormat(doc.published, "DD MMM YYYY").value }}
         </div>
-        <ContentDoc :value="doc" />
-      </article>
+        <ContentRenderer :value="doc" />
+      </ContentDoc>
       <div class="flex items-center justify-end mt-6 text-sm">
         <UButton
           label="All articles &rarr;"
@@ -32,7 +32,7 @@ const { slug } = route.params;
 const links = useBreadcrumbItems();
 const config = useRuntimeConfig();
 
-const ogImage =  `${config.public.baseURL}/blog/${slug}.png`
+const ogImage = `${config.public.baseURL}/blog/${slug}.png`;
 useSeoMeta({
   ogImage: ogImage,
   twitterCard: "summary_large_image",
@@ -49,7 +49,7 @@ defineOgImageComponent("BlogOgImage", {
   description: doc.value.description,
   url: route.fullPath,
   coverImage: ogImage,
-  colorMode: 'dark'
+  colorMode: "dark",
 });
 </script>
 <style>

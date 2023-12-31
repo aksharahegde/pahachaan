@@ -1,7 +1,7 @@
 ---
 title: Fixes for Django 4.2 and JS package updates
 description: Broken UI in Django 4.2
-path: /blog/fixes-for-django-4.2
+path: /blog/fixes-for-django-4-2-and-js-package-updates
 published: 2023-06-16T12:34:08.602Z
 cover: /blog/fixes-for-django-4-2-and-js-package-updates.png
 ---
