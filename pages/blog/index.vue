@@ -13,12 +13,13 @@
   </main>
 </template>
 <script setup>
+const config = useRuntimeConfig();
+const route = useRoute();
+
 const { data: articles } = await useAsyncData("blog-all", () =>
   queryContent("/blog").where({ title: { $ne: 'Blog' } }).sort({ published: -1 }).find()
 );
 
-const config = useRuntimeConfig();
-const route = useRoute();
 const { data: mainIndex } = await useAsyncData("mainIndex", () =>
   queryContent("/blog").where({ title: { $eq: 'Blog' } }).findOne()
 );

@@ -4,6 +4,7 @@
  */
 
 import { computed, defineComponent, h, resolveComponent } from 'vue'
+import { useSiteConfig } from '#imports'
 
 // convert to typescript props
 const props = withDefaults(defineProps<{
@@ -70,6 +71,22 @@ const siteName = computed(() => {
 const siteLogo = computed(() => {
   return props.siteLogo || siteConfig.logo
 })
+
+const runtimeConfig = useRuntimeConfig()['nuxt-og-image']
+
+const IconComponent = runtimeConfig.hasNuxtIcon
+  ? resolveComponent('Icon')
+  : defineComponent({
+    render() {
+      return h('div', 'missing nuxt-icon')
+    },
+  })
+if (typeof props.icon === 'string' && !runtimeConfig.hasNuxtIcon && process.dev) {
+  console.warn('Please install `nuxt-icon` to use icons with the fallback OG Image component.')
+  // eslint-disable-next-line no-console
+  console.log('\nnpm add -D nuxt-icon\n')
+  // create simple div renderer component
+}
 </script>
 
 <template>
@@ -121,10 +138,10 @@ const siteLogo = computed(() => {
           </p>
         </div>
         <div v-if="Boolean(coverImage)" style="width: 30%;" class="flex justify-end">
-          <img :src="coverImage" size="250px" style="margin: 0 auto; opacity: 0.9;border-radius:100%" />
+          <img :src="coverImage" class="rounded-full"/>
         </div>
-        <div v-else-if="Boolean(icon)" style="width: 30%;" class="flex justify-end">
-          <Icon :name="icon" size="250px" style="margin: 0 auto; opacity: 0.7;" />
+        <div v-if="Boolean(icon)" style="width: 30%;" class="flex justify-end">
+          <IconComponent :name="icon" size="250px" style="margin: 0 auto; opacity: 0.7;" />
         </div>
       </div>
       <div class="flex flex-row justify-center items-center text-left w-full">

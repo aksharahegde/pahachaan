@@ -2,8 +2,7 @@
     "headline": "Hello, I'm",
     "title": "Akshara Hegde",
     "description": "Fullstack Developer, Opensource Contributor & Writer",
-    "siteLogo": "https://aksharahegde.xyz/icon.png",
-    "coverImage": "https://aksharahegde.xyz/avatar.jpg",
+    "coverImage": "/avatar.jpg",
     "theme": "#374151",
     "colorMode": "dark"
 }

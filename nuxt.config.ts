@@ -32,12 +32,7 @@ export default defineNuxtConfig({
     },
   },
   ogImage: {
-    defaults: {
-      cacheMaxAgeSeconds: 60 * 60 * 24 * 7 * 1000 // 7 days
-    },
-    componentOptions: {
-      global: true,
-    }
+    compatibility: { prerender: { chromium: false } },
   },
   googleFonts: {
     display: "swap",
