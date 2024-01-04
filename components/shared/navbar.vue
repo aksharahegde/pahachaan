@@ -55,6 +55,11 @@ const items = [
     icon: "solar:folder-with-files-outline",
   },
   {
+    name: "Shop",
+    path: "/shop",
+    icon: "solar:shop-2-outline",
+  },
+  {
     name: "Blog",
     path: "/blog",
     icon: "solar:document-add-outline",
