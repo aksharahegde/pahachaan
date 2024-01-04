@@ -22,7 +22,7 @@
   </template>
   
   <script lang="ts" setup>
-const { data: articles } = await useAsyncData("blog-all", () =>
+const { data: articles } = await useAsyncData("blog-recent", () =>
   queryContent("/blog").where({ title: { $ne: 'Blog' } }).sort({ published: -1 }).limit(3).find()
 );
   </script>
