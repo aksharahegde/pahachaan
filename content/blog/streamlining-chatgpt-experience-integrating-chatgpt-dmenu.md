@@ -4,6 +4,7 @@ description: Integrate ChatGPT into your dmanu on your linux system
 path: /blog/streamlining-chatgpt-experience-integrating-chatgpt-dmenu
 published: 2023-03-08T10:12:15.170Z
 cover: /blog/streamlining-chatgpt-experience-integrating-chatgpt-dmenu.png
+thumbnail: /blog/thumbnails/streamlining-chatgpt-experience-integrating-chatgpt-dmenu.png
 ---
 
 <img src="/blog/streamlining-chatgpt-experience-integrating-chatgpt-dmenu.png">

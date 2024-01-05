@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-import { STATUS_COLORS } from "~/constants";
 
 defineProps({
   product: {

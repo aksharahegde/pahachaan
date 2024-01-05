@@ -11,7 +11,7 @@
     />
     <div class="flex gap-2">
       <UAvatar
-        :src="article.cover"
+        :src="article.thumbnail"
         :ui="{ rounded: 'rounded relative bg-gray-700' }"
         :alt="article.title"
         size="md"

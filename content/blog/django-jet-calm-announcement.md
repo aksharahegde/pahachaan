@@ -4,6 +4,7 @@ description: Rebooted with Calm for Django 4 and latest jQuery and jQuery-UI
 path: /blog/django-jet-calm-announcement
 published: 2022-11-12T10:12:15.170Z
 cover: /blog/django-jet-calm-announcement.png
+thumbnail: /blog/thumbnails/django-jet-calm-announcement.png
 ---
 
 <img src="/blog/django-jet-calm-announcement.png">
