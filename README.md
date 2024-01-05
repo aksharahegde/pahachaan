@@ -1,6 +1,13 @@
-# Pahachaan - Personal portfolio site template
+# Pahachaan
 
+### Personal portfolio site template all kind of techies.
+
+#### Preview
 ![Landing page](https://aksharahegde.xyz/screenshot.png)
+
+#### Perfromance
+![Performance](/public/performance.png)
+
 
 ## Features
 Its a minimal template for personal site and free to use.
