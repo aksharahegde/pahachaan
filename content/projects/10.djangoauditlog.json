@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/aksharahegde/django-audit-log",
+  "thumbnail": "",
+  "thumbnailAlt": "django audit log",
+  "category": "django",
+  "heading": "Django Audit Log",
+  "description": "Django Audit Log is a simple Django app to log model changes.",
+  "role": "Contributor",
+  "status": "active"
+}
