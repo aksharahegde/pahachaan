@@ -1,6 +1,6 @@
 const STATUS_COLORS: any = {
   active: "blue",
-  abondened: "red",
+  abandoned: "red",
   wip: "yellow",
   completed: "green",
 };
