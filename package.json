@@ -1,6 +1,16 @@
 {
   "name": "pahachaan",
-  "version": "1.0.0",
+  "version": "1.1.1",
+  "author": "aksharahegde <https://github.com/aksharahegde>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aksharahegde/pahachaan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aksharahegde/pahachaan/issues"
+  },
+  "homepage": "https://github.com/aksharahegde/pahachaan#readme",
   "description": "a minimal template for personal site and free to use",
   "private": true,
   "type": "module",
