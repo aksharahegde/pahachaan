@@ -1,15 +1,24 @@
 <template>
   <footer class="body-font max-w-5xl mx-auto">
-    <div class="flex justify-end">
-      <NuxtLink
-        :to="footer.github"
-        target="_blank"
-        class="px-4 py-2 text-xs hover:text-primary-500 transition-all duration-300 hover:underline flex items-center justify-center gap-2"
-        external
+    <div class="flex py-2">
+      <UAlert
+        icon="i-simple-icons-github"
+        variant="soft"
+        title="Free site template"
       >
-      <Icon name="i-simple-icons-github" />
-        <span>Get site template</span>
-      </NuxtLink>
+        <template #title="{ title }">
+          <span>{{ title }}</span>
+        </template>
+        <template #description>
+          This site's template can be cloned and used for free.
+          <NuxtLink
+            :to="footer.github"
+            target="_blank"
+            class="text-xs mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2"
+            external
+          >Click to get the template</NuxtLink>
+        </template>
+      </UAlert>
     </div>
     <div
       class="container flex flex-col items-center px-4 py-2 mx-auto border-t-2 border-gray-400 md:px-8 sm:flex-row"
