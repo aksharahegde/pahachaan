@@ -2,6 +2,7 @@
     "url": "#",
     "thumbnail": "/projects/logo/nullbrains.svg",
     "thumbnailAlt": "nullbrains screenshot",
+    "thumbnailBg": "bg-gradient-to-tr from-yellow-200 to-blue-200",
     "category": "ecommerce",
     "heading": "nullbrains",
     "description": "The marketing website of a fullstack web development.",

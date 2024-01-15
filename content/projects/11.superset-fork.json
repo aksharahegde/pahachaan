@@ -1,6 +1,7 @@
 {
     "url": "https://github.com/aksharahegde/superset-fork",
-    "thumbnail": "",
+    "thumbnail": "/projects/logo/superset.svg",
+    "thumbnailBg": "bg-blue-100",
     "thumbnailAlt": "superset fork",
     "category": "Data Visualization",
     "heading": "Superset",

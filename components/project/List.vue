@@ -18,6 +18,7 @@
         color="black"
       />
     </div>
+    <span class="hidden" v-for="color in colors" :key="color" />
   </div>
 </template>
 
@@ -25,4 +26,26 @@
 const { data: projects } = await useAsyncData("projects-home", () =>
   queryContent("/projects").limit(3).find()
 );
+
+const colors = [
+  "bg-blue-100",
+  "bg-gray-100",
+  "bg-gray-800",
+  "bg-purple-300",
+  "bg-purple-950",
+  "bg-amber-700",
+  "bg-green-200",
+  "bg-yellow-200",
+  "bg-yellow-500",
+  "bg-yellow-800",
+  "bg-yellow-900",
+  "bg-slate-300",
+  "bg-slate-600",
+  "bg-red-100",
+  "bg-red-600",
+  "bg-blue-100",
+  "bg-pink-100",
+  "bg-gradient-to-tr from-yellow-200 to-blue-200",
+  "bg-gradient-to-br from-yellow-200 via-pink-200 to-blue-200"
+];
 </script>

@@ -8,8 +8,9 @@
     <UChip :color="STATUS_COLORS[project.status]" size="sm" variant="solid" position="top-left" inset>
       <UAvatar
         :src="project.thumbnail"
-        :ui="{ rounded: 'rounded p-0.5 relative bg-gray-700' }"
+        :ui="{ rounded: 'rounded px-[2px] py-[4px] relative' }"
         :alt="project.heading"
+        :class="project.thumbnailBg"
         size="md"
       />
     </UChip>

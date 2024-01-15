@@ -1,6 +1,7 @@
 {
     "url": "https://github.com/aksharahegde/hawa",
     "thumbnail": "/projects/logo/hawa.png",
+    "thumbnailBg": "bg-slate-600",
     "thumbnailAlt": "hawa repo",
     "category": "development",
     "heading": "Hawa",

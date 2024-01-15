@@ -1,6 +1,7 @@
 {
     "url": "#",
     "thumbnail": "/projects/logo/superpowers.svg",
+    "thumbnailBg": "bg-yellow-200",
     "thumbnailAlt": "superpowers screenshot",
     "category": "fun",
     "heading": "Superpowers",

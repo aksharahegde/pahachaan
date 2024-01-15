@@ -1,0 +1,11 @@
+{
+  "url": "https://unjs.io",
+  "thumbnail": "/projects/logo/unjs.svg",
+  "thumbnailAlt": "unjs landing page",
+  "thumbnailBg": "bg-yellow-500",
+  "category": "development",
+  "heading": "unjs",
+  "description": "JavaScript Libraries, Tools, and Utilities, Crafted to Elevate Your Coding Journey.",
+  "role": "Contributor",
+  "status": "active"
+}

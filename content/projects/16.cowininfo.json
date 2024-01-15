@@ -1,10 +1,11 @@
 {
-    "url": "https://cowin-info.vercel.app/",
-    "thumbnail": "/projects/logo/covininfo.svg",
-    "thumbnailAlt": "Cowin Info screenshot",
-    "category": "healthcare",
-    "heading": "Cowin Info",
-    "description": "Find vaccination slots and download certificates.",
-    "status": "abandoned",
-    "role": "Author"
+  "url": "https://cowin-info.vercel.app/",
+  "thumbnail": "/projects/logo/covininfo.svg",
+  "thumbnailBg": "bg-green-200",
+  "thumbnailAlt": "Cowin Info screenshot",
+  "category": "healthcare",
+  "heading": "Cowin Info",
+  "description": "Find vaccination slots and download certificates.",
+  "status": "abandoned",
+  "role": "Author"
 }

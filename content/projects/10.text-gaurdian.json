@@ -1,6 +1,7 @@
 {
     "url": "https://github.com/aksharahegde/text-gaurdian",
     "thumbnail": "/projects/logo/text_gaurdian.png",
+    "thumbnailBg": "bg-pink-100",
     "thumbnailAlt": "text gaurdian",
     "category": "AI",
     "heading": "Text Gaurdian",

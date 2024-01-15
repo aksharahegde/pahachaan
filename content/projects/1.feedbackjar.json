@@ -1,6 +1,7 @@
 {
     "url": "https://feedbackjar.app/",
     "thumbnail": "/projects/logo/feedbackjar.svg",
+    "thumbnailBg": "bg-gray-800",
     "thumbnailAlt": "feedbackjar landing page",
     "category": "development",
     "heading": "Feedbackjar",

@@ -1,6 +1,7 @@
 {
     "url": "https://guessmoji.vercel.app/",
     "thumbnail": "/projects/logo/guessmoji.png",
+    "thumbnailBg": "bg-blue-100",
     "thumbnailAlt": "guessmoji screenshot",
     "category": "fun",
     "heading": "Guessmoji",

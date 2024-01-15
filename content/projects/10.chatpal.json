@@ -1,10 +1,11 @@
 {
-    "url": "https://chatpal.vercel.app",
-    "thumbnail": "/projects/logo/chatpal.avif",
-    "thumbnailAlt": "chatpal",
-    "category": "app",
-    "heading": "Chatpal",
-    "description": "Discover the ultimate AI chatbot app that's always ready to assist.",
-    "role": "Author",
-    "status": "active"
+  "url": "https://chatpal.vercel.app",
+  "thumbnail": "/projects/logo/chatpal.avif",
+  "thumbnailBg": "bg-purple-300 dark:bg-purple-950",
+  "thumbnailAlt": "chatpal",
+  "category": "app",
+  "heading": "Chatpal",
+  "description": "Discover the ultimate AI chatbot app that's always ready to assist.",
+  "role": "Author",
+  "status": "active"
 }

@@ -1,5 +1,7 @@
 {
     "url": "https://github.com/aksharahegde/django-jet-3-calm",
+    "thumbnail": "/projects/logo/django-jet.svg",
+    "thumbnailBg": "bg-red-100",
     "heading": "Django JET Calm",
     "description": "Modern template for Django-4 admin interface with improved functionality.",
     "role": "Maintainer",

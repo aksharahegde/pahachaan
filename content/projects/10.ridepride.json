@@ -1,6 +1,7 @@
 {
     "url": "https://ride-pride.vercel.app/",
     "thumbnail": "/projects/logo/ridepride.png",
+    "thumbnailBg": "bg-gradient-r bg-red-600 bg-gray-600",
     "thumbnailAlt": "ridepride screenshot",
     "category": "rental",
     "heading": "OXCE - Ride with Pride",

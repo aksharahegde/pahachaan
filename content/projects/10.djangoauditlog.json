@@ -1,6 +1,7 @@
 {
   "url": "https://github.com/aksharahegde/django-audit-log",
-  "thumbnail": "",
+  "thumbnail": "/projects/logo/django-audit-log.svg",
+  "thumbnailBg": "bg-blue-100",
   "thumbnailAlt": "django audit log",
   "category": "django",
   "heading": "Django Audit Log",

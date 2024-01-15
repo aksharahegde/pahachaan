@@ -1,7 +1,8 @@
 {
   "url": "https://github.com/aksharahegde/nuxt-glow",
   "heading": "Nuxt Glow",
-  "description": "Add a mouse-tracing glow effect to Nuxt components effortlessly.",
   "thumbnail": "/projects/logo/glow.svg",
+  "thumbnailBg": "bg-amber-700",
+  "description": "Add a mouse-tracing glow effect to Nuxt components effortlessly.",
   "role": "Author"
 }

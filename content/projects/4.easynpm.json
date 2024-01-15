@@ -1,6 +1,7 @@
 {
     "url": "https://easynpm.netlify.app/",
     "thumbnail": "/projects/logo/easynpm.svg",
+    "thumbnailBg": "bg-red-600",
     "thumbnailAlt": "easynpm landing page",
     "category": "development",
     "heading": "EasyNPM",

@@ -1,6 +1,7 @@
 {
     "url": "https://s3silks.vercel.app/",
     "thumbnail": "/projects/logo/s3silks.png",
+    "thumbnailBg": "bg-gradient-to-br from-yellow-200 via-pink-200 to-blue-200",
     "thumbnailAlt": "s3silks screenshot",
     "category": "ecommerce",
     "heading": "S3 Silks",
