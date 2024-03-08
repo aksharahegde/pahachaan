@@ -3,18 +3,21 @@
     <div class="font-bold md:text-lg text-gray-600 dark:text-gray-200">
       This site uses,
     </div>
-    <div class="grid grid-cols-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
+    <div
+      class="grid grid-cols-2 mt-4 sm:grid-cols-3 md:grid-cols-4 gap-4 bg-slate-800 dark:bg-transparent rounded-lg py-4"
+    >
       <a
         :href="item.link"
         target="_blank"
         v-for="(item, index) in uses"
         :key="index"
-        class="flex justify-center items-center p-4 md:justify-start grayscale invert dark:invert-0 opacity-60 hover:grayscale-0 hover:opacity-100"
+        class="flex justify-center items-center p-4 md:justify-start"
       >
         <img
-          class="w-32"
+          class="w-32 mx-auto"
           :src="item.icon"
           :alt="item.label"
+          :class="item.class"
           loading="lazy"
           width="128"
           height="128"
@@ -26,34 +29,40 @@
 <script setup>
 const uses = [
   {
-    icon: '/credits/nuxt-white.svg',
+    icon: "/credits/nuxt-white.svg",
     label: "NuxtJS",
     link: "https://nuxt.com/",
   },
   {
-    icon: '/credits/tailwind-white.svg',
+    icon: "/credits/tailwind-white.svg",
     label: "Tailwind CSS",
     link: "https://tailwindcss.com/",
   },
   {
-    icon:  '/credits/nuxt-content.svg',
+    icon: "/credits/nuxt-content.svg",
     label: "Nuxt Content",
     link: "https://content.nuxt.com/",
   },
   {
-    icon: '/credits/vercel-light.svg',
+    icon: "/credits/vercel-light.svg",
     label: "Vercel",
     link: "https://vercel.com/",
   },
   {
-    icon: '/credits/openstatus.svg',
+    icon: "/credits/openstatus.svg",
     label: "Openstatus",
     link: "https://www.openstatus.dev/",
   },
   {
-    icon: '/credits/calcom.svg',
+    icon: "/credits/calcom.svg",
     label: "Cal.com",
     link: "https://cal.com/",
+  },
+  {
+    icon: "/credits/dubco.svg",
+    label: "dub.co",
+    link: "https://dub.co/",
+    class: "invert",
   },
 ];
 </script>
