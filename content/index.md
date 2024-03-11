@@ -10,7 +10,7 @@ Akshara Hegde
 Full Stack Engineer and Opensource Contributor
 ::
 
-::contact{:items='[{"name": "i-simple-icons-github", "url": "https://git.new/pahachaan"}, {"name": "i-simple-icons-linkedin", "url": "https://linkedin.com/in/aksharadt"}, {"name": "i-simple-icons-x", "url": "https://x.com/akshara_dev"}, {"name": "i-simple-icons-minutemailer", "url": "mailto:aksharadt@skiff.com"}, {"name": "i-solar-calendar-date-bold", "url": "https://cal.com/aksharahegde"}]'}
+::contact{:items='[{"name": "i-simple-icons-github", "url": "https://git.new/pahachaan"}, {"name": "i-simple-icons-linkedin", "url": "https://linkedin.com/in/aksharadt"}, {"name": "i-simple-icons-x", "url": "https://x.com/akshara_dev"}, {"name": "i-simple-icons-minutemailer", "url": "mailto:akshara.dt@gmail.com"}, {"name": "i-solar-calendar-date-bold", "url": "https://cal.com/aksharahegde"}]'}
 ::
 
 ::page-content
