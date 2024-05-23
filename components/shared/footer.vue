@@ -3,14 +3,14 @@
     <div class="flex py-2">
       <UAlert
         icon="i-simple-icons-github"
-        variant="soft"
+        variant="solid"
         title="Free site template"
       >
         <template #title="{ title }">
           <span>{{ title }}</span>
         </template>
         <template #description>
-          This site's template can be cloned and used for free.
+          This site is opensource template and can be used for free.
           <NuxtLink
             :to="footer.github"
             target="_blank"

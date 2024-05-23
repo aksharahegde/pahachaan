@@ -11,10 +11,10 @@
         target="_blank"
         v-for="(item, index) in uses"
         :key="index"
-        class="flex justify-center items-center p-4 md:justify-start"
+        class="flex justify-center items-center p-4 md:justify-start group"
       >
         <img
-          class="w-32 mx-auto"
+          class="w-32 h-12 mx-auto group-hover:scale-110 transition-all duration-300"
           :src="item.icon"
           :alt="item.label"
           :class="item.class"
@@ -63,6 +63,12 @@ const uses = [
     label: "dub.co",
     link: "https://dub.co/",
     class: "invert",
+  },
+  {
+    icon: "/credits/openpanel.svg",
+    label: "Openpanel",
+    link: "https://openpanel.dev",
+    // class: "invert",
   },
 ];
 </script>
