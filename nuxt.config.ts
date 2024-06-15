@@ -11,9 +11,9 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxt/content",
     "@vueuse/nuxt",
-    "@nuxtseo/module",
     "@nuxthq/studio",
-    "@nuxt/fonts"
+    "@nuxt/fonts",
+    "@nuxtjs/seo"
   ],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
