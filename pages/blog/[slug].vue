@@ -11,7 +11,7 @@
           {{ doc.title }}
         </h1>
         <div class="text-gray-600 dark:text-gray-300 text-sm">
-          Published on {{ useDateFormat(doc.published, "DD MMM YYYY").value }}
+          Published on {{ useDateFormat(doc.published, "Do MMMM YYYY").value }}
         </div>
         <ContentRenderer :value="doc" />
       </ContentDoc>
@@ -27,6 +27,8 @@
   </main>
 </template>
 <script setup>
+import { useDateFormat } from "@vueuse/core";
+
 const route = useRoute();
 const { slug } = route.params;
 const links = useBreadcrumbItems();

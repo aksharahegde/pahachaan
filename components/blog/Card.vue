@@ -4,7 +4,7 @@
     class="flex items-start group p-2 -m-2 rounded-lg flex-col"
   >
     <UBadge
-      :label="useDateFormat(article.published, 'DD MMM YYYY').value"
+      :label="useDateFormat(article.published, 'Do MMMM YYYY').value"
       color="black"
       variant="soft"
       class="mb-1"
