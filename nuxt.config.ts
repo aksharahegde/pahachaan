@@ -10,10 +10,10 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/ui",
     "@nuxt/content",
-    "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@nuxtseo/module",
     "@nuxthq/studio",
+    "@nuxt/fonts"
   ],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
@@ -39,12 +39,6 @@ export default defineNuxtConfig({
   },
   ogImage: {
     compatibility: { prerender: { chromium: false } },
-  },
-  googleFonts: {
-    display: "swap",
-    families: {
-      "Fira+Code": [300, 400, 500, 600],
-    },
   },
   runtimeConfig: {
     public: {
