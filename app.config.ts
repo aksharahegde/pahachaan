@@ -2,6 +2,7 @@ export default defineAppConfig({
   ui: {
     primary: "sky",
     gray: "neutral",
+    icons: ["simple-icons", "solar"],
     formGroup: {
       help: "text-xs mt-1 text-gray-500 dark:text-gray-400",
       error: "text-xs mt-1 text-red-500 dark:text-red-400",

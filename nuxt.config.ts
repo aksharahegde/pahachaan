@@ -26,9 +26,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  ui: {
-    icons: ["simple-icons", "solar"],
-  },
   content: {
     highlight: {
       theme: "slack-dark",
