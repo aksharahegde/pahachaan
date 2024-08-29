@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxthq/studio",
     "@nuxt/fonts",
-    "@nuxtjs/seo"
+    "@nuxtjs/seo",
+    "@nuxt/image",
   ],
 
   app: {
