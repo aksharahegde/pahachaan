@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <ContentDoc v-slot="{ doc }">
+    <LazyContentDoc v-slot="{ doc }">
       <Header class="mb-4" :title="doc.title" :description="doc.description" />
       <div class="flex flex-col space-y-4">
         <ProductCard
@@ -9,7 +9,7 @@
           :product="product"
         />
       </div>
-    </ContentDoc>
+    </LazyContentDoc>
   </main>
 </template>
 
