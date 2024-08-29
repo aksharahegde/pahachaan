@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <ContentDoc v-slot="{ doc }">
+    <LazyContentDoc v-slot="{ doc }">
       <Header class="mb-4" :title="doc.title" :description="doc.description" />
       <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-2" />
       <div class="flex flex-col space-y-4">
@@ -10,7 +10,7 @@
           :project="project"
         />
       </div>
-    </ContentDoc>
+    </LazyContentDoc>
   </main>
 </template>
 

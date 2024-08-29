@@ -7,14 +7,17 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   modules: [
     "@nuxt/ui",
     "@nuxt/content",
-    "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
-    "@nuxtseo/module",
     "@nuxthq/studio",
+    "@nuxt/fonts",
+    "@nuxtjs/seo",
+    "@nuxt/image",
   ],
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -26,9 +29,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  ui: {
-    icons: ["simple-icons", "solar"],
-  },
+
   content: {
     highlight: {
       theme: "slack-dark",
@@ -37,15 +38,11 @@ export default defineNuxtConfig({
       search: true as any,
     },
   },
+
   ogImage: {
     compatibility: { prerender: { chromium: false } },
   },
-  googleFonts: {
-    display: "swap",
-    families: {
-      "Fira+Code": [300, 400, 500, 600],
-    },
-  },
+
   runtimeConfig: {
     public: {
       statusSiteSlug: process.env.STATUS_SITE_SLUG,
@@ -54,7 +51,10 @@ export default defineNuxtConfig({
       analyticsClientId: process.env.ANALYTICS_CLIENT_ID,
     },
   },
+
   site: {
     name: process.env.OWNER_NAME,
   },
+
+  compatibilityDate: "2024-08-26",
 });

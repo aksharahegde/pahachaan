@@ -20,7 +20,7 @@
       >
         {{ project.heading }}
         <UBadge v-if="project.role" color="gray" size="xs" variant="soft">
-        {{ project.role }}
+          {{ project.role }}
         </UBadge>
       </h3>
       <p class="dark:text-gray-400 text-gray-600 text-sm py-1">

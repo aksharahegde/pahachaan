@@ -23,20 +23,22 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxthq/studio": "^1.0.6",
-    "@nuxtseo/module": "^2.0.0-beta.51",
-    "@vueuse/core": "^10.7.0",
-    "@vueuse/nuxt": "^10.7.0",
-    "nuxt": "^3.9.0",
-    "vue": "^3.3.13",
-    "vue-router": "^4.2.5"
+    "@nuxt/fonts": "^0.7.2",
+    "@nuxt/image": "^1.7.1",
+    "@nuxthq/studio": "^2.0.3",
+    "@nuxtjs/seo": "^2.0.0-rc.19",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1",
+    "nuxt": "^3.13.0",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3"
   },
   "dependencies": {
-    "@iconify-json/simple-icons": "^1.0.5",
-    "@iconify-json/solar": "^1.1.9",
-    "@nuxt/content": "^2.10.0",
-    "@nuxt/ui": "^2.11.1",
-    "@nuxtjs/google-fonts": "^3.1.3",
-    "@openpanel/web": "^0.0.8-beta"
+    "@iconify-json/simple-icons": "^1.1.114",
+    "@iconify-json/solar": "^1.1.10",
+    "@nuxt/content": "^2.13.2",
+    "@nuxt/ui": "^2.18.4",
+    "@openpanel/web": "^0.0.9-beta",
+    "caniuse-lite": "^1.0.30001653"
   }
 }
