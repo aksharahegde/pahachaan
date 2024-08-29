@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
   modules: [
     "@nuxt/ui",
     "@nuxt/content",
@@ -15,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxtjs/seo"
   ],
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -26,6 +28,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   content: {
     highlight: {
       theme: "slack-dark",
@@ -34,9 +37,11 @@ export default defineNuxtConfig({
       search: true as any,
     },
   },
+
   ogImage: {
     compatibility: { prerender: { chromium: false } },
   },
+
   runtimeConfig: {
     public: {
       statusSiteSlug: process.env.STATUS_SITE_SLUG,
@@ -45,7 +50,10 @@ export default defineNuxtConfig({
       analyticsClientId: process.env.ANALYTICS_CLIENT_ID,
     },
   },
+
   site: {
     name: process.env.OWNER_NAME,
   },
+
+  compatibilityDate: "2024-08-26",
 });

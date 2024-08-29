@@ -3,12 +3,7 @@
     :to="article._path"
     class="flex items-start group p-2 -m-2 rounded-lg flex-col"
   >
-    <UBadge
-      :label="useDateFormat(article.published, 'Do MMMM YYYY').value"
-      color="black"
-      variant="soft"
-      class="mb-1"
-    />
+    <UBadge :label="publishedDate" color="black" variant="soft" class="mb-1" />
     <div class="flex gap-2">
       <UAvatar
         :src="article.thumbnail"
@@ -32,7 +27,14 @@
 <script setup>
 import { useDateFormat } from "@vueuse/core";
 
-defineProps({
+const props = defineProps({
   article: Object,
+});
+const publishedDate = ref(null);
+onMounted(() => {
+  publishedDate.value = useDateFormat(
+    props.article.published,
+    "Do MMMM YYYY"
+  ).value;
 });
 </script>
