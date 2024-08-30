@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen">
+  <main class="min-h-screen prose dark:prose-invert">
     <LazyContentDoc v-slot="{ doc }" tag="article">
       <UBreadcrumb :links="links" />
       <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1">
