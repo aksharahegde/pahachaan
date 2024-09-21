@@ -3,7 +3,7 @@
   <SharedNavbar />
   <div class="h-4 md:h-24" />
   <UContainer>
-    <NuxtPage />
+    <NuxtPage class="mx-auto px-2 lg:px-8 max-w-2xl"/>
   </UContainer>
   <div class="h-4 md:h-32" />
   <SharedFooter />
@@ -29,8 +29,14 @@ useHead({
 });
 </script>
 <style>
-* {
-  font-family: "Fira Code", monospace;
+:host, html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
 }
 .page-enter-active,
 .page-leave-active {

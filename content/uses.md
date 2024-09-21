@@ -6,7 +6,8 @@ icon: 'solar:monitor-smartphone-outline'
 
 
 ##### Workstation
-- Lenovo Thinkbook i5, 24GB RAM
+- Asus VivoBook 15, 16GB RAM (Primary)
+- Lenovo Thinkbook i5, 24GB RAM (Secondary)
 - Acer HC1 27 inch Curved Full HD VA Panel Gaming Monitor
 - HP X1000 Wired Mouse (Black)
 - Zebronics mechanical USB wired keyboard Max Plus (RGB)
@@ -14,31 +15,7 @@ icon: 'solar:monitor-smartphone-outline'
 - Some rotating cusioned chair
 
 ##### IDEs
-- VS Code
-    - Angular essentials
-    - Nuxt
-    - Volar
-    - Tailwind CSS IntelliSense
-    - Headwind
-    - Apollo GraphQL
-    - MDC
-    - Docker
-    - GitLens
-    - JIRA and Bitbucket
-    - Peacock
-    - Prettier
-    - YAML
-    - Python
-    - Astro
-    - Carppuccin theme & icons
-    - Headwind (Sort tailwind classes)
-    - Iconify
-    - Svelte for VS Code
-    - Tauri
-    - Google Cloud Code
-
-- PyCharm
-- Android Studio
+- Cursor
 
 
 ##### Design
@@ -49,7 +26,6 @@ icon: 'solar:monitor-smartphone-outline'
 
 ##### Notes
 - Obsidien [(for tech)]{style="font-size: 11px;"}
-- Notion [(for tech)]{style="font-size: 11px;"}
 - Appflowy [(for tech)]{style="font-size: 11px;"}
 - Superlist [(for personal)]{style="font-size: 11px;"}
 

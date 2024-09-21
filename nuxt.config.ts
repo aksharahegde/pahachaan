@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    prerender: {
+      routes: ["/", "/uses", "/projects", "/blog"],
+    },
+  },
+
   modules: [
     "@nuxt/ui",
     "@nuxt/content",

@@ -1,8 +1,9 @@
 <template>
   <ClientOnly>
+    <UTooltip :text="status.label">
     <a
       v-if="config.public.statusSiteSlug"
-      class="inline-flex gap-2 items-center px-3 py-1 text-xs rounded-md border border-border dark:text-white/70 dark:hover:bg-muted dark:hover:text-primary-500 max-w-fit"
+      class="inline-flex gap-2 items-center px-3 py-1 max-w-fit"
       :href="statusSiteUrl"
       target="_blank"
       rel="noreferrer"
@@ -18,8 +19,8 @@
           :class="status.color"
         />
       </span>
-      {{ status.label }}
     </a>
+  </UTooltip>
   </ClientOnly>
 </template>
 <script setup lang="ts">
