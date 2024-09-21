@@ -18,19 +18,30 @@ Its a minimal template for personal site and free to use.
 - Dynamic social media profile links.
 - Light & Dark mode support.
 - 100% SEO compatibile with dynamic post preview for populating social media.
+- Openpanel analytics integration.
+
+## Note
+I have added some more features to this template. If you want to use the stable version, please use `template-stable` branch.
+
 
 ## Use this template
 1. `git clone` this repo or click on `Use this template` button.
 2. `cd` into the project directory.
-3. Run `bun install` to install the dependencies.
-4. Set following variables in `.env`
+3. Checkout to `template-stable` branch.
+4. Run `bun install` to install the dependencies.
+5. Set following variables in `.env`
+
 ```bash
-# Openstatus is a opensource tool monitor your services. Set user slug.
+# Openstatus is a opensource tool monitor your services. #Set user slug.
 STATUS_SITE_SLUG=
 # Set your site url.
 NUXT_PUBLIC_SITE_URL=
 # Set your site name.
 OWNER_NAME=
+
+# Openpanel (https://openpanel.dev)
+ANALYTICS_CLIENT_ID=
+ANALYTICS_CLIENT_SECRET=
 ```
 
 4. Run `bun dev` to start the development server.
