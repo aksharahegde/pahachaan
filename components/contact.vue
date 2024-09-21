@@ -28,7 +28,7 @@ const props = defineProps({
       {
         name: "OSS PRs",
         icon: "i-solar-usb-bold",
-        url: "https://oss-pr.pages.dev",
+        url: "https://prs.aksharahegde.xyz",
       },
     ],
   },
