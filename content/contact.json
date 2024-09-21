@@ -1,0 +1,10 @@
+{
+  "contact": [
+    { "name": "Github", "icon": "i-simple-icons-github", "url": "https://git.new/pahachaan" },
+    { "name": "LinkedIn", "icon": "i-simple-icons-linkedin", "url": "https://linkedin.com/in/aksharadt" },
+    { "name": "X", "icon": "i-simple-icons-x", "url": "https://x.com/akshara_dev" },
+    { "name": "Email", "icon": "i-simple-icons-minutemailer", "url": "mailto:akshara.dt@gmail.com" },
+    { "name": "Cal.com", "icon": "i-solar-calendar-date-bold", "url": "https://cal.com/aksharahegde" },
+    { "name": "OSS PRs", "icon": "i-solar-usb-bold", "url": "https://oss-pr.pages.dev" }
+  ]
+}

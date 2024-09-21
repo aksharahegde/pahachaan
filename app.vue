@@ -29,8 +29,14 @@ useHead({
 });
 </script>
 <style>
-* {
-  font-family: "Fira Code", monospace;
+:host, html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
 }
 .page-enter-active,
 .page-leave-active {

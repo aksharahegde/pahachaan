@@ -49,7 +49,7 @@
 
         <NuxtLink :to="footer.blog" target="_blank" class="link" external>
           <span class="sr-only">Blog</span>
-          <Icon name="solar:document-add-outline" />
+          <Icon name="i-simple-icons-blogger" />
         </NuxtLink>
       </div>
     </div>
