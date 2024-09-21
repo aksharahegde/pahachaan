@@ -14,7 +14,7 @@ const props = defineProps({
         icon: "i-simple-icons-linkedin",
         url: "https://linkedin.com/in/aksharadt",
       },
-      { name: "X", icon: "i-simple-icons-x", url: "https://x.com/akshara_dev" },
+      { name: "Twitter", icon: "i-simple-icons-twitter", url: "https://x.com/akshara_dev" },
       {
         name: "Email",
         icon: "i-simple-icons-minutemailer",
@@ -36,21 +36,28 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col max-w-xl">
     <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
-      Find me on
+      Links
     </h3>
-    <div class="flex gap-4 py-2">
-      <UTooltip v-for="item in items" :key="item.name" :text="item.name">
-        <a
-          :href="item.url"
-          target="_blank"
-          rel="noopener"
-          class="rounded-md text-gray-700 dark:bg-gray-900 dark:text-gray-300 transition-all duration-300 border border-gray-500 p-2 hover:text-primary-500 hover:border-primary-500 flex items-center justify-center"
-        >
-          <Icon :name="item.icon" class="w-5 h-5 md:w-4 md:h-4" />
-        </a>
-      </UTooltip>
+    <div class="flex flex-col space-y-3 py-2">
+      <a
+        v-for="item in items"
+        :key="item.name"
+        :href="item.url"
+        target="_blank"
+        rel="noopener"
+        class="flex items-end justify-between w-full gap-2 group"
+      >
+        <span class="text-sm font-medium text-gray-800 dark:text-gray-200">
+          {{ item.name }}
+        </span>
+        <span class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"/>
+        <UIcon
+          :name="item.icon"
+          class="text-gray-700 dark:text-gray-300 w-6 h-6"
+        />
+      </a>
     </div>
   </div>
 </template>

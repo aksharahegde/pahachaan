@@ -1,5 +1,5 @@
 <template>
-  <footer class="body-font max-w-5xl mx-auto">
+  <footer class="body-font max-w-2xl mx-auto">
     <div class="flex py-2">
       <UAlert
         icon="i-simple-icons-github"
@@ -14,9 +14,10 @@
           <NuxtLink
             :to="footer.github"
             target="_blank"
-            class="text-xs mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2"
+            class="text-sm mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2"
             external
-          >Click to get the template</NuxtLink>
+            >Click to get the template</NuxtLink
+          >
         </template>
       </UAlert>
     </div>
@@ -30,27 +31,15 @@
         Rights Reserved.
       </p>
       <div
-        class="flex items-center justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
+        class="flex items-center justify-between md:justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
       >
         <SharedOpenstatusWidget />
-        <NuxtLink
-          :to="`mailto:${footer.email}`"
-          target="_blank"
-          class="link"
-          external
-        >
-          <Icon name="i-simple-icons-minutemailer" />
-        </NuxtLink>
-
-        <NuxtLink :to="footer.github" target="_blank" class="link" external>
-          <span class="sr-only">GitHub</span>
-          <Icon name="i-simple-icons-github" />
-        </NuxtLink>
-
-        <NuxtLink :to="footer.blog" target="_blank" class="link" external>
-          <span class="sr-only">Blog</span>
-          <Icon name="i-simple-icons-blogger" />
-        </NuxtLink>
+        <UTooltip text="Blog">
+          <NuxtLink :to="footer.blog" target="_blank" class="link" external>
+            <span class="sr-only">Blog</span>
+            <UIcon name="i-simple-icons-blogger" />
+          </NuxtLink>
+        </UTooltip>
       </div>
     </div>
   </footer>
@@ -64,5 +53,8 @@ const { data: footer } = await useAsyncData("footer", () =>
 <style scoped>
 .link {
   @apply text-gray-500 hover:text-primary-500 text-lg flex justify-center items-center;
+}
+.link svg {
+  @apply w-12 h-12;
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
   <ClientOnly>
-    <div class="fixed w-full z-50" :class="isMobile ? 'bottom-0' : 'top-0'">
-      <nav class="mx-auto md:px-4 sm:px-6 lg:px-8 max-w-5xl">
+    <div
+      class="fixed w-full z-50"
+      :class="isMobile ? 'bottom-0' : 'top-0 left-1/2 -translate-x-1/2'"
+    >
+      <nav class="mx-auto px-2 sm:px-6 lg:px-8 max-w-2xl">
         <ul
-          class="flex items-center md:my-4 px-3 text-sm font-medium text-gray-800 shadow shadow-gray-800/5 backdrop-blur dark:bg-gray-900 dark:text-gray-200"
+          class="flex items-center justify-between md:my-4 px-3 text-sm font-medium text-gray-800 shadow shadow-gray-800/5 backdrop-blur dark:bg-gray-900 dark:text-gray-200"
         >
           <li v-for="item in items" :key="item.path">
             <UTooltip
@@ -15,7 +18,7 @@
                 class="relative px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
                 active-class="text-primary-600 dark:text-primary-400"
               >
-                <Icon
+                <UIcon
                   aria-hidden="true"
                   :name="item.icon"
                   class="w-7 h-7 md:w-5 md:h-5 z-10"
