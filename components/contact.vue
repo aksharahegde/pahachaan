@@ -10,7 +10,7 @@ const props = defineProps({
         url: "https://git.new/pahachaan",
       },
       {
-        name: "LinkedIn",
+        name: "Linkedin",
         icon: "i-simple-icons-linkedin",
         url: "https://linkedin.com/in/aksharadt",
       },
@@ -40,23 +40,22 @@ const props = defineProps({
     <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
       Links
     </h3>
-    <div class="flex flex-col space-y-3 py-2">
+    <div class="flex flex-wrap gap-6 py-2 justify-between">
       <a
         v-for="item in items"
         :key="item.name"
         :href="item.url"
         target="_blank"
         rel="noopener"
-        class="flex items-end justify-between w-full gap-2 group"
+        class="flex items-center gap-2 group"
       >
-        <span class="text-sm font-medium text-gray-800 dark:text-gray-200">
-          {{ item.name }}
-        </span>
-        <span class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"/>
-        <UIcon
+      <UIcon
           :name="item.icon"
-          class="text-gray-700 dark:text-gray-300 w-6 h-6"
+          class="text-gray-700 dark:text-gray-300 w-6 h-6 transition-all duration-500 group-hover:scale-110"
         />
+        <span class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:underline">
+          {{ item.name }}
+        </span>        
       </a>
     </div>
   </div>
