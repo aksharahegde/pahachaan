@@ -18,6 +18,7 @@
           :src="item.icon"
           :alt="item.label"
           :class="item.class"
+          :aria-label="`${item.label} website`"
           loading="lazy"
           width="128"
           height="128"
