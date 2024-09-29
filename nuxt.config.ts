@@ -35,7 +35,7 @@ export default defineNuxtConfig({
     },
     experimental: {
       search: true as any,
-    },
+    }
   },
 
   ogImage: {
@@ -48,6 +48,7 @@ export default defineNuxtConfig({
       baseURL: process.env.NUXT_PUBLIC_SITE_URL,
       ownerName: process.env.OWNER_NAME,
       analyticsClientId: process.env.ANALYTICS_CLIENT_ID,
+      twitter: process.env.TWITTER_HANDLE,
     },
   },
 
