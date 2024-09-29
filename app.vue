@@ -114,7 +114,7 @@ html {
 }
 
 .font-sans {
-  font-family: Barlow, "Barlow Fallback: BlinkMacSystemFont",
+  font-family: "Barlow", "Barlow Fallback: BlinkMacSystemFont",
     "Barlow Fallback: Segoe UI", "Barlow Fallback: Roboto",
     "Barlow Fallback: Helvetica Neue", "Barlow Fallback: Arial", system-ui,
     sans-serif;
