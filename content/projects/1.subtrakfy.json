@@ -1,0 +1,11 @@
+{
+    "url": "https://subtrak.fyi/",
+    "thumbnail": "https://subtrak.fyi/icon.png",
+    "thumbnailBg": "bg-gray-100",
+    "thumbnailAlt": "subtrakfy landing page",
+    "category": "Finance",
+    "heading": "Subtrakfy",
+    "description": "Track your subscriptions for free.",
+    "status": "wip",
+    "role": "Author"
+}

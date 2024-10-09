@@ -13,6 +13,9 @@
       </p>
     </div>
     <Contact class="mt-2" />
+    <div>
+      <Announcement class="mt-2" />
+    </div>
     <ProjectList class="mt-2" />
     <BlogRecent class="mt-2" />
   </main>
