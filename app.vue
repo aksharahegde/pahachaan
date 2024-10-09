@@ -96,7 +96,6 @@ if (import.meta.server) {
         sizes: "16x16",
         href: "/favicon-16x16.png",
       },
-      { rel: "manifest", href: "/manifest.json" },
       { rel: "feed", type: "application/rss+xml", href: "/rss.xml" },
     ],
   });
