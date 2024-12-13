@@ -76,8 +76,8 @@ if (import.meta.server) {
     ],
     link: [
       { rel: "canonical", href: url },
-      { rel: "mask-icon", color: "#fff", href: "/favicon.png" },
-      { rel: "icon", type: "image/svg", href: "/favicon.svg" },
+      { rel: "mask-icon", color: "#fff", href: "/favicon.ico" },
+      { rel: "icon", type: "image/ico", href: "/favicon.ico" },
       { rel: "alternate", type: "application/rss+xml", href: "/rss.xml" },
       {
         rel: "apple-touch-icon",
