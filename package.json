@@ -39,6 +39,6 @@
     "@nuxt/content": "^2.13.2",
     "@nuxt/ui": "^2.18.7",
     "@openpanel/web": "^0.0.9-beta",
-    "caniuse-lite": "^1.0.30001668"
+    "caniuse-lite": "^1.0.30001688"
   }
 }
