@@ -1,13 +1,13 @@
 <template>
   <a
-    href="https://subtrak.fyi?ref=aksharahegde.com"
+    href="https://ink.aksharahegde.xyz/?ref=aksharahegde.xyz"
     target="_blank"
     class="w-full"
   >
     <UAlert
-      description="A free and minimal tool to track your subscriptions of any kind."
-      :avatar="{ src: 'https://subtrak.fyi/icon.png' }"
-      title="Subtrakfy is now live!"
+      title="Ink is now live!"
+      description="A free and minimal template to showcase your writings."
+      :avatar="{ src: 'https://ink.aksharahegde.xyz/icon.png' }"
     />
   </a>
 </template>
