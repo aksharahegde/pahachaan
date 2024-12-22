@@ -14,7 +14,16 @@ const props = defineProps({
         icon: "i-simple-icons-linkedin",
         url: "https://linkedin.com/in/aksharadt",
       },
-      { name: "Twitter", icon: "i-simple-icons-twitter", url: "https://x.com/akshara_dev" },
+      {
+        name: "Peerlist",
+        icon: "i-simple-icons-peerlist",
+        url: "https://peerlist.io/akshara",
+      },
+      {
+        name: "Twitter",
+        icon: "i-simple-icons-twitter",
+        url: "https://x.com/akshara_dev",
+      },
       {
         name: "Email",
         icon: "i-simple-icons-minutemailer",
@@ -37,10 +46,8 @@ const props = defineProps({
 
 <template>
   <div class="flex flex-col max-w-xl">
-    <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
-      Links
-    </h3>
-    <div class="flex flex-wrap gap-6 py-2 justify-between">
+    <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">Links</h3>
+    <div class="flex flex-wrap gap-6 py-2">
       <a
         v-for="item in items"
         :key="item.name"
@@ -49,13 +56,15 @@ const props = defineProps({
         rel="noopener"
         class="flex items-center gap-2 group"
       >
-      <UIcon
+        <UIcon
           :name="item.icon"
           class="text-gray-700 dark:text-gray-300 w-6 h-6 transition-all duration-500 group-hover:scale-110"
         />
-        <span class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:underline">
+        <span
+          class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:underline"
+        >
           {{ item.name }}
-        </span>        
+        </span>
       </a>
     </div>
   </div>
