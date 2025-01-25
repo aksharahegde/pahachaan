@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@nuxtjs/seo",
     "@nuxt/image",
-    "@nuxt/fonts"
+    "@nuxt/fonts",
+    "@nuxthub/core",
   ],
 
   app: {
