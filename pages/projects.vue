@@ -28,11 +28,18 @@ const { data: doc } = await useAsyncData("doc", () =>
   queryContent(route.path).findOne()
 );
 
+const { title, description, icon } = doc.value;
 defineOgImageComponent("MyOg", {
   headline: config.public.ownerName,
-  title: doc.value.title,
-  description: doc.value.description,
-  url: route.fullPath,
-  icon: doc.value.icon
+  title,
+  description,
+  icon,
+  url: route.fullPath
 });
+
+useSeoMeta({
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: `${config.public.baseURL}/og_me.png`,
+})
 </script>

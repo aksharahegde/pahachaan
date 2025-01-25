@@ -1,6 +1,6 @@
 ---
 title: 'Resources'
-description: 'I love to share my knowledge. Check out my resources.'
+description: 'Explore a collection of free resources and guides. Expand your knowledge and learn something new with these helpful materials.'
 icon: 'solar:bookmark-linear'
 ---
 

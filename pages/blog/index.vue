@@ -24,11 +24,18 @@ const { data: mainIndex } = await useAsyncData("mainIndex", () =>
   queryContent("/blog").where({ title: { $eq: 'Blog' } }).findOne()
 );
 
+const { title, description, icon } = mainIndex.value;
 defineOgImageComponent("MyOg", {
   headline: config.public.ownerName,
-  title: mainIndex.value.title,
-  description: mainIndex.value.description,
+  title,
+  description,
+  icon,
   url: route.fullPath,
-  icon: mainIndex.value.icon
 });
+
+useSeoMeta({
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: `${config.public.baseURL}/og_me.png`,
+})
 </script>
