@@ -1,6 +1,6 @@
 ---
 title: 'Uses'
-description: 'My day-to-day setup. what I use to get stuff done.'
+description: 'Explore my daily tech setup. See the tools and software I use to maximize productivity and get things done. Discover my workflow!'
 icon: 'solar:monitor-smartphone-outline'
 ---
 

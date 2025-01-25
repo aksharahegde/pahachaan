@@ -1,6 +1,6 @@
 ---
 title: 'Projects'
-description: 'I love to build stuff. Here are some of my projects.'
+description: 'I love to build things that make an impact, mostly open source projects.'
 icon: 'solar:folder-with-files-outline'
 ---
 

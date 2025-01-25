@@ -1,6 +1,6 @@
 ---
 title: 'Shop'
-description: 'I love to sell digital products.'
+description: 'Find resources, templates, and more to elevate your creative projects. Shop now!'
 icon: 'solar:shop-2-outline'
 ---
 

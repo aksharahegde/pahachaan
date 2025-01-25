@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@nuxtjs/seo",
     "@nuxt/image",
-    "@nuxt/fonts",
+    "@nuxt/fonts"
   ],
 
   app: {
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     },
     experimental: {
       search: true as any,
-    }
+    },
   },
 
   ogImage: {

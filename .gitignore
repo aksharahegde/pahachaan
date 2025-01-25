@@ -25,3 +25,6 @@ logs
 
 # Cursor rules
 .cursorrules
+
+# Performance
+.unlighthouse
