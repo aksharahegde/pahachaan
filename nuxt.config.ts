@@ -2,9 +2,13 @@
 export default defineNuxtConfig({
   devtools: {
     enabled: true,
-
     timeline: {
       enabled: true,
+    },
+  },
+  nitro: {
+    experimental: {
+      websocket: true,
     },
   },
 
@@ -17,6 +21,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/fonts",
     "@nuxthub/core",
+    "nuxt-visitors",
   ],
 
   app: {
@@ -57,6 +62,5 @@ export default defineNuxtConfig({
   site: {
     name: process.env.OWNER_NAME,
   },
-
-  compatibilityDate: "2024-08-26",
+  compatibilityDate: "2025-01-28",
 });
