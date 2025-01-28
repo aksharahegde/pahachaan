@@ -1,26 +1,27 @@
 <template>
   <ClientOnly>
     <UTooltip :text="status.label">
-    <a
-      v-if="config.public.statusSiteSlug"
-      class="inline-flex gap-2 items-center px-3 py-1 max-w-fit"
-      :href="statusSiteUrl"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <span class="flex relative w-2 h-2">
-        <span
-          v-if="status.label === 'Operational'"
-          class="inline-flex absolute w-full h-full rounded-full opacity-75 duration-1000 animate-ping"
-          :class="status.color"
-        />
-        <span
-          class="inline-flex relative w-2 h-2 rounded-full"
-          :class="status.color"
-        />
-      </span>
-    </a>
-  </UTooltip>
+      <a
+        v-if="config.public.statusSiteSlug"
+        class="flex gap-2 items-center px-3 py-1 max-w-fit"
+        :href="statusSiteUrl"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="flex relative w-2 h-2">
+          <span
+            v-if="status.label === 'Operational'"
+            class="inline-flex absolute w-full h-full rounded-full opacity-75 duration-1000 animate-ping"
+            :class="status.color"
+          />
+          <span
+            class="inline-flex relative w-2 h-2 rounded-full"
+            :class="status.color"
+          />
+        </span>
+        <span class="text-xs inline-block lg:hidden">{{ status.label }}</span>
+      </a>
+    </UTooltip>
   </ClientOnly>
 </template>
 <script setup lang="ts">
