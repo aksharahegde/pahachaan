@@ -38,6 +38,5 @@ defineOgImageComponent("MyOg", payload);
 useSeoMeta({
   twitterTitle: seo.value.title,
   twitterDescription: seo.value.description,
-  twitterImage: `${config.public.baseURL}/og_me.png`,
 })
 </script>
