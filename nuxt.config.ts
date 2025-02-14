@@ -37,6 +37,9 @@ export default defineNuxtConfig({
   },
 
   content: {
+    preview: {
+      api: "https://api.nuxt.studio",
+    },
     highlight: {
       theme: "slack-dark",
     },
