@@ -28,7 +28,7 @@
     "@nuxthq/studio": "^2.2.1",
     "@nuxthub/core": "0.8.14",
     "@nuxtjs/seo": "^2.1.1",
-    "@vueuse/core": "^10.11.1",
+    "@vueuse/core": "^12.7.0",
     "@vueuse/nuxt": "^10.11.1",
     "nuxt": "^3.15.4",
     "vue": "^3.5.13",
