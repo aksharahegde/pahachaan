@@ -23,7 +23,10 @@
   
   <script lang="ts" setup>
 const { data: articles } = await useAsyncData("blog-recent", () =>
-  queryContent("/blog").where({ title: { $ne: 'Blog' } }).sort({ published: -1 }).limit(3).find()
+  queryCollection("content")
+  .where('title', '<>', 'Blog')
+  .order('published', 'DESC')
+  .limit(3)
+  .all()
 );
-  </script>
-  
+</script>

@@ -17,11 +17,14 @@ const config = useRuntimeConfig();
 const route = useRoute();
 
 const { data: articles } = await useAsyncData("blog-all", () =>
-  queryContent("/blog").where({ title: { $ne: 'Blog' } }).sort({ published: -1 }).find()
+  queryCollection("blog")
+  .where('title', '<>', 'Blog')
+  .order('published', 'DESC')
+  .all()
 );
 
 const { data: mainIndex } = await useAsyncData("mainIndex", () =>
-  queryContent("/blog").where({ title: { $eq: 'Blog' } }).findOne()
+  queryCollection("blog").where('title', '==', 'Blog').findOne()
 );
 
 const { title, description, icon } = mainIndex.value;

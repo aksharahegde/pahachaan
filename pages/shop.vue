@@ -18,13 +18,13 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: products } = await useAsyncData("shop-all", () =>
-  queryContent("/shop")
-    .where({ title: { $ne: "Shop" } })
-    .find()
+  queryCollection("content")
+    .where('title', '<>', 'Shop')
+    .all()
 );
 
 const { data: doc } = await useAsyncData("doc", () =>
-  queryContent(route.path).findOne()
+  queryCollection("content").where('title', '==', 'Shop').findOne()
 );
 
 const { title, description, icon } = doc.value;

@@ -21,11 +21,13 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: projects } = await useAsyncData("projects-all", () =>
-  queryContent("/projects").where({ title: { $ne: 'Projects' } }).find()
+  queryCollection("projects")
+  .where('title', '<>', 'Projects')
+  .all()
 );
 
 const { data: doc } = await useAsyncData("doc", () =>
-  queryContent(route.path).findOne()
+  queryCollection("content").where('title', '==', 'Projects').findOne()
 );
 
 const { title, description, icon } = doc.value;

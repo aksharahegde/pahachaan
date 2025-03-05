@@ -25,7 +25,7 @@
 const config = useRuntimeConfig();
 
 const { data: seo } = await useAsyncData("seo", () =>
-  queryContent("/seo").findOne()
+  queryCollection("content").where('title', '==', 'SEO').findOne()
 );
 
 const payload = {

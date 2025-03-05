@@ -31,7 +31,7 @@ useSeoMeta({
 });
 
 const { data: doc } = await useAsyncData("doc", () =>
-  queryContent(route.path).findOne()
+  queryCollection("content").where('title', '==', 'Blog').findOne()
 );
 
 const { title, description } = doc.value

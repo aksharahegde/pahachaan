@@ -20,7 +20,7 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: doc } = await useAsyncData("doc", () =>
-  queryContent(route.path).findOne()
+  queryCollection("content").where('title', '==', 'Uses').findOne()
 );
 
 const { title, description, icon } = doc.value;

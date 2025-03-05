@@ -47,8 +47,9 @@
 <script setup>
 const config = useRuntimeConfig();
 const { data: footer } = await useAsyncData("footer", () =>
-  queryContent("/footer").findOne()
+  queryCollection("footer").first()
 );
+console.log(footer.value);
 </script>
 <style scoped>
 .link {

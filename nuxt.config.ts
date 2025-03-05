@@ -14,7 +14,6 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/ui",
-    "@nuxt/content",
     "@vueuse/nuxt",
     "@nuxthq/studio",
     "@nuxtjs/seo",
@@ -22,6 +21,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxthub/core",
     "nuxt-visitors",
+    "@nuxt/content",
   ],
 
   app: {
@@ -39,13 +39,7 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: "https://api.nuxt.studio",
-    },
-    highlight: {
-      theme: "slack-dark",
-    },
-    experimental: {
-      search: true as any,
-    },
+    }
   },
 
   ogImage: {
