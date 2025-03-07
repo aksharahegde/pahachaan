@@ -3,18 +3,20 @@ import { asSeoCollection } from "@nuxtjs/seo/content";
 
 export default defineContentConfig({
   collections: {
-    blog: defineCollection({
-      type: "page",
-      source: "blog/*.md",
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        published: z.string(),
-        path: z.string(),
-        cover: z.string(),
-        thumbnail: z.string(),
-      }),
-    }),
+    blog: defineCollection(
+      asSeoCollection({
+        type: "page",
+        source: "blog/*.md",
+        schema: z.object({
+          title: z.string(),
+          description: z.string(),
+          published: z.string(),
+          path: z.string(),
+          cover: z.string(),
+          thumbnail: z.string(),
+        }),
+      })
+    ),
     projects: defineCollection({
       type: "data",
       source: "projects/*.json",

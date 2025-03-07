@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="article._path"
+    :to="article.path"
     class="flex items-start group p-2 -m-2 rounded-lg flex-col"
   >
     <UBadge :label="publishedDate" color="black" variant="soft" class="mb-1" />

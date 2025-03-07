@@ -1,15 +1,13 @@
 <template>
   <main class="min-h-screen">
-    <LazyContentDoc v-slot="{ doc }">
-      <Header class="mb-4" :title="doc.title" :description="doc.description" />
-      <div class="flex flex-col space-y-4">
-        <BlogCard
-          v-for="article in articles"
-          :key="article._path"
-          :article="article"
-        />
-      </div>
-    </LazyContentDoc>
+    <Header class="mb-4" :title="mainIndex.title" :description="mainIndex.description" />
+    <div class="flex flex-col space-y-4">
+      <BlogCard
+        v-for="article in articles"
+        :key="article.path"
+        :article="article"
+      />
+    </div>
   </main>
 </template>
 <script setup>
@@ -18,13 +16,13 @@ const route = useRoute();
 
 const { data: articles } = await useAsyncData("blog-all", () =>
   queryCollection("blog")
-  .where('title', '<>', 'Blog')
-  .order('published_at', 'DESC')
-  .all()
+    .where("title", "<>", "Blog")
+    .order("published", "DESC")
+    .all()
 );
 
 const { data: mainIndex } = await useAsyncData("mainIndex", () =>
-  queryCollection("blog").where('title', '==', 'Blog').findOne()
+  queryCollection("blog").where("title", "==", "Blog").first()
 );
 
 const { title, description, icon } = mainIndex.value;
@@ -40,5 +38,5 @@ useSeoMeta({
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: `${config.public.baseURL}/og_me.png`,
-})
+});
 </script>
