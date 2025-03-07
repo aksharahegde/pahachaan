@@ -6,10 +6,29 @@ export default defineContentConfig({
     blog: defineCollection({
       type: "page",
       source: "blog/*.md",
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        published: z.string(),
+        path: z.string(),
+        cover: z.string(),
+        thumbnail: z.string(),
+      }),
     }),
     projects: defineCollection({
-      type: "page",
-      source: "projects/*.md",
+      type: "data",
+      source: "projects/*.json",
+      schema: z.object({
+        url: z.string(),
+        thumbnail: z.string(),
+        thumbnailBg: z.string(),
+        thumbnailAlt: z.string(),
+        category: z.string(),
+        heading: z.string(),
+        description: z.string(),
+        status: z.string(),
+        role: z.string(),
+      }),
     }),
     content: defineCollection({
       type: "page",
