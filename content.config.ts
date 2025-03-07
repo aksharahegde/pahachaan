@@ -17,25 +17,47 @@ export default defineContentConfig({
         }),
       })
     ),
-    projects: defineCollection({
+    projects: defineCollection(
+      asSeoCollection({
+        type: "data",
+        source: "projects/*.json",
+        schema: z.object({
+          title: z.string(),
+          path: z.string(),
+          url: z.string(),
+          thumbnail: z.string(),
+          thumbnailBg: z.string(),
+          thumbnailAlt: z.string(),
+          category: z.string(),
+          heading: z.string(),
+          description: z.string(),
+          status: z.string(),
+          role: z.string(),
+        }),
+      })
+    ),
+    shop: defineCollection(asSeoCollection({
       type: "data",
-      source: "projects/*.json",
+      source: "shop/*.json",
       schema: z.object({
+        title: z.string(),
+        icon: z.string(),
         url: z.string(),
-        thumbnail: z.string(),
-        thumbnailBg: z.string(),
-        thumbnailAlt: z.string(),
         category: z.string(),
         heading: z.string(),
         description: z.string(),
-        status: z.string(),
-        role: z.string(),
       }),
-    }),
-    content: defineCollection({
-      type: "page",
-      source: "*.md",
-    }),
+    })),
+    content: defineCollection(
+      asSeoCollection({
+        type: "page",
+        source: "*.md",
+        schema: z.object({
+        title: z.string(),
+        path: z.string(),
+        }),
+      })
+    ),
     footer: defineCollection({
       type: "data",
       source: "footer.json",

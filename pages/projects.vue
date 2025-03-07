@@ -1,16 +1,14 @@
 <template>
   <main class="min-h-screen">
-    <LazyContentDoc v-slot="{ doc }">
-      <Header class="mb-4" :title="doc.title" :description="doc.description" />
-      <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-2" />
-      <div class="flex flex-col space-y-4">
-        <ProjectCard
-          v-for="(project, id) in projects"
-          :key="id"
-          :project="project"
-        />
-      </div>
-    </LazyContentDoc>
+    <Header class="mb-4" :title="doc.title" :description="doc.description" />
+    <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-2" />
+    <div class="flex flex-col space-y-4">
+      <ProjectCard
+        v-for="(project, id) in projects"
+        :key="id"
+        :project="project"
+      />
+    </div>
   </main>
 </template>
 
@@ -21,29 +19,27 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: projects } = await useAsyncData("projects-all", () =>
-  queryCollection("projects")
-  .where('title', '<>', 'Projects')
-  .all()
+  queryCollection("projects").where("title", "<>", "Projects").all()
 );
 
 const { data: doc } = await useAsyncData(route.path, () => {
-  return queryCollection('projects').path(route.path).first()
-})
+  return queryCollection("projects").where("title", "==", 'Projects').first();
+});
 
 console.log(doc.value);
 
-// const { title, description, icon } = doc.value;
-// defineOgImageComponent("MyOg", {
-//   headline: config.public.ownerName,
-//   title,
-//   description,
-//   icon,
-//   url: route.fullPath
-// });
+const { title, description, icon } = doc.value;
+defineOgImageComponent("MyOg", {
+  headline: config.public.ownerName,
+  title,
+  description,
+  icon,
+  url: route.fullPath,
+});
 
-// useSeoMeta({
-//   twitterTitle: title,
-//   twitterDescription: description,
-//   twitterImage: `${config.public.baseURL}/og_me.png`,
-// })
+useSeoMeta({
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: `${config.public.baseURL}/og_me.png`,
+});
 </script>

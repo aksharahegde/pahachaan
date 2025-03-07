@@ -1,7 +1,0 @@
----
-title: 'Projects'
-description: 'I love to build things that make an impact, mostly open source projects.'
-icon: 'solar:folder-with-files-outline'
----
-
-this text wont render
