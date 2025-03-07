@@ -1,9 +1,7 @@
 <template>
   <main class="min-h-screen">
-    <LazyContentDoc v-slot="{ doc }">
-      <Header class="mb-4" :title="doc.title" :description="doc.description" />
-      <ContentRenderer :value="doc" />
-    </LazyContentDoc>
+    <Header class="mb-4" :title="doc.title" :description="doc.description" />
+    <ContentRenderer :value="doc" />
   </main>
 </template>
 <script setup>
@@ -11,7 +9,7 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: doc } = await useAsyncData("doc", () =>
-  queryCollection("content").where('title', '==', 'Resources').findOne()
+  queryCollection("content").where("title", "==", "Resources").first()
 );
 
 const { title, description, icon } = doc.value;
