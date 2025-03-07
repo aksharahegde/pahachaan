@@ -1,23 +1,42 @@
-import { defineContentConfig, defineCollection } from '@nuxt/content'
-
+import { defineContentConfig, defineCollection, z } from "@nuxt/content";
+import { asSeoCollection } from "@nuxtjs/seo/content";
 
 export default defineContentConfig({
   collections: {
     blog: defineCollection({
       type: "page",
-      source: "content/blog/*.md",
+      source: "blog/*.md",
     }),
     projects: defineCollection({
       type: "page",
-      source: "content/projects/*.md",
+      source: "projects/*.md",
     }),
     content: defineCollection({
       type: "page",
-      source: "content/*.md",
+      source: "*.md",
     }),
     footer: defineCollection({
-      type: "page",
-      source: "content/footer.json",
+      type: "data",
+      source: "footer.json",
+      schema: z.object({
+        github: z.string(),
+        blog: z.string(),
+      }),
     }),
+    seo: defineCollection(
+      asSeoCollection({
+        type: "data",
+        source: "seo.json",
+        schema: z.object({
+          code: z.string(),
+          headline: z.string(),
+          title: z.string(),
+          description: z.string(),
+          coverImage: z.string(),
+          theme: z.string(),
+          colorMode: z.string(),
+        }),
+      })
+    ),
   },
 });

@@ -25,7 +25,7 @@
 <script setup>
 const { data: projects } = await useAsyncData("projects-home", () =>
   queryCollection("projects")
-  .where('status', '==', 'active')
+  // .where('status', '==', 'active')
   .limit(3)
   .all()
 );

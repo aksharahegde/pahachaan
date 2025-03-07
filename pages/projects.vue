@@ -26,22 +26,24 @@ const { data: projects } = await useAsyncData("projects-all", () =>
   .all()
 );
 
-const { data: doc } = await useAsyncData("doc", () =>
-  queryCollection("content").where('title', '==', 'Projects').findOne()
-);
-
-const { title, description, icon } = doc.value;
-defineOgImageComponent("MyOg", {
-  headline: config.public.ownerName,
-  title,
-  description,
-  icon,
-  url: route.fullPath
-});
-
-useSeoMeta({
-  twitterTitle: title,
-  twitterDescription: description,
-  twitterImage: `${config.public.baseURL}/og_me.png`,
+const { data: doc } = await useAsyncData(route.path, () => {
+  return queryCollection('projects').path(route.path).first()
 })
+
+console.log(doc.value);
+
+// const { title, description, icon } = doc.value;
+// defineOgImageComponent("MyOg", {
+//   headline: config.public.ownerName,
+//   title,
+//   description,
+//   icon,
+//   url: route.fullPath
+// });
+
+// useSeoMeta({
+//   twitterTitle: title,
+//   twitterDescription: description,
+//   twitterImage: `${config.public.baseURL}/og_me.png`,
+// })
 </script>

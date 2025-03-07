@@ -2,9 +2,10 @@
   <footer class="body-font max-w-2xl mx-auto">
     <div class="flex py-2">
       <UAlert
+        v-if="footer"
         icon="i-simple-icons-github"
         variant="solid"
-        title="Free site template"
+        :title="footer.title"
       >
         <template #title="{ title }">
           <span>{{ title }}</span>
@@ -35,7 +36,13 @@
       >
         <SharedOpenstatusWidget />
         <UTooltip text="Blog">
-          <NuxtLink :to="footer.blog" target="_blank" class="link" external>
+          <NuxtLink 
+            v-if="footer" 
+            :to="footer.blog" 
+            target="_blank" 
+            class="link" 
+            external
+          >
             <span class="sr-only">Blog</span>
             <UIcon name="i-simple-icons-blogger" />
           </NuxtLink>
@@ -44,13 +51,15 @@
     </div>
   </footer>
 </template>
+
 <script setup>
 const config = useRuntimeConfig();
-const { data: footer } = await useAsyncData("footer", () =>
-  queryCollection("footer").first()
-);
-console.log(footer.value);
+
+const { data: footer } = await useAsyncData('footer', () => {
+  return queryCollection('footer').findOne();
+});
 </script>
+
 <style scoped>
 .link {
   @apply text-gray-500 hover:text-primary-500 text-lg flex justify-center items-center;

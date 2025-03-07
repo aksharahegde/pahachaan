@@ -19,7 +19,7 @@ const route = useRoute();
 const { data: articles } = await useAsyncData("blog-all", () =>
   queryCollection("blog")
   .where('title', '<>', 'Blog')
-  .order('published', 'DESC')
+  .order('published_at', 'DESC')
   .all()
 );
 

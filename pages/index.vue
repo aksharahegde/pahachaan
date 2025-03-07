@@ -24,9 +24,7 @@
 <script setup>
 const config = useRuntimeConfig();
 
-const { data: seo } = await useAsyncData("seo", () =>
-  queryCollection("content").where('title', '==', 'SEO').findOne()
-);
+const { data: seo } = await useAsyncData("seo", () => queryCollection("seo").first());
 
 const payload = {
   ...seo.value,
@@ -38,5 +36,8 @@ defineOgImageComponent("MyOg", payload);
 useSeoMeta({
   twitterTitle: seo.value.title,
   twitterDescription: seo.value.description,
-})
+  twitterImage: seo.value.coverImage,
+  twitterTheme: seo.value.theme,
+  twitterColorScheme: seo.value.colorMode,
+});
 </script>

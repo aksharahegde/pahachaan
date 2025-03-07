@@ -25,7 +25,7 @@
 const { data: articles } = await useAsyncData("blog-recent", () =>
   queryCollection("content")
   .where('title', '<>', 'Blog')
-  .order('published', 'DESC')
+  // .order('published_at', 'DESC')
   .limit(3)
   .all()
 );
