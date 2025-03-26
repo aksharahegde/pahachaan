@@ -38,11 +38,13 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: "https://api.nuxt.studio",
-    }
+    },
   },
 
   ogImage: {
-    compatibility: { prerender: { chromium: false } },
+    defaults: {
+      renderer: 'satori'
+    }
   },
 
   runtimeConfig: {
