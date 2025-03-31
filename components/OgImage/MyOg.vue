@@ -126,7 +126,7 @@ if (typeof props.icon === 'string' && !runtimeConfig.hasNuxtIcon && process.dev)
     <div class="h-full w-full justify-between relative">
       <div class="flex flex-row justify-between items-start">
         <div class="flex flex-col w-full max-w-[65%]">
-          <h1 class="m-0 font-bold mb-[30px] text-[75px]">
+          <h1 class="m-0 font-bold mb-[30px] text-[44px]">
             {{ title }}
           </h1>
           <p
