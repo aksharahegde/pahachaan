@@ -14,14 +14,13 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/ui",
-    "@nuxt/content",
     "@vueuse/nuxt",
-    "@nuxthq/studio",
     "@nuxtjs/seo",
-    "@nuxt/image",
     "@nuxt/fonts",
     "@nuxthub/core",
     "nuxt-visitors",
+    "@nuxt/content",
+    "nuxt-llms",
   ],
 
   app: {
@@ -37,16 +36,19 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: {
-      theme: "slack-dark",
-    },
-    experimental: {
-      search: true as any,
+    preview: {
+      api: "https://api.nuxt.studio",
     },
   },
 
+  hub: {
+    database: true,
+  },
+
   ogImage: {
-    compatibility: { prerender: { chromium: false } },
+    defaults: {
+      renderer: "satori",
+    },
   },
 
   runtimeConfig: {
@@ -61,6 +63,11 @@ export default defineNuxtConfig({
 
   site: {
     name: process.env.OWNER_NAME,
+  },
+  llms: {
+    domain: process.env.NUXT_PUBLIC_SITE_URL,
+    title: process.env.OWNER_NAME,
+    description: `A portfolio website of ${process.env.OWNER_NAME}`,
   },
   compatibilityDate: "2025-01-28",
 });

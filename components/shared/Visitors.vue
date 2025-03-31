@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
     <div
-      class="fixed bottom-[1rem] right-[1rem] p-1 rounded-full overflow-hidden z-10"
+      class="fixed bottom-[4rem] md:bottom-[1rem] md:right-[1rem] p-1 rounded-full overflow-hidden z-10"
     >
       <UTooltip :text="`${visitors} viewers on website`">
         <div

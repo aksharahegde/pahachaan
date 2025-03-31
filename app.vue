@@ -20,7 +20,7 @@ useSeoMeta({
 });
 
 useHead({
-  title: () => (route.meta.title as string) || "",
+  title: () => (route.meta?.title as string) || "",
   titleTemplate: (title) =>
     title ? `${title} - ${config.public.ownerName}` : config.public.ownerName,
   htmlAttrs: {
