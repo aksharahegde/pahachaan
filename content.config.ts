@@ -58,14 +58,18 @@ export default defineContentConfig({
         }),
       })
     ),
-    footer: defineCollection({
-      type: "data",
-      source: "footer.json",
-      schema: z.object({
-        github: z.string(),
-        blog: z.string(),
-      }),
-    }),
+    footer: defineCollection(
+      asSeoCollection({
+        type: "data",
+        source: "footer.json",
+        schema: z.object({
+          github: z.string(),
+          linkedin: z.string(),
+          twitter: z.string(),
+          blog: z.string(),
+        }),
+      })
+    ),
     seo: defineCollection(
       asSeoCollection({
         type: "data",

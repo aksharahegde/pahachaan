@@ -23,9 +23,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
-
 const { data: seo } = await useAsyncData("seo", () => queryCollection("seo").first());
-console.log('SEO---->', seo.value);
 
 const payload = {
   ...seo.value,

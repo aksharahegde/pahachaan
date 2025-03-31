@@ -36,16 +36,14 @@
       >
         <SharedOpenstatusWidget />
         <UTooltip text="Blog">
-          <NuxtLink 
-            v-if="footer" 
-            :to="footer.blog" 
-            target="_blank" 
-            class="link" 
+          <UButton
+            color="gray"
+            variant="ghost"
+            :to="footer?.blog"
+            target="_blank"
+            icon="i-simple-icons-blogger"
             external
-          >
-            <span class="sr-only">Blog</span>
-            <UIcon name="i-simple-icons-blogger" />
-          </NuxtLink>
+          />
         </UTooltip>
       </div>
     </div>
@@ -55,11 +53,10 @@
 <script setup>
 const config = useRuntimeConfig();
 
-const { data: footer } = await useAsyncData('footer', () => {
-  return queryCollection('footer').findOne();
+const { data: footer } = await useAsyncData("footer", () => {
+  return queryCollection("footer").first();
 });
 </script>
-
 <style scoped>
 .link {
   @apply text-gray-500 hover:text-primary-500 text-lg flex justify-center items-center;
