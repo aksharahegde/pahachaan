@@ -3,12 +3,29 @@
   <div
     class="max-w-3xl mx-auto p-5 bg-gray-100 my-4 dark:bg-gray-950 rounded-lg overflow-y-auto"
     :class="{ 'fixed top-12 right-2 z-50': isPinned }"
+    :style="{ 
+      viewTransitionName: 'toc-container',
+      containIntrinsicSize: 'auto',
+      contain: 'layout'
+    }"
   >
     <div class="flex items-center justify-between w-full gap-2">
       <div class="flex items-center gap-2">
-        <SharedPin v-if="isPinned" @click="togglePin" class="cursor-pointer" />
-        <SharedUnpin v-else @click="togglePin" class="cursor-pointer" />
-        <h1 class="text-lg mb-0">Table of Contents</h1>
+        <SharedPin 
+          v-if="isPinned" 
+          @click="handlePinToggle" 
+          class="cursor-pointer"
+          style="view-transition-name: pin-icon"
+        />
+        <SharedUnpin 
+          v-else 
+          @click="handlePinToggle" 
+          class="cursor-pointer"
+          style="view-transition-name: pin-icon"
+        />
+        <h1 class="text-lg mb-0" style="view-transition-name: toc-title">
+          Table of Contents
+        </h1>
       </div>
       <button
         @click="toggle()"
@@ -77,40 +94,56 @@ defineProps({
 
 const [isOpen, toggle] = useToggle();
 const isPinned = useLocalStorage("isPinned", false);
-const togglePin = () => {
-  isPinned.value = !isPinned.value;
+
+const handlePinToggle = () => {
+  // Check if View Transitions API is supported
+  if (!document.startViewTransition) {
+    isPinned.value = !isPinned.value;
+    return;
+  }
+
+  // Use View Transitions API
+  document.startViewTransition(() => {
+    isPinned.value = !isPinned.value;
+  });
 };
 </script>
 
-<style scoped>
-.toc-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+<style>
+@keyframes fade-in {
+  from { opacity: 0; }
 }
 
-.toc-list {
-  list-style: none;
-  padding: 0;
+@keyframes fade-out {
+  to { opacity: 0; }
 }
 
-.depth-2 {
-  margin: 10px 0;
-  font-size: 1.2em;
-  font-weight: bold;
+@keyframes slide-from-right {
+  from { transform: translateX(100%); }
 }
 
-.depth-3 {
-  margin: 5px 0 5px 20px;
-  font-size: 1em;
+@keyframes slide-to-right {
+  to { transform: translateX(100%); }
 }
 
-a {
-  text-decoration: none;
-  color: #2c3e50;
+::view-transition-old(toc-container) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+             300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
 }
 
-a:hover {
-  text-decoration: underline;
+::view-transition-new(toc-container) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+             300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+::view-transition-old(pin-icon),
+::view-transition-new(pin-icon) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Prevent flickering of the content */
+::view-transition-group(toc-container) {
+  isolation: auto;
 }
 </style>
