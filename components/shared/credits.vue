@@ -65,11 +65,5 @@ const uses = [
     link: "https://dub.co/",
     class: "invert",
   },
-  {
-    icon: "/credits/openpanel.svg",
-    label: "Openpanel",
-    link: "https://openpanel.dev",
-    // class: "invert",
-  },
 ];
 </script>
