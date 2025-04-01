@@ -39,6 +39,18 @@ export default defineNuxtConfig({
     preview: {
       api: "https://api.nuxt.studio",
     },
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: "monokai",
+          },
+        },
+        toc: {
+          depth: 3
+        },
+      },
+    },
   },
 
   hub: {
