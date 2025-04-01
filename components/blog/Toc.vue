@@ -1,12 +1,12 @@
 <!-- components/TableOfContents.vue -->
 <template>
   <div
-    class="max-w-3xl mx-auto p-2 bg-gray-100 my-4 dark:bg-gray-950 rounded"
+    class="max-w-3xl mx-auto p-4 bg-gray-100 mt-4 dark:bg-gray-950 rounded-lg"
     :class="[
       isPinned
         ? [
-            'fixed top-20 right-4 z-50 w-72',
-            'max-h-[calc(100vh-9rem)]',
+            'fixed top-20 right-4 z-50 w-72 shadow-lg',
+            'max-h-[calc(100vh-7rem)]',
             'overflow-y-auto',
             'scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600',
             'scrollbar-track-transparent',
@@ -56,7 +56,7 @@
         transition: 'height 0.3s ease-in-out',
       }"
     >
-      <ul ref="tocContent" id="toc-content" class="space-y-2 mt-4">
+      <ul ref="tocContent" id="toc-content" class="space-y-2 mt-4 pb-3">
         <li
           v-for="item in links"
           :key="item.id"
@@ -111,19 +111,17 @@ const isPinned = useLocalStorage("isPinned", false);
 const tocContent = ref(null);
 const contentHeight = ref(0);
 
-onMounted(() => {
-  updateContentHeight();
-});
-
-watch(() => props.links, updateContentHeight, { deep: true });
-
-function updateContentHeight() {
+const updateContentHeight = () => {
   nextTick(() => {
     if (tocContent.value) {
       contentHeight.value = tocContent.value.scrollHeight;
     }
   });
-}
+};
+
+onMounted(() => updateContentHeight());
+
+watch(() => props.links, updateContentHeight, { deep: true });
 
 const handlePinToggle = () => {
   if (!document.startViewTransition) {
@@ -136,7 +134,6 @@ const handlePinToggle = () => {
   });
 };
 
-// Optional: close TOC when clicking a link on mobile
 const handleLinkClick = () => {
   if (window.innerWidth < 768) {
     isOpen.value = false;
