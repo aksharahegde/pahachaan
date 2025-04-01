@@ -1,15 +1,22 @@
 <!-- components/TableOfContents.vue -->
 <template>
-  <div class="max-w-3xl mx-auto p-5 bg-gray-100 my-4 dark:bg-gray-950 rounded-lg overflow-y-auto">
-    <div class="flex items-center justify-between w-full">
-      <h1 class="text-lg mb-0">Table of Contents</h1>
-      <button 
-      @click="toggle()"
-      :aria-expanded="isOpen"
-      aria-controls="toc-content"
-    >
-      [ {{ isOpen ? 'Hide' : 'Show' }} ]
-    </button>
+  <div
+    class="max-w-3xl mx-auto p-5 bg-gray-100 my-4 dark:bg-gray-950 rounded-lg overflow-y-auto"
+    :class="{ 'fixed top-12 right-2 z-50': isPinned }"
+  >
+    <div class="flex items-center justify-between w-full gap-2">
+      <div class="flex items-center gap-2">
+        <SharedPin v-if="isPinned" @click="togglePin" class="cursor-pointer" />
+        <SharedUnpin v-else @click="togglePin" class="cursor-pointer" />
+        <h1 class="text-lg mb-0">Table of Contents</h1>
+      </div>
+      <button
+        @click="toggle()"
+        :aria-expanded="isOpen"
+        aria-controls="toc-content"
+      >
+        [ {{ isOpen ? "Hide" : "Show" }} ]
+      </button>
     </div>
 
     <Transition
@@ -35,7 +42,10 @@
           >
             {{ item.text }}
           </a>
-          <ul v-if="item.children && item.children.length" class="mt-2 space-y-2">
+          <ul
+            v-if="item.children && item.children.length"
+            class="mt-2 space-y-2"
+          >
             <li
               v-for="child in item.children"
               :key="child.id"
@@ -56,20 +66,20 @@
 </template>
 
 <script setup>
-import { useToggle } from '@vueuse/core'
-
-const [isOpen, toggle] = useToggle()
-
-watch(isOpen, (newVal) => {
-  console.log('isOpen', newVal)
-})
+import { useToggle, useLocalStorage } from "@vueuse/core";
 
 defineProps({
   links: {
     type: Array,
-    required: true
-  }
-})
+    required: true,
+  },
+});
+
+const [isOpen, toggle] = useToggle();
+const isPinned = useLocalStorage("isPinned", false);
+const togglePin = () => {
+  isPinned.value = !isPinned.value;
+};
 </script>
 
 <style scoped>
