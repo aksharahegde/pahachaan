@@ -1,26 +1,34 @@
 <!-- components/TableOfContents.vue -->
 <template>
   <div
-    class="max-w-3xl mx-auto p-5 bg-gray-100 my-4 dark:bg-gray-950 rounded-lg overflow-y-auto"
-    :class="{ 'fixed top-12 right-2 z-50': isPinned }"
+    class="max-w-3xl mx-auto p-2 bg-gray-100 my-4 dark:bg-gray-950 rounded-md"
+    :class="[
+      isPinned ? [
+        'fixed top-20 right-4 z-50 w-72 shadow-lg',
+        'max-h-[calc(100vh-6rem)]', // Account for top spacing and some bottom margin
+        'overflow-y-auto',
+        'scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600',
+        'scrollbar-track-transparent'
+      ] : 'overflow-y-auto'
+    ]"
     :style="{ 
       viewTransitionName: 'toc-container',
       containIntrinsicSize: 'auto',
       contain: 'layout'
     }"
   >
-    <div class="flex items-center justify-between w-full gap-2">
+    <div class="flex items-center justify-between w-full gap-2 sticky top-0 bg-gray-100 dark:bg-gray-950 py-2 -mt-2 -mx-2 px-2">
       <div class="flex items-center gap-2">
         <SharedPin 
           v-if="isPinned" 
           @click="handlePinToggle" 
-          class="cursor-pointer"
+          class="cursor-pointer hover:text-primary-500 transition-colors"
           style="view-transition-name: pin-icon"
         />
         <SharedUnpin 
           v-else 
           @click="handlePinToggle" 
-          class="cursor-pointer"
+          class="cursor-pointer hover:text-primary-500 transition-colors"
           style="view-transition-name: pin-icon"
         />
         <h1 class="text-lg mb-0" style="view-transition-name: toc-title">
@@ -31,6 +39,7 @@
         @click="toggle()"
         :aria-expanded="isOpen"
         aria-controls="toc-content"
+        class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
       >
         [ {{ isOpen ? "Hide" : "Show" }} ]
       </button>
@@ -44,7 +53,11 @@
       leave-from-class="transform scale-y-100 opacity-100"
       leave-to-class="transform scale-y-95 opacity-0"
     >
-      <ul v-show="isOpen" id="toc-content" class="space-y-2">
+      <ul 
+        v-show="isOpen" 
+        id="toc-content" 
+        class="space-y-2 mt-4"
+      >
         <li
           v-for="item in links"
           :key="item.id"
@@ -55,7 +68,8 @@
         >
           <a
             :href="`#${item.id}`"
-            class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline"
+            class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline block py-1"
+            @click="handleLinkClick"
           >
             {{ item.text }}
           </a>
@@ -70,7 +84,8 @@
             >
               <a
                 :href="`#${child.id}`"
-                class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline"
+                class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline block py-1"
+                @click="handleLinkClick"
               >
                 {{ child.text }}
               </a>
@@ -92,20 +107,25 @@ defineProps({
   },
 });
 
-const [isOpen, toggle] = useToggle();
+const [isOpen, toggle] = useToggle(true);
 const isPinned = useLocalStorage("isPinned", false);
 
 const handlePinToggle = () => {
-  // Check if View Transitions API is supported
   if (!document.startViewTransition) {
     isPinned.value = !isPinned.value;
     return;
   }
 
-  // Use View Transitions API
   document.startViewTransition(() => {
     isPinned.value = !isPinned.value;
   });
+};
+
+// Optional: close TOC when clicking a link on mobile
+const handleLinkClick = () => {
+  if (window.innerWidth < 768) {
+    isOpen.value = false;
+  }
 };
 </script>
 
@@ -142,8 +162,27 @@ const handlePinToggle = () => {
   mix-blend-mode: normal;
 }
 
-/* Prevent flickering of the content */
 ::view-transition-group(toc-container) {
   isolation: auto;
 }
+
+/* Custom scrollbar styles */
+/* @layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(156 163 175 / 0.5);
+    border-radius: 20px;
+  }
+} */
 </style>
