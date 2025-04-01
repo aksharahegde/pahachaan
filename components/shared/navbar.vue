@@ -6,7 +6,7 @@
     >
       <nav class="mx-auto px-2 sm:px-6 lg:px-8 max-w-2xl">
         <ul
-          class="flex items-center justify-between md:my-4 px-3 text-sm font-medium text-gray-800 shadow shadow-gray-800/5 backdrop-blur dark:bg-gray-900 dark:text-gray-200"
+          class="flex items-center justify-between md:my-4 px-3 text-sm font-medium text-gray-800 shadow shadow-gray-800/5 bg-white dark:bg-gray-900 dark:text-gray-200"
         >
           <li v-for="item in items" :key="item.path">
             <UTooltip
