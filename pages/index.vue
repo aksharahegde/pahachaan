@@ -1,7 +1,10 @@
 <template>
   <main class="min-h-screen space-y-6">
     <div>
-      <h1 class="text-2xl font-bold mb-1">Akshara Hegde</h1>
+      <h1 class="text-2xl font-bold mb-1">
+        Akshara Hegde
+        <sub class="text-sm text-gray-500 font-normal">he/him</sub>
+      </h1>
       <h2 class="text-base font-medium text-gray-700 dark:text-gray-300 mb-3">
         Full Stack Engineer and Opensource Contributor
       </h2>
@@ -23,7 +26,9 @@
 
 <script setup>
 const config = useRuntimeConfig();
-const { data: seo } = await useAsyncData("seo", () => queryCollection("seo").first());
+const { data: seo } = await useAsyncData("seo", () =>
+  queryCollection("seo").first()
+);
 
 const payload = {
   ...seo.value,
