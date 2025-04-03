@@ -3,5 +3,10 @@
     "github": "https://git.new/pahachaan",
     "blog": "https://ink.aksharahegde.xyz",
     "linkedin": "https://www.linkedin.com/in/aksharadt/",
-    "twitter": "https://x.com/akshara_dev"
+    "twitter": "https://x.com/akshara_dev",
+    "affiliate": {
+        "title": "20% off for 3 months",
+        "description": "Signup to Dub.co and get 20% off for 3 months",
+        "url": "https://refer.dub.co/akshara-hegde"
+    }
 }

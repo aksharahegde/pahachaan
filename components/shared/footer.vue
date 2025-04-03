@@ -1,12 +1,47 @@
 <template>
   <footer class="body-font max-w-2xl mx-auto">
-    <div class="flex py-2">
+    <div class="flex flex-col gap-2 py-2">
+      <!-- affiliate link -->
+      <UAlert
+        v-if="footer.affiliate"
+        variant="solid"
+        :title="footer.affiliate.title"
+        :avatar="{ src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
+      >
+        <template #title="{ title }">
+          <h2 class="text-lg font-bold">{{ title }}</h2>
+        </template>
+        <template #description>
+          <div class="flex flex-col relative">
+            <p class="text-base">{{ footer.affiliate.description }}</p>
+            <UButton
+              :to="footer.affiliate.url"
+              target="_blank"
+              variant="soft"
+              color="white"
+              class="mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2 w-fit p-0"
+              external
+            >
+              <span>Signup to Dub</span>
+            </UButton>
+            <span
+              class="absolute top-0 right-0 -translate-y-1/2 hidden lg:block text-5xl px-2 py-1 opacity-30 rounded-full animate-pulse"
+              >20% off</span
+            >
+          </div>
+        </template>
+      </UAlert>
+
+      <!-- Github repo -->
       <UAlert
         v-if="footer"
         icon="i-simple-icons-github"
         variant="solid"
         :title="footer.title"
       >
+        <template #icon="{ icon }">
+          <UIcon :name="icon" class="w-8 h-8" />
+        </template>
         <template #title="{ title }">
           <span>{{ title }}</span>
         </template>

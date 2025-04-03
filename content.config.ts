@@ -67,6 +67,11 @@ export default defineContentConfig({
           linkedin: z.string(),
           twitter: z.string(),
           blog: z.string(),
+          affiliate: z.object({
+            title: z.string(),
+            description: z.string(),
+            url: z.string(),
+          }),
         }),
       })
     ),
