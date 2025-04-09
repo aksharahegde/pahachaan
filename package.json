@@ -24,7 +24,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/fonts": "^0.10.3",
-    "@nuxthub/core": "0.8.22",
+    "@nuxthub/core": "0.8.23",
     "@nuxtjs/seo": "^3.0.1",
     "@vueuse/core": "^13.0.0",
     "@vueuse/nuxt": "^12.8.2",
