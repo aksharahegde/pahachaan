@@ -37,7 +37,7 @@
     "@iconify-json/simple-icons": "^1.2.30",
     "@iconify-json/solar": "^1.2.2",
     "@nuxt/content": "^3.4.0",
-    "@nuxt/kit": "^3.16.2",
+    "@nuxt/kit": "^4.0.3",
     "@nuxt/ui": "^2.21.1",
     "caniuse-lite": "^1.0.30001707",
     "cobe": "^0.6.3",
