@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/seo",
     "@nuxt/fonts",
-    "@nuxthub/core",
     "nuxt-visitors",
     "@nuxt/content",
     "nuxt-llms",
@@ -47,14 +46,10 @@ export default defineNuxtConfig({
           },
         },
         toc: {
-          depth: 3
+          depth: 3,
         },
       },
     },
-  },
-
-  hub: {
-    database: true,
   },
 
   ogImage: {
