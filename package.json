@@ -36,7 +36,7 @@
     "@iconify-json/solar": "^1.2.4",
     "@nuxt/content": "^3.7.1",
     "@nuxt/kit": "^3.19.2",
-    "@nuxt/ui": "^2.22.3",
+    "@nuxt/ui": "^3.3.4",
     "browserslist": "^4.26.2",
     "caniuse-lite": "^1.0.30001743",
     "cobe": "^0.6.5",
