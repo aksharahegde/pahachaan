@@ -1,4 +1,4 @@
---- 
+---
 title: My hands on Vue 3 Chart Libraries
 description: Chart libraries for data visualization in Vue 3 in my experience as a web developer
 path: /blog/visualization-libraries-i-worked-on
@@ -7,9 +7,7 @@ cover: /blog/visualization-libraries-i-worked-on.png
 thumbnail: /blog/thumbnails/visualization-libraries-i-worked-on.png
 ---
 
-
-<img src="/blog/visualization-libraries-i-worked-on.png">
-
+<img src="/blog/visualization-libraries-i-worked-on.png" alt="Visualization libraries I worked on">
 
 In my experience as a web developer, data visualization plays a crucial role in making complex data more accessible and understandable. For frontend developers working with Vue 3 and Nuxt, choosing the right visualization chart library is essential to creating engaging and interactive user experiences. The right library can save time, enhance the functionality of your application, and provide beautiful, responsive charts that convey your data effectively.
 
@@ -17,7 +15,7 @@ Vue 3 and Nuxt offer powerful frameworks for building modern web applications, a
 
 ## Chart.js
 
-<img src="/blog/chartjs.png" class="invert">
+<img src="/blog/chartjs.png" class="invert" alt="Chart.js">
 
 ### Features
 
@@ -54,7 +52,7 @@ Link:
 
 ## ECharts
 
-<img src="/blog/echarts.png" class="invert">
+<img src="/blog/echarts.png" class="invert" alt="ECharts">
 
 ### Features
 
@@ -88,8 +86,7 @@ ECharts boasts strong community support, with detailed documentation and numerou
 
 ## ApexCharts
 
-<img src="/blog/apexcharts.png" class="invert">
-
+<img src="/blog/apexcharts.png" class="invert" alt="ApexCharts">
 
 ### Features
 
@@ -123,8 +120,7 @@ ApexCharts has an active community and comprehensive documentation. The library 
 
 ## D3.js
 
-<img src="/blog/d3charts.png" class="invert">
-
+<img src="/blog/d3charts.png" class="invert" alt="D3.js charts">
 
 ### Features
 
@@ -157,8 +153,7 @@ D3.js has a large and active community, with extensive documentation, numerous p
 
 ## Highcharts
 
-<img src="/blog/highcharts.png">
-
+<img src="/blog/highcharts.png" alt="Highcharts">
 
 ### Features
 
@@ -201,6 +196,8 @@ Choosing the right visualization chart library for your Vue 3 and Nuxt projects 
 
 By understanding the strengths and limitations of each library, you can make an informed decision that best fits your project's requirements. Happy coding!
 
---- 
+---
+
 #### **Credit**
+
 All screenshots are from respective chart library official website.
