@@ -35,7 +35,7 @@
     "@iconify-json/simple-icons": "^1.2.57",
     "@iconify-json/solar": "^1.2.5",
     "@nuxt/content": "^3.8.0",
-    "@nuxt/kit": "^3.20.0",
+    "@nuxt/kit": "^4.2.0",
     "@nuxt/ui": "^2.22.3",
     "better-sqlite3": "^12.4.1",
     "browserslist": "^4.27.0",
