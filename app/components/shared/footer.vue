@@ -93,6 +93,8 @@ const { data: footer } = await useAsyncData("footer", () => {
 });
 </script>
 <style scoped>
+@reference "~/assets/css/main.css";
+
 .link {
   @apply text-gray-500 hover:text-primary-500 text-lg flex justify-center items-center;
 }

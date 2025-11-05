@@ -1,14 +1,16 @@
 <template>
-  <NuxtLoadingIndicator color="primary" />
-  <SharedNavbar />
-  <div class="h-4 md:h-24" />
-  <UContainer>
-    <NuxtPage class="mx-auto px-2 lg:px-8 max-w-2xl" />
-  </UContainer>
-  <div class="h-4 md:h-32" />
-  <SharedVisitors />
-  <SharedFooter />
-  <div class="h-16 md:hidden" />
+  <UApp>
+    <NuxtLoadingIndicator color="primary" />
+    <SharedNavbar />
+    <div class="h-4 md:h-24" />
+    <UContainer>
+      <NuxtPage class="mx-auto px-2 lg:px-8 max-w-2xl" />
+    </UContainer>
+    <div class="h-4 md:h-32" />
+    <SharedVisitors />
+    <SharedFooter />
+    <div class="h-16 md:hidden" />
+  </UApp>
 </template>
 <script setup lang="ts">
 const config = useRuntimeConfig();
