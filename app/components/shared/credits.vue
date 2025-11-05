@@ -4,7 +4,7 @@
       This site uses,
     </div>
     <div
-      class="grid grid-cols-2 mt-4 sm:grid-cols-3 md:grid-cols-4 gap-4 bg-slate-800 dark:bg-transparent rounded-lg py-4"
+      class="grid grid-cols-2 mt-4 sm:grid-cols-3 md:grid-cols-4 gap-4 bg-slate-800/70 dark:bg-transparent rounded-lg py-4"
     >
       <a
         :href="item.link"

@@ -39,7 +39,7 @@
     "@nuxt/ui": "latest",
     "better-sqlite3": "latest",
     "browserslist": "latest",
-    "caniuse-lite": "latest",
+    "caniuse-lite": "^1.0.30001753",
     "cobe": "latest",
     "mime": "latest",
     "nuxt-llms": "latest",
