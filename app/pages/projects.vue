@@ -1,8 +1,8 @@
 <template>
   <main class="min-h-screen">
     <Header class="mb-4" :title="doc.title" :description="doc.description" />
-    <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-2" />
-    <div class="flex flex-col space-y-4">
+    <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-4" />
+    <div class="flex flex-col gap-4">
       <ProjectCard
         v-for="(project, id) in projects"
         :key="id"
@@ -23,7 +23,10 @@ const { data: projects } = await useAsyncData("projects-all", () =>
 );
 
 const { data: doc } = await useAsyncData(route.path, () => {
-  return queryCollection("projects").where("title", "==", 'Projects').first();
+  return queryCollection("projects")
+    .where("title", "==", "Projects")
+    .order("status", "DESC")
+    .first();
 });
 
 console.log(doc.value);

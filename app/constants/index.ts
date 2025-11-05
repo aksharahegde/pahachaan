@@ -1,8 +1,8 @@
 const STATUS_COLORS: any = {
-  active: "blue",
-  abandoned: "red",
-  wip: "yellow",
-  completed: "green",
+  active: "primary",
+  abandoned: "error",
+  wip: "warning",
+  completed: "success",
 };
 
 const STATUS_LEGEND = Object.keys(STATUS_COLORS).map((key) => ({

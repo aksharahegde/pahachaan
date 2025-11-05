@@ -1,7 +1,11 @@
 <template>
   <main class="min-h-screen">
-    <Header class="mb-4" :title="mainIndex.title" :description="mainIndex.description" />
-    <div class="flex flex-col space-y-4">
+    <Header
+      class="mb-4"
+      :title="mainIndex.title"
+      :description="mainIndex.description"
+    />
+    <div class="flex flex-col gap-4">
       <BlogCard
         v-for="article in articles"
         :key="article.path"

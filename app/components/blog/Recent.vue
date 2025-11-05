@@ -1,9 +1,9 @@
 <template>
-  <div class="space-y-4">
+  <div class="flex flex-col gap-4">
     <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
       Recent articles
     </h3>
-    <div class="space-y-4">
+    <div class="flex flex-col gap-4">
       <BlogCard
         v-for="(article, id) in articles"
         :key="id"
