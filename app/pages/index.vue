@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen space-y-6">
+  <main class="min-h-screen flex flex-col gap-6">
     <div>
       <h1 class="text-3xl font-bold mb-1">
         Akshara Hegde

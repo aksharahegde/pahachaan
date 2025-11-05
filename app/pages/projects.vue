@@ -29,8 +29,6 @@ const { data: doc } = await useAsyncData(route.path, () => {
     .first();
 });
 
-console.log(doc.value);
-
 const { title, description, icon } = doc.value;
 defineOgImageComponent("MyOg", {
   headline: config.public.ownerName,

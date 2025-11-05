@@ -1,9 +1,9 @@
 <template>
-  <div class="space-y-4">
+  <div class="flex flex-col gap-4">
     <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
       Projects
     </h3>
-    <div class="space-y-4">
+    <div class="flex flex-col gap-4">
       <ProjectCard
         v-for="(project, id) in projects"
         :key="id"
@@ -15,7 +15,7 @@
         label="All Projects &rarr;"
         to="/projects"
         variant="link"
-        color="black"
+        color="neutral"
       />
     </div>
     <span class="hidden" v-for="color in colors" :key="color" />
@@ -24,10 +24,7 @@
 
 <script setup>
 const { data: projects } = await useAsyncData("projects-home", () =>
-  queryCollection("projects")
-  .where('status', '==', 'active')
-  .limit(3)
-  .all()
+  queryCollection("projects").where("status", "==", "active").limit(3).all()
 );
 
 const colors = [
@@ -49,6 +46,6 @@ const colors = [
   "bg-blue-100",
   "bg-pink-100",
   "bg-gradient-to-tr from-yellow-200 to-blue-200",
-  "bg-gradient-to-br from-yellow-200 via-pink-200 to-blue-200"
+  "bg-gradient-to-br from-yellow-200 via-pink-200 to-blue-200",
 ];
 </script>

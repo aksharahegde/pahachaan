@@ -3,12 +3,9 @@
     :to="article.path"
     class="flex items-start group p-2 -m-2 gap-1 rounded-lg flex-col"
   >
-    <UBadge
-      :label="publishedDate"
-      color="neutral"
-      variant="soft"
-      class="mb-1"
-    />
+    <span class="text-sm text-gray-500 dark:text-gray-400">
+      {{ publishedDate }}
+    </span>
     <div class="flex items-center gap-2">
       <UAvatar
         :src="article.thumbnail"

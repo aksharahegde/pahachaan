@@ -1,5 +1,7 @@
 <template>
-  <section class="space-y-2 py-4 text-gray-600 dark:text-gray-300 text-sm">
+  <section
+    class="flex flex-col gap-2 py-4 text-gray-600 dark:text-gray-300 text-sm"
+  >
     <div class="font-bold md:text-lg text-gray-600 dark:text-gray-200">
       This site uses,
     </div>

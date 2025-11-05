@@ -6,7 +6,9 @@
       class="flex gap-2 items-center"
     >
       <UChip :color="status.color" />
-      <span class="text-xs text-gray-600 dark:text-gray-400 capitalize">{{ status.name }}</span>
+      <span class="text-xs text-gray-600 dark:text-gray-400 capitalize">{{
+        status.name
+      }}</span>
     </div>
   </div>
 </template>

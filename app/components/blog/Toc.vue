@@ -1,7 +1,7 @@
 <!-- components/TableOfContents.vue -->
 <template>
   <div
-    class="max-w-3xl mx-auto p-4 bg-gray-100 mt-4 dark:bg-gray-950 rounded-lg"
+    class="max-w-3xl mx-auto p-4 bg-gray-100 my-4 dark:bg-gray-950 rounded-lg"
     :class="[
       isPinned
         ? [
@@ -56,7 +56,11 @@
         transition: 'height 0.3s ease-in-out',
       }"
     >
-      <ul ref="tocContent" id="toc-content" class="space-y-2 mt-4 pb-3">
+      <ul
+        ref="tocContent"
+        id="toc-content"
+        class="flex flex-col gap-2 mt-4 pb-3"
+      >
         <li
           v-for="item in links"
           :key="item.id"
@@ -74,7 +78,7 @@
           </a>
           <ul
             v-if="item.children && item.children.length"
-            class="mt-2 space-y-2"
+            class="mt-2 flex flex-col gap-2"
           >
             <li
               v-for="child in item.children"
@@ -167,12 +171,14 @@ const handleLinkClick = () => {
 }
 
 ::view-transition-old(toc-container) {
-  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+  animation:
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
 }
 
 ::view-transition-new(toc-container) {
-  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+  animation:
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 }
 

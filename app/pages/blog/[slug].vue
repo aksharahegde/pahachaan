@@ -9,7 +9,9 @@
     <div class="text-gray-600 dark:text-gray-300 text-sm">
       Published on {{ useDateFormat(doc.published, "Do MMMM YYYY").value }}
     </div>
-    <BlogToc :links="doc.body?.toc?.links" />
+    <ClientOnly>
+      <BlogToc :links="doc.body?.toc?.links" />
+    </ClientOnly>
     <ContentRenderer v-if="doc" :value="doc" />
     <div class="flex items-center justify-end mt-6 text-sm">
       <UButton
