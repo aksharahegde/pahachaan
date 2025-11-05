@@ -4,7 +4,8 @@
       <!-- affiliate link -->
       <UAlert
         v-if="footer.affiliate"
-        variant="solid"
+        color="neutral"
+        variant="subtle"
         :title="footer.affiliate.title"
         :avatar="{ src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
       >
@@ -36,7 +37,8 @@
       <UAlert
         v-if="footer"
         icon="i-simple-icons-github"
-        variant="solid"
+        color="neutral"
+        variant="subtle"
         :title="footer.title"
       >
         <template #icon="{ icon }">

@@ -7,7 +7,12 @@
     <UAlert
       title="Ink is now live!"
       description="A free and minimal template to showcase your writings."
-      :avatar="{ src: 'https://ink.aksharahegde.xyz/icon.png', alt: 'Ink landing page' }"
+      color="neutral"
+      variant="subtle"
+      :avatar="{
+        src: 'https://ink.aksharahegde.xyz/icon.png',
+        alt: 'Ink landing page',
+      }"
     />
   </a>
 </template>
