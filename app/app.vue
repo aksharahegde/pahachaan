@@ -45,7 +45,7 @@ if (import.meta.server) {
   const { path = "/" } = route.fullPath.match(PATH_RE)?.groups ?? {};
   const url = `${config.public.baseURL}${path}`;
 
-  useServerHead({
+  useHead({
     meta: () => [
       { name: "theme-color", content: "#0ea5e9" },
       { name: "msapplication-TileColor", content: "#0ea5e9" },
@@ -116,7 +116,8 @@ html {
 }
 
 .font-sans {
-  font-family: "Barlow", "Barlow Fallback: BlinkMacSystemFont",
+  font-family:
+    "Barlow", "Barlow Fallback: BlinkMacSystemFont",
     "Barlow Fallback: Segoe UI", "Barlow Fallback: Roboto",
     "Barlow Fallback: Helvetica Neue", "Barlow Fallback: Arial", system-ui,
     sans-serif;
