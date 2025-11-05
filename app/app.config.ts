@@ -30,5 +30,12 @@ export default defineAppConfig({
     container: {
       constrained: "max-w-5xl",
     },
+    prose: {
+      headings: {
+        icon: {
+          name: "i-heroicons-hashtag-20-solid",
+        },
+      },
+    },
   },
 });

@@ -123,11 +123,15 @@ const siteLogo = computed(() => {
         </filter>
       </defs>
     </svg>
-    <div class="p-[60px]" :style="{
-      background: colorMode !== 'light' ?
-    'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(17, 24, 39, 0.8), rgb(0, 0, 0))' :
-    'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(255, 255, 255, 0.7), rgb(255, 255, 255))'
-    }">
+    <div
+      class="p-[60px]"
+      :style="{
+        background:
+          colorMode !== 'light'
+            ? 'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(17, 24, 39, 0.8), rgb(0, 0, 0))'
+            : 'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(255, 255, 255, 0.7), rgb(255, 255, 255))',
+      }"
+    >
       <div class="h-full w-full justify-between relative">
         <div class="flex flex-row justify-between items-start">
           <div class="flex flex-col w-full max-w-[65%]">
@@ -144,7 +148,7 @@ const siteLogo = computed(() => {
           </div>
         </div>
         <div class="flex flex-row justify-center items-center text-left w-full">
-          <img v-if="siteLogo" :src="siteLogo" height="30" />
+          <img v-if="siteLogo" :src="siteLogo" height="30" alt="Site logo" />
           <template v-else>
             <svg
               height="50"

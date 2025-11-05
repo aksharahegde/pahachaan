@@ -7,7 +7,7 @@ thumbnail: /blog/thumbnails/nuxt-component-for-openstatus-public-widget.png
 path: /blog/nuxt-component-for-openstatus-public-widget
 ---
 
-<img src="/blog/nuxt-component-for-openstatus-public-widget.png">
+<img src="/blog/nuxt-component-for-openstatus-public-widget.png" alt="Nuxt component for Openstatus public widget">
 
 [Openstatus](https://www.openstatus.dev/) has added a public endpoint where you can access the status of your status page.
 However, there's no SDK or package to integrate the status into your project right now.
@@ -15,6 +15,7 @@ However, there's no SDK or package to integrate the status into your project rig
 Here, I'm giving components for Nuxt 2 and Nuxt 3 projects.
 
 ### Component for Nuxt 3
+
 ```html
 <template>
   <a
@@ -38,62 +39,63 @@ Here, I'm giving components for Nuxt 2 and Nuxt 3 projects.
   </a>
 </template>
 <script setup lang="ts">
-import * as z from "zod";
+  import * as z from "zod";
 
-const config = useRuntimeConfig();
-const statusSiteUrl = config.statusSiteSlug;
+  const config = useRuntimeConfig();
+  const statusSiteUrl = config.statusSiteSlug;
 
-const status = ref({
-  label: "checking",
-  color: undefined,
-});
+  const status = ref({
+    label: "checking",
+    color: undefined,
+  });
 
-const statusEnum = z.enum([
-  "operational",
-  "degraded_performance",
-  "partial_outage",
-  "major_outage",
-  "under_maintenance",
-  "unknown",
-]);
+  const statusEnum = z.enum([
+    "operational",
+    "degraded_performance",
+    "partial_outage",
+    "major_outage",
+    "under_maintenance",
+    "unknown",
+  ]);
 
-const statusSchema = z.object({ status: statusEnum });
+  const statusSchema = z.object({ status: statusEnum });
 
-const dictionary = {
-  operational: {
-    label: "Operational",
-    color: "bg-green-500",
-  },
-  degraded_performance: {
-    label: "Degraded Performance",
-    color: "bg-yellow-500",
-  },
-  partial_outage: {
-    label: "Partial Outage",
-    color: "bg-yellow-500",
-  },
-  major_outage: {
-    label: "Major Outage",
-    color: "bg-red-500",
-  },
-  unknown: {
-    label: "Unknown",
-    color: "bg-gray-500",
-  },
-  under_maintenance: {
-    label: "Under Maintenance",
-    color: "bg-gray-500",
-  },
-} as const;
+  const dictionary = {
+    operational: {
+      label: "Operational",
+      color: "bg-green-500",
+    },
+    degraded_performance: {
+      label: "Degraded Performance",
+      color: "bg-yellow-500",
+    },
+    partial_outage: {
+      label: "Partial Outage",
+      color: "bg-yellow-500",
+    },
+    major_outage: {
+      label: "Major Outage",
+      color: "bg-red-500",
+    },
+    unknown: {
+      label: "Unknown",
+      color: "bg-gray-500",
+    },
+    under_maintenance: {
+      label: "Under Maintenance",
+      color: "bg-gray-500",
+    },
+  } as const;
 
-const { data } = await useFetch("/api/site-status");
-const parsed = statusSchema.safeParse(data);
-const key = !parsed.success ? "unknown" : parsed.data.status;
-status.value = dictionary[key];
+  const { data } = await useFetch("/api/site-status");
+  const parsed = statusSchema.safeParse(data);
+  const key = !parsed.success ? "unknown" : parsed.data.status;
+  status.value = dictionary[key];
 </script>
 ```
 
 ### Component for Nuxt 2
+
 ```html
 <template>
   <a
@@ -117,68 +119,68 @@ status.value = dictionary[key];
   </a>
 </template>
 <script>
-const statusEnum = [
-  "operational",
-  "degraded_performance",
-  "partial_outage",
-  "major_outage",
-  "under_maintenance",
-  "unknown",
-];
+  const statusEnum = [
+    "operational",
+    "degraded_performance",
+    "partial_outage",
+    "major_outage",
+    "under_maintenance",
+    "unknown",
+  ];
 
-const dictionary = {
-  operational: {
-    label: "Operational",
-    color: "bg-green-500",
-  },
-  degraded_performance: {
-    label: "Degraded Performance",
-    color: "bg-yellow-500",
-  },
-  partial_outage: {
-    label: "Partial Outage",
-    color: "bg-yellow-500",
-  },
-  major_outage: {
-    label: "Major Outage",
-    color: "bg-red-500",
-  },
-  unknown: {
-    label: "Unknown",
-    color: "bg-gray-500",
-  },
-  under_maintenance: {
-    label: "Under Maintenance",
-    color: "bg-gray-500",
-  },
-};
-
-export default {
-  data() {
-    return {
-      status: {
-        label: "Checking",
-        color: "",
-      },
-      statusSiteUrl: "read-from-runtime-config",
-    };
-  },
-  mounted() {
-    this.fetchSiteStatus();
-  },
-  methods: {
-    async fetchSiteStatus() {
-      const { data } = await $fetch((`/api/site-status`);
-      const key = statusEnum.includes(data.status) ? data.status : "unknown";
-      this.status = dictionary[key];
+  const dictionary = {
+    operational: {
+      label: "Operational",
+      color: "bg-green-500",
     },
-  },
-};
+    degraded_performance: {
+      label: "Degraded Performance",
+      color: "bg-yellow-500",
+    },
+    partial_outage: {
+      label: "Partial Outage",
+      color: "bg-yellow-500",
+    },
+    major_outage: {
+      label: "Major Outage",
+      color: "bg-red-500",
+    },
+    unknown: {
+      label: "Unknown",
+      color: "bg-gray-500",
+    },
+    under_maintenance: {
+      label: "Under Maintenance",
+      color: "bg-gray-500",
+    },
+  };
+
+  export default {
+    data() {
+      return {
+        status: {
+          label: "Checking",
+          color: "",
+        },
+        statusSiteUrl: "read-from-runtime-config",
+      };
+    },
+    mounted() {
+      this.fetchSiteStatus();
+    },
+    methods: {
+      async fetchSiteStatus() {
+        const { data } = await $fetch((`/api/site-status`);
+        const key = statusEnum.includes(data.status) ? data.status : "unknown";
+        this.status = dictionary[key];
+      },
+    },
+  };
 </script>
 ```
 
-
 ### Serverless function to fetch status from Openstatus public API
+
 ```js
 export default defineEventHandler((event) => {
   const config = useRuntimeConfig();
