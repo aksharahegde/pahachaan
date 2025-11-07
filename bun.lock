@@ -10,7 +10,7 @@
         "@nuxt/kit": "npm:@nuxt/kit-nightly@latest",
         "@nuxt/ui": "latest",
         "better-sqlite3": "latest",
-        "browserslist": "latest",
+        "browserslist": "^4.27.0",
         "caniuse-lite": "^1.0.30001753",
         "cobe": "latest",
         "mime": "latest",
