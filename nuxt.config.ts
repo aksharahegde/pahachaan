@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "nuxt-visitors",
     "@nuxt/content",
     "nuxt-llms",
+    "nuxt-studio",
   ],
 
   css: ["~/assets/css/main.css"],
@@ -54,6 +55,20 @@ export default defineNuxtConfig({
           depth: 3,
         },
       },
+    },
+  },
+
+  studio: {
+    // Studio admin route (default: '/_studio')
+    route: "/_studio",
+
+    // GitHub repository configuration (owner and repo are required)
+    repository: {
+      provider: "github", // only GitHub is currently supported
+      owner: process.env.STUDIO_GITHUB_OWNER as string, // your GitHub username or organization
+      repo: process.env.STUDIO_GITHUB_REPO as string, // your repository name
+      branch: process.env.STUDIO_GITHUB_BRANCH_NAME, // the branch to commit to (default: main)
+      rootDir: "", // optional: if your Nuxt app is in a subdirectory (default: '')
     },
   },
 
