@@ -19,7 +19,7 @@
       },
       "devDependencies": {
         "@iconify-json/heroicons": "^1.2.3",
-        "@nuxt/devtools": "latest",
+        "@nuxt/devtools": ">=2.6.4",
         "@nuxt/fonts": "latest",
         "@nuxtjs/seo": "latest",
         "@vueuse/core": "latest",
