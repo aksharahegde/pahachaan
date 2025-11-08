@@ -90,5 +90,32 @@ export default defineContentConfig({
         }),
       })
     ),
+    home: defineCollection(
+      asSeoCollection({
+        type: "data",
+        source: "home.json",
+        schema: z.object({
+          name: z.string(),
+          pronouns: z.string(),
+          title: z.string(),
+          bio: z.string(),
+        }),
+      })
+    ),
+    contact: defineCollection(
+      asSeoCollection({
+        type: "data",
+        source: "contact.json",
+        schema: z.object({
+          contact: z.array(
+            z.object({
+              name: z.string(),
+              icon: z.string(),
+              url: z.string(),
+            })
+          ),
+        }),
+      })
+    ),
   },
 });

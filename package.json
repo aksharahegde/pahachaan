@@ -22,6 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
     "@nuxt/devtools": "latest",
     "@nuxt/fonts": "latest",
     "@nuxtjs/seo": "latest",

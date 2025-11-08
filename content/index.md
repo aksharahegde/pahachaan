@@ -1,4 +1,12 @@
-# Akshara Hegde
-## Full Stack Engineer and Opensource Contributor
+---
+title: "Home"
+---
 
-I am a dedicated fullstack engineer based in Bengaluru, India. I love building things that make an impact using Nuxt and Python and afirm believer in the power of Open Source and have contributed to various projects.
+::announcement
+---
+title: "Ink is now live!"
+description: "A free and minimal template to showcase your writings."
+url: "https://ink.aksharahegde.xyz/?ref=aksharahegde.xyz"
+image: "https://ink.aksharahegde.xyz/icon.png"
+---
+::
