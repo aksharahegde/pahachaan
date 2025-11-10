@@ -43,7 +43,7 @@
     "browserslist": "^4.27.0",
     "caniuse-lite": "^1.0.30001753",
     "cobe": "latest",
-    "mime": "^2.0.3",
+    "mime": "^4.1.0",
     "nuxt-llms": "latest",
     "nuxt-visitors": "latest"
   }
