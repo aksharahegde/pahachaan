@@ -29,7 +29,7 @@
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
     "nuxt": "npm:nuxt-nightly@latest",
-    "nuxt-studio": "1.0.0-alpha.1",
+    "nuxt-studio": "1.0.0-alpha.2",
     "vue": "latest",
     "vue-router": "latest"
   },
