@@ -1,6 +1,10 @@
 <template>
   <main class="min-h-screen prose dark:prose-invert">
-    <UBreadcrumb separator-icon="i-lucide-chevron-right" :items="links" />
+    <UBreadcrumb
+      separator-icon="i-lucide-chevron-right"
+      :items="links"
+      class="no-print"
+    />
     <h1
       class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
     >
@@ -13,7 +17,10 @@
       <BlogToc :links="doc.body?.toc?.links" />
     </ClientOnly>
     <ContentRenderer v-if="doc" :value="doc" />
-    <div class="flex items-center justify-end mt-6 text-sm">
+    <BlogPrintCredit
+      :article-url="`${config.public.baseURL}${route.fullPath}`"
+    />
+    <div class="flex items-center justify-end mt-6 text-sm no-print">
       <UButton
         label="All articles &rarr;"
         to="/blog"

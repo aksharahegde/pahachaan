@@ -22,7 +22,7 @@
     <div
       class="flex items-center justify-between w-full gap-2 sticky top-0 bg-gray-100 dark:bg-gray-950 py-2 -mt-2 -mx-2 px-2 rounded-md"
     >
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 no-print">
         <SharedPin
           v-if="isPinned"
           @click="handlePinToggle"
@@ -40,10 +40,10 @@
         </h1>
       </div>
       <button
-        @click="toggle()"
         :aria-expanded="isOpen"
+        @click="toggle()"
         aria-controls="toc-content"
-        class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+        class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-print"
       >
         [ {{ isOpen ? "Hide" : "Show" }} ]
       </button>
