@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp class="bg-default">
     <NuxtLoadingIndicator color="primary" />
     <SharedNavbar class="no-print" />
     <div class="h-4 md:h-24" />
@@ -27,9 +27,6 @@ useHead({
     title ? `${title} - ${config.public.ownerName}` : config.public.ownerName,
   htmlAttrs: {
     lang: "en",
-  },
-  bodyAttrs: {
-    class: "font-sans",
   },
   link: [
     {

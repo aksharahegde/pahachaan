@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  future: {
-    compatibilityVersion: 4,
-  },
   devtools: {
     enabled: true,
     timeline: {
@@ -35,7 +32,7 @@ export default defineNuxtConfig({
         lang: "en",
       },
       bodyAttrs: {
-        class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
+        class: "antialiased bg-gray-50 dark:bg-gray-900 min-h-screen font-sans",
       },
     },
   },

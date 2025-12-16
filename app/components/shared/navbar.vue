@@ -37,7 +37,7 @@
           </li>
           <li class="flex-1 hidden md:flex"></li>
           <li class="hidden md:flex">
-            <SharedColorMode />
+            <SharedThemePicker />
           </li>
         </ul>
       </nav>
