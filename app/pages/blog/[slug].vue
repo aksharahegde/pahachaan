@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen prose dark:prose-invert">
-    <UBreadcrumb :links="links" />
+    <UBreadcrumb separator-icon="i-lucide-chevron-right" :items="links" />
     <h1
       class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
     >

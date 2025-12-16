@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
-    "@nuxt/devtools": ">=2.6.4",
+    "@nuxt/devtools": "^3.1.1",
     "@nuxt/fonts": "latest",
     "@nuxtjs/seo": "latest",
     "@vueuse/core": "latest",
@@ -40,10 +40,10 @@
     "@nuxt/kit": "npm:@nuxt/kit-nightly@latest",
     "@nuxt/ui": "latest",
     "better-sqlite3": "latest",
-    "browserslist": "^4.27.0",
-    "caniuse-lite": "^1.0.30001753",
+    "browserslist": "^4.28.1",
+    "caniuse-lite": "^1.0.30001760",
     "cobe": "latest",
-    "mime": "^2.0.3",
+    "mime": "^2.6.0",
     "nuxt-llms": "latest",
     "nuxt-visitors": "latest"
   }
