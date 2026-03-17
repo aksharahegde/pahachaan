@@ -1,6 +1,6 @@
 ---
-title: Why I Built man-tui: A Terminal UI for Man Pages
-description: As a developer who lives in the terminal, I've always loved the power of Unix man pages. But the traditional `man` command felt rough around the edges. So I built man-tui—a fast, keyboard-first TUI that feels like a natural extension of the terminal workflow.
+title: Why I Built man-tui, A Terminal UI for Man Pages
+description: A fast, keyboard-driven TUI for browsing man pages.
 path: /blog/why-i-built-man-tui
 published: 2026-03-17T12:00:00.000Z
 cover: /blog/why-i-built-man-tui.png
@@ -9,7 +9,7 @@ thumbnail: /blog/thumbnails/why-i-built-man-tui.png
 
 <img src="/blog/why-i-built-man-tui.png" alt="Why I Built man-tui: A Terminal UI for Man Pages">
 
-As a developer who lives in the terminal, I've always loved the power of Unix man pages—the definitive reference for command-line tools. But the traditional `man` command, while timeless, has always felt... rough around the edges. Scrolling through plain text with limited navigation, no fuzzy search, and a linear reading experience never quite matched the speed of my thinking.
+As a developer who lives in the terminal, I've always loved the power of Unix man pages; the definitive reference for command-line tools. But the traditional `man` command, while timeless, has always felt... rough around the edges. Scrolling through plain text with limited navigation, no fuzzy search, and a linear reading experience never quite matched the speed of my thinking.
 
 That's why I built **man-tui**, a fast, keyboard-first terminal UI for browsing Linux and macOS man pages. It wasn't just about making man pages prettier; it was about creating a tool that feels like a natural extension of the terminal workflow I use every day.
 
@@ -23,7 +23,7 @@ And if you're like me, you often forget the exact command name but remember part
 
 Rust has become my go-to for performance-critical tools, and the terminal UI ecosystem has matured beautifully. I chose:
 
-- **Ratatui** (formerly tui-rs) for the widget layout—it's fast, well-designed, and handles complex split panes elegantly.
+- **Ratatui** (formerly tui-rs) for the widget layout; it's fast, well-designed, and handles complex split panes elegantly.
 - **crossterm** for terminal input/output with raw mode control.
 - **fuzzy-matcher** (Skim algorithm) for that sweet fuzzy matching that feels like magic.
 
@@ -34,7 +34,7 @@ Together these let me build a responsive, keyboard-driven interface that feels n
 1. **Speed**: Open the app, start typing `git c`, and instantly see `git checkout`, `git commit`, `git config` appear. Press Enter, and the man page loads in the right pane. No waiting for a pager, no manual scrolling.
 2. **Context retention**: The app caches command history and favorites in a simple TOML config. Your last-viewed command and section persist between runs.
 3. **Section awareness**: Man pages are divided into numbered sections (1 for user commands, 2 for system calls, etc.). man-tui lets you filter by section, so you don't confuse `printf` the shell builtin with `printf` the C function.
-4. **In-page search with navigation**: `/` starts a search, then `n`/`N` to jump between matches—all within the split view. No more leaving the pager to search again.
+4. **In-page search with navigation**: `/` starts a search, then `n`/`N` to jump between matches; all within the split view. No more leaving the pager to search again.
 5. **Theme toggle**: Because staring at a black background all day can be soul-crushing; light mode exists.
 
 ### The Learning Curve (For Me)
@@ -63,6 +63,6 @@ There are still things I'd like to add:
 
 If you spend any time in the terminal and use man pages, I'd love for you to try `man-tui`. It's available on GitHub: [aksharahegde/manrust](https://github.com/aksharahegde/manrust). Build from source with `cargo build --release` or `cargo install`.
 
-You can also explore the live demo at **[manrust.lovable.app](https://manrust.lovable.app)** to see it in action before installing.
+It also has a beautiful landing page at **[manrust.lovable.app](https://manrust.lovable.app)**.
 
 Sometimes the best tools are born from annoyance. I was annoyed by the friction of reading man pages. So I built the tool I wanted to use. That's a formula that's worked for Unix since the beginning.
