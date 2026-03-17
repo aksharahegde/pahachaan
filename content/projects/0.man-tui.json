@@ -1,0 +1,11 @@
+{
+  "url": "https://manrust.lovable.app/",
+  "thumbnail": "/projects/logo/manrust.png",
+  "thumbnailBg": "bg-slate-900",
+  "thumbnailAlt": "man-tui logo",
+  "category": "development",
+  "heading": "man-tui",
+  "description": "A fast, keyboard-first terminal UI for browsing Linux/macOS man pages.",
+  "status": "active",
+  "role": "Author"
+}
