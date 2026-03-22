@@ -22,6 +22,10 @@ defineOgImageComponent("MyOg", {
 });
 
 useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: `${config.public.baseURL}/og_me.png`,

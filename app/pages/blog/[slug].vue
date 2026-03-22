@@ -32,24 +32,43 @@
 </template>
 <script setup>
 import { useDateFormat } from "@vueuse/core";
+import { defineArticle } from "@unhead/schema-org/vue";
 
 const route = useRoute();
 const { slug } = route.params;
 const links = useBreadcrumbItems();
 const config = useRuntimeConfig();
 
-const ogImage = `${config.public.baseURL}/blog/${slug}.png`;
-useSeoMeta({
-  ogImage: ogImage,
-  twitterCard: "summary_large_image",
-  articleAuthor: config.public.ownerName,
-});
-
 const { data: doc } = await useAsyncData(route.path, () =>
   queryCollection("blog").where("path", "==", route.path).first()
 );
 
-const { title, description } = doc.value;
+if (!doc.value) {
+  throw createError({ statusCode: 404, statusMessage: "Not found" });
+}
+
+const { title, description, published, cover } = doc.value;
+const base = config.public.baseURL?.replace(/\/$/, "") ?? "";
+const articleUrl = `${base}${route.path}`;
+const ogImage = `${base}/blog/${slug}.png`;
+const imageUrl = cover.startsWith("http") ? cover : `${base}${cover}`;
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogType: "article",
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterCard: "summary_large_image",
+  articleAuthor: config.public.ownerName,
+  articlePublishedTime: published,
+  articleModifiedTime: published,
+});
+
 defineOgImageComponent("BlogOgImage", {
   headline: config.public.ownerName,
   title,
@@ -58,6 +77,21 @@ defineOgImageComponent("BlogOgImage", {
   coverImage: ogImage,
   colorMode: "dark",
 });
+
+useSchemaOrg([
+  defineArticle({
+    headline: title,
+    description,
+    datePublished: published,
+    author: {
+      "@type": "Person",
+      name: config.public.ownerName,
+      url: base,
+    },
+    image: imageUrl,
+    url: articleUrl,
+  }),
+]);
 </script>
 <style>
 @reference "~/assets/css/main.css";
