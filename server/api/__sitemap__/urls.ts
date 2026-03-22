@@ -1,16 +1,25 @@
-// import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
-// import { serverqueryCollection } from "#content/server";
-// import { asSitemapUrl, defineSitemapEventHandler } from "#imports";
+import { queryCollection } from "@nuxt/content/server";
 
-// export default defineSitemapEventHandler(async (e) => {
-//   const contentList = (await serverqueryCollection(e).all()) as ParsedContent[];
-//   const final = contentList
-//     .filter((c) => c._dir.startsWith("blog"))
-//     .map((c) => {
-//       return asSitemapUrl({
-//         loc: c._path,
-//         lastmod: new Date(),
-//       });
-//     });
-//   return final;
-// });
+export default defineSitemapEventHandler(async (event) => {
+  const posts = await queryCollection(event, "blog").all();
+
+  return posts
+    .filter(
+      (entry) =>
+        entry.title !== "Blog" &&
+        typeof entry.path === "string" &&
+        entry.path.startsWith("/blog/") &&
+        entry.path !== "/blog"
+    )
+    .map((entry) => {
+      const published =
+        "published" in entry && typeof entry.published === "string"
+          ? new Date(entry.published)
+          : undefined;
+
+      return {
+        loc: entry.path as string,
+        lastmod: published,
+      };
+    });
+});

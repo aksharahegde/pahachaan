@@ -22,7 +22,6 @@ useSeoMeta({
 });
 
 useHead({
-  title: () => (route.meta?.title as string) || "",
   titleTemplate: (title) =>
     title ? `${title} - ${config.public.ownerName}` : config.public.ownerName,
   htmlAttrs: {
@@ -47,29 +46,6 @@ if (import.meta.server) {
       { name: "theme-color", content: "#0ea5e9" },
       { name: "msapplication-TileColor", content: "#0ea5e9" },
       { property: "og:url", content: url },
-      {
-        property: "og:image",
-        content: `${config.public.baseURL}/__og-image__/static/og.png`,
-        key: "og:image",
-      },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "600" },
-      {
-        property: "og:title",
-        content: (route.meta.title as string) || config.public.ownerName,
-      },
-      {
-        name: "description",
-        content:
-          (route.meta.description as string) ||
-          `The personal website of ${config.public.ownerName}`,
-      },
-      {
-        property: "og:description",
-        content:
-          (route.meta.description as string) ||
-          `The personal website of ${config.public.ownerName}`,
-      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: `@${config.public.twitter}` },
       { name: "twitter:creator", content: `@${config.public.twitter}` },

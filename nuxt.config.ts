@@ -34,6 +34,18 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "antialiased bg-gray-50 dark:bg-gray-900 min-h-screen font-sans",
       },
+      script: [
+        {
+          key: "umami",
+          defer: true,
+          src:
+            process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ||
+            "https://cloud.umami.is/script.js",
+          "data-website-id":
+            process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ||
+            "9a02a74f-1f55-4936-866b-e00fb826f667",
+        },
+      ],
     },
   },
 
@@ -79,12 +91,24 @@ export default defineNuxtConfig({
       baseURL: process.env.NUXT_PUBLIC_SITE_URL,
       ownerName: process.env.OWNER_NAME,
       analyticsClientId: process.env.ANALYTICS_CLIENT_ID,
+      umamiScriptUrl:
+        process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ||
+        "https://cloud.umami.is/script.js",
+      umamiWebsiteId:
+        process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ||
+        "9a02a74f-1f55-4936-866b-e00fb826f667",
       twitter: process.env.TWITTER_HANDLE,
     },
   },
 
   site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL,
     name: process.env.OWNER_NAME,
+    description: `Portfolio and blog of ${process.env.OWNER_NAME}`,
+  },
+
+  schemaOrg: {
+    identity: "Person",
   },
   llms: {
     domain: process.env.NUXT_PUBLIC_SITE_URL,
