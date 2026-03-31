@@ -31,7 +31,7 @@
     "nuxt": "latest",
     "nuxt-studio": "1.0.0-alpha.1",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "^5.0.4"
   },
   "dependencies": {
     "@iconify-json/simple-icons": "latest",
