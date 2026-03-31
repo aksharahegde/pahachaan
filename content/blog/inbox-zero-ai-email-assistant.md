@@ -1,14 +1,14 @@
 ---
-title: Inbox Zero, Partly Thanks to AI — How I Built an Email Assistant That Doesn't Suck
+title: Inbox Zero, Partly Thanks to AI - How I Built an Email Assistant That Doesn't Suck
 cover: /blog/inbox-zero-ai-email-assistant.png
 description: How I built ai-email, a privacy-first AI Gmail assistant using Ollama, Node.js, and Nuxt 3 that summarizes threads, drafts replies, and flags urgent emails.
 published: 2026-03-31T12:00:00.000Z
 thumbnail: /blog/thumbnails/inbox-zero-ai-email-assistant.png
 ---
 
-![Inbox Zero, Partly Thanks to AI — How I Built an Email Assistant That Doesn't Suck](/blog/inbox-zero-ai-email-assistant.png)
+![Inbox Zero, Partly Thanks to AI - How I Built an Email Assistant That Doesn't Suck](/blog/inbox-zero-ai-email-assistant.png)
 
-I'm the kind of person who leaves emails unread until it's embarrassing. I tried every productivity hack, but nothing stuck. So I did what any lazy developer does: I automated it.--- Unknown node: hardBreak ---ai-email is my take on an AI-powered Gmail assistant that actually respects you—no weird hallucinations, no sending emails you didn't mean to. It's a small tool, but it's changed how I work. Here's the story.
+I'm the kind of person who leaves emails unread until it's embarrassing. I tried every productivity hack, but nothing stuck. So I did what any lazy developer does: I automated it.--- Unknown node: hardBreak ---ai-email is my take on an AI-powered Gmail assistant that actually respects you; no weird hallucinations, no sending emails you didn't mean to. It's a small tool, but it's changed how I work. Here's the story.
 
 ## The Goal Was Simple (Ha)
 
@@ -19,14 +19,14 @@ I wanted to:
 - Flag urgent emails that need my attention now
 - Do it all without me having to click through Gmail's clunky UI
 
-No "AI taking over my inbox" nonsense—just a helpful assistant that stays in its lane.
+No "AI taking over my inbox" nonsense; just a helpful assistant that stays in its lane.
 
 ## Tech Stack — Keep It Boring and Reliable
 
 - **Backend**: Node.js + TypeScript (I'm comfortable here)
 - **Auth**: Gmail OAuth2 with secure token storage (no passwords stored, ever)
 - **AI**: Ollama locally (Llama 3) for privacy, fallback to GPT if needed
-- **Frontend**: Nuxt 3 — just a simple dashboard to see summaries and approve drafts
+- **Frontend**: Nuxt 3 - just a simple dashboard to see summaries and approve drafts
 - **Storage**: SQLite for email metadata and logs (lightweight, no separate DB)
 
 Why local LLM? I didn't want my email content going to some API's data pipeline. Ollama runs on my laptop, and it's fast enough for summaries.
@@ -57,7 +57,7 @@ Why local LLM? I didn't want my email content going to some API's data pipeline.
 
 ## Is It Worth It?
 
-For me, yes. I clear my inbox in 10 minutes now instead of an hour. The drafts are good about 80% of the time—I still tweak them, but the boilerplate is gone.
+For me, yes. I clear my inbox in 10 minutes now instead of an hour. The drafts are good about 80% of the time, I still tweak them, but the boilerplate is gone.
 
 Would I recommend building your own? Only if you enjoy tinkering. There are good commercial tools out there (Hey, Superhuman). But if you want full control and don't mind maintaining it, it's a satisfying project.
 
@@ -72,7 +72,7 @@ I keep `ai-email` public because I believe in sharing patterns. The repo shows:
 
 If you're interested, the code is there. It's not "production-ready" by enterprise standards, but it's honest and works for me.
 
-## Wrap-Up — Tools Should Get Out of the Way
+## Wrap-Up; Tools Should Get Out of the Way
 
 The best automation is the kind you forget is there. `ai-email` doesn't dazzle anyone with AI hype; it just quietly saves me time. That's the goal.
 
