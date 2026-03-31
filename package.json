@@ -42,7 +42,7 @@
     "better-sqlite3": "latest",
     "browserslist": "^4.28.1",
     "caniuse-lite": "^1.0.30001760",
-    "cobe": "latest",
+    "cobe": "^2.0.1",
     "mermaid": "^11.13.0",
     "mime": "^2.6.0",
     "nuxt-llms": "latest",
