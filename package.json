@@ -44,7 +44,7 @@
     "caniuse-lite": "^1.0.30001760",
     "cobe": "^2.0.1",
     "mermaid": "^11.13.0",
-    "mime": "^2.6.0",
+    "mime": "^4.1.0",
     "nuxt-llms": "latest",
     "nuxt-visitors": "latest",
     "playwright-core": "^1.58.2"
