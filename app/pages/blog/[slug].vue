@@ -69,7 +69,8 @@ useSeoMeta({
   articleModifiedTime: published,
 });
 
-defineOgImageComponent("BlogOgImage", {
+defineOgImage({
+  component: "BlogOgImage",
   headline: config.public.ownerName,
   title,
   description,

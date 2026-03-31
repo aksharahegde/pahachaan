@@ -115,5 +115,16 @@ export default defineNuxtConfig({
     title: process.env.OWNER_NAME,
     description: `A portfolio website of ${process.env.OWNER_NAME}`,
   },
+  vite: {
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "tailwindcss/colors",
+        "@unhead/schema-org/vue",
+      ],
+    },
+  },
+
   compatibilityDate: "2025-01-28",
 });

@@ -6,6 +6,7 @@
     <!-- mermaid.render() produces sanitized SVG output (securityLevel configured) -->
     <div v-html="svgContent" />
   </div>
+  <code v-else-if="isInline" :class="$attrs.class"><slot /></code>
   <pre
     v-else
     :class="$attrs.class"
@@ -23,6 +24,7 @@ const props = defineProps({
   meta: { type: String, default: "" },
 });
 
+const isInline = computed(() => !props.language && !props.filename);
 const isMermaid = computed(() => props.language === "mermaid");
 const svgContent = ref("");
 
