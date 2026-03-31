@@ -25,7 +25,7 @@
     "@iconify-json/heroicons": "^1.2.3",
     "@nuxt/devtools": "^3.1.1",
     "@nuxt/fonts": "latest",
-    "@nuxtjs/seo": "latest",
+    "@nuxtjs/seo": "^5.1.0",
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
     "nuxt": "latest",
