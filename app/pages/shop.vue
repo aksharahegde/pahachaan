@@ -24,8 +24,7 @@ const { data: doc } = await useAsyncData("shop-index", () =>
 );
 
 const { title, description, icon } = doc.value;
-defineOgImage({
-  component: "MyOg",
+defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title,
   description,

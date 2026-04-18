@@ -79,12 +79,6 @@ export default defineNuxtConfig({
     },
   },
 
-  ogImage: {
-    defaults: {
-      renderer: "satori",
-    },
-  },
-
   runtimeConfig: {
     public: {
       statusSiteSlug: process.env.STATUS_SITE_SLUG,
