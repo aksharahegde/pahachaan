@@ -109,13 +109,17 @@ export default defineNuxtConfig({
     title: process.env.OWNER_NAME,
     description: `A portfolio website of ${process.env.OWNER_NAME}`,
   },
+  seo: {
+    treeShakeUseSeoMeta: false,
+  },
   vite: {
     optimizeDeps: {
       include: [
-        "@vue/devtools-core",
-        "@vue/devtools-kit",
-        "tailwindcss/colors",
-        "@unhead/schema-org/vue",
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'tailwindcss/colors',
+        '@unhead/schema-org/vue',
+        'mermaid',
       ],
     },
   },
