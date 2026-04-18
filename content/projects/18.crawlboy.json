@@ -1,0 +1,11 @@
+{
+  "url": "https://crawlboy.aksharahegde.xyz/",
+  "thumbnail": "/projects/logo/crawlboy.svg",
+  "thumbnailBg": "bg-slate-900",
+  "thumbnailAlt": "Crawlboy project",
+  "category": "development",
+  "heading": "Crawlboy",
+  "description": "Turn any sitemap into clean Markdown. Built for Crawl4AI workflows.",
+  "status": "active",
+  "role": "Author"
+}

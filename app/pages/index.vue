@@ -41,7 +41,7 @@ const payload = {
   url: config.public.baseURL,
   siteName: config.public.ownerName,
 };
-defineOgImage({ component: "MyOg", ...payload });
+defineOgImage("MyOg", payload);
 
 useHead({
   title: seo.value.title,

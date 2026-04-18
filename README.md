@@ -38,11 +38,9 @@ cd pahachaan
 
 ```bash
 bun install
-# or npm install / pnpm install / yarn install
 ```
 
-NOTE: This project uses Bun as the package manager.
-You can use npm, pnpm, or yarn if you prefer. You can safely delete bun.lock which is stale.
+This repository uses [Bun](https://bun.sh/) for installs and scripts (`bun.lock`). Use `bun run <script>` for package.json scripts (for example `bun run build`).
 
 ### 3. Configure Environment
 
@@ -433,7 +431,7 @@ Nuxt supports various hosting platforms:
 
 ```bash
 # Install Vercel CLI
-npm i -g vercel
+bun install -g vercel
 
 # Deploy
 vercel
