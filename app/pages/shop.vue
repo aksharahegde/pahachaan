@@ -24,7 +24,7 @@ const { data: doc } = await useAsyncData("shop-index", () =>
 );
 
 const { title, description, icon } = doc.value;
-defineOgImageComponent("MyOg", {
+defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title,
   description,
@@ -33,6 +33,10 @@ defineOgImageComponent("MyOg", {
 });
 
 useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: `${config.public.baseURL}/og_me.png`,

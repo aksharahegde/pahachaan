@@ -38,12 +38,20 @@ const { data: seo } = await useAsyncData("seo", () =>
 
 const payload = {
   ...seo.value,
-  url: config.public.baseUrl,
+  url: config.public.baseURL,
   siteName: config.public.ownerName,
 };
-defineOgImageComponent("MyOg", payload);
+defineOgImage("MyOg", payload);
+
+useHead({
+  title: seo.value.title,
+  titleTemplate: false,
+});
 
 useSeoMeta({
+  description: seo.value.description,
+  ogTitle: seo.value.title,
+  ogDescription: seo.value.description,
   twitterTitle: seo.value.title,
   twitterDescription: seo.value.description,
   twitterImage: seo.value.coverImage,

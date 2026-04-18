@@ -4,9 +4,9 @@ title: "Home"
 
 ::announcement
 ---
-title: "Ink is now live!"
-description: "A free and minimal template to showcase your writings."
-url: "https://ink.aksharahegde.xyz/?ref=aksharahegde.xyz"
-image: "https://ink.aksharahegde.xyz/icon.png"
+title: "Crawlboy is live — sitemap in, Markdown out"
+description: "Crawl4AI-powered CLI: nested sitemaps → one clean .md per URL. Built for docs mirrors, search, and RAG."
+url: "https://crawlboy.aksharahegde.xyz/?ref=aksharahegde.xyz"
+image: "/projects/logo/crawlboy.svg"
 ---
 ::

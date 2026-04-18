@@ -5,4 +5,17 @@
   --spacing: 0.25rem;
 }
 
+.only-print {
+  @apply hidden;
+}
+
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+  .only-print {
+    @apply block;
+  }
+}
+
 @source "../../../content/**/*";

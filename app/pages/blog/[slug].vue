@@ -1,6 +1,10 @@
 <template>
   <main class="min-h-screen prose dark:prose-invert">
-    <UBreadcrumb :links="links" />
+    <UBreadcrumb
+      separator-icon="i-lucide-chevron-right"
+      :items="links"
+      class="no-print"
+    />
     <h1
       class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
     >
@@ -13,7 +17,10 @@
       <BlogToc :links="doc.body?.toc?.links" />
     </ClientOnly>
     <ContentRenderer v-if="doc" :value="doc" />
-    <div class="flex items-center justify-end mt-6 text-sm">
+    <BlogPrintCredit
+      :article-url="`${config.public.baseURL}${route.fullPath}`"
+    />
+    <div class="flex items-center justify-end mt-6 text-sm no-print">
       <UButton
         label="All articles &rarr;"
         to="/blog"
@@ -25,25 +32,44 @@
 </template>
 <script setup>
 import { useDateFormat } from "@vueuse/core";
+import { defineArticle } from "@unhead/schema-org/vue";
 
 const route = useRoute();
 const { slug } = route.params;
 const links = useBreadcrumbItems();
 const config = useRuntimeConfig();
 
-const ogImage = `${config.public.baseURL}/blog/${slug}.png`;
-useSeoMeta({
-  ogImage: ogImage,
-  twitterCard: "summary_large_image",
-  articleAuthor: config.public.ownerName,
-});
-
 const { data: doc } = await useAsyncData(route.path, () =>
   queryCollection("blog").where("path", "==", route.path).first()
 );
 
-const { title, description } = doc.value;
-defineOgImageComponent("BlogOgImage", {
+if (!doc.value) {
+  throw createError({ statusCode: 404, statusMessage: "Not found" });
+}
+
+const { title, description, published, cover } = doc.value;
+const base = config.public.baseURL?.replace(/\/$/, "") ?? "";
+const articleUrl = `${base}${route.path}`;
+const ogImage = `${base}/blog/${slug}.png`;
+const imageUrl = cover.startsWith("http") ? cover : `${base}${cover}`;
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogType: "article",
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterCard: "summary_large_image",
+  articleAuthor: config.public.ownerName,
+  articlePublishedTime: published,
+  articleModifiedTime: published,
+});
+
+defineOgImage("BlogOgImage", {
   headline: config.public.ownerName,
   title,
   description,
@@ -51,6 +77,21 @@ defineOgImageComponent("BlogOgImage", {
   coverImage: ogImage,
   colorMode: "dark",
 });
+
+useSchemaOrg([
+  defineArticle({
+    headline: title,
+    description,
+    datePublished: published,
+    author: {
+      "@type": "Person",
+      name: config.public.ownerName,
+      url: base,
+    },
+    image: imageUrl,
+    url: articleUrl,
+  }),
+]);
 </script>
 <style>
 @reference "~/assets/css/main.css";
