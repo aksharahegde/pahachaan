@@ -30,9 +30,9 @@
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
     "nuxt": "latest",
-    "nuxt-studio": "^1.6.0",
+    "nuxt-studio": "^1.6.1",
     "vue": "latest",
-    "vue-router": "^5.0.4"
+    "vue-router": "^5.0.6"
   },
   "dependencies": {
     "@iconify-json/simple-icons": "latest",
@@ -44,7 +44,7 @@
     "@resvg/resvg-js": "^2.6.2",
     "better-sqlite3": "latest",
     "browserslist": "^4.28.2",
-    "caniuse-lite": "^1.0.30001788",
+    "caniuse-lite": "^1.0.30001790",
     "cobe": "^2.0.1",
     "mermaid": "^11.14.0",
     "mime": "^4.1.0",
