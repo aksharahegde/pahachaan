@@ -134,7 +134,6 @@ export default defineNuxtConfig({
         '@vue/devtools-kit',
         'tailwindcss/colors',
         '@unhead/schema-org/vue',
-        'mermaid',
       ],
     },
   },
