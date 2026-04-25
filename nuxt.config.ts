@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: "client",
     writeEarlyHints: true,
+    defaults: {
+      nuxtLink: {
+        prefetchOn: {
+          interaction: true,
+          visibility: false,
+        },
+      },
+    },
   },
   devtools: {
     enabled: true,
