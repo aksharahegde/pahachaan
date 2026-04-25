@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   experimental: {
     payloadExtraction: "client",
+    writeEarlyHints: true,
   },
   devtools: {
     enabled: true,
