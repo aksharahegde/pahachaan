@@ -38,6 +38,7 @@
     "@iconify-json/simple-icons": "latest",
     "@iconify-json/solar": "latest",
     "@nuxt/content": "latest",
+    "@nuxt/image": "^2.0.0",
     "@nuxt/kit": "latest",
     "@nuxt/ui": "latest",
     "@resvg/resvg-js": "^2.6.2",

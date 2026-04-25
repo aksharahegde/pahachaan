@@ -14,11 +14,12 @@
       Published on {{ useDateFormat(doc.published, "Do MMMM YYYY").value }}
     </div>
     <ClientOnly>
-      <BlogToc :links="doc.body?.toc?.links" />
+      <LazyBlogToc :links="doc.body?.toc?.links" hydrate-on-visible />
     </ClientOnly>
     <ContentRenderer v-if="doc" :value="doc" />
-    <BlogPrintCredit
+    <LazyBlogPrintCredit
       :article-url="`${config.public.baseURL}${route.fullPath}`"
+      hydrate-on-visible
     />
     <div class="flex items-center justify-end mt-6 text-sm no-print">
       <UButton
