@@ -15,15 +15,16 @@
         :key="index"
         class="flex justify-center items-center p-4 md:justify-start group"
       >
-        <img
+        <NuxtImg
           class="w-32 h-12 mx-auto group-hover:scale-110 transition-all duration-300"
           :src="item.icon"
           :alt="item.label"
           :class="item.class"
           :aria-label="`${item.label} website`"
           loading="lazy"
+          fetchpriority="low"
           width="128"
-          height="128"
+          height="48"
         />
       </a>
     </div>

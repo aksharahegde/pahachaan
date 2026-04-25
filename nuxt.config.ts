@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
+    "@nuxt/image",
     "@nuxt/fonts",
     "nuxt-visitors",
     "@nuxt/content",
@@ -34,19 +35,33 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "antialiased bg-gray-50 dark:bg-gray-900 min-h-screen font-sans",
       },
-      script: [
-        {
-          key: "umami",
-          defer: true,
-          src:
-            process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ||
-            "https://cloud.umami.is/script.js",
-          "data-website-id":
-            process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ||
-            "9a02a74f-1f55-4936-866b-e00fb826f667",
-        },
-      ],
+      script:
+        process.env.NODE_ENV === "production"
+          ? [
+              {
+                key: "umami",
+                defer: true,
+                async: true,
+                tagPosition: "bodyClose",
+                src:
+                  process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ||
+                  "https://cloud.umami.is/script.js",
+                "data-website-id":
+                  process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ||
+                  "9a02a74f-1f55-4936-866b-e00fb826f667",
+              },
+            ]
+          : [],
     },
+  },
+
+  routeRules: {
+    "/": { prerender: true },
+    "/uses": { prerender: true },
+    "/resources": { prerender: true },
+    "/blog/**": { swr: 3600 },
+    "/projects": { swr: 3600 },
+    "/shop": { swr: 3600 },
   },
 
   content: {
