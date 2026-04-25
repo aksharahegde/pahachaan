@@ -6,7 +6,7 @@
       <Header class="mb-4" :title="doc.title" :description="doc.description" />
       <ContentRenderer :value="doc" />
     </div>
-    <SharedCredits />
+    <LazySharedCredits hydrate-on-visible />
   </main>
 </template>
 <script setup>
