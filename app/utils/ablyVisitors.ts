@@ -1,6 +1,10 @@
 import type { VisitorLocation } from "./visitorGlobe";
 
 export const VISITORS_CHANNEL_NAME = "site:visitors";
+export const FALLBACK_VISITOR_LOCATION: VisitorLocation = {
+  latitude: 12.97,
+  longitude: 77.59,
+};
 
 type HeaderValue = string | string[] | undefined;
 
@@ -56,12 +60,12 @@ function isVisitorPresenceData(value: unknown): value is VisitorPresenceData {
 
 export function readVisitorLocationFromHeaders(
   headers: Readonly<Record<string, HeaderValue>>,
-): VisitorLocation | null {
+): VisitorLocation {
   const latitude = getHeader(headers, "x-vercel-ip-latitude");
   const longitude = getHeader(headers, "x-vercel-ip-longitude");
   const location = { latitude, longitude };
 
-  return isValidLocation(location) ? location : null;
+  return isValidLocation(location) ? location : FALLBACK_VISITOR_LOCATION;
 }
 
 export function normalizePresenceLocations(

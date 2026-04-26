@@ -15,15 +15,18 @@ describe("Ably visitor helpers", () => {
     ).toEqual({ latitude: "12.97", longitude: "77.59" });
   });
 
-  test("omits missing and invalid request coordinates", () => {
+  test("falls back when request coordinates are missing or invalid", () => {
     expect(
       readVisitorLocationFromHeaders({
         "x-vercel-ip-latitude": "91",
         "x-vercel-ip-longitude": "77.59",
       }),
-    ).toBeNull();
+    ).toEqual({ latitude: 12.97, longitude: 77.59 });
 
-    expect(readVisitorLocationFromHeaders({})).toBeNull();
+    expect(readVisitorLocationFromHeaders({})).toEqual({
+      latitude: 12.97,
+      longitude: 77.59,
+    });
   });
 
   test("normalizes Ably presence members with valid location data", () => {
