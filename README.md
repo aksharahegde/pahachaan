@@ -4,19 +4,13 @@
 
 #### Preview
 
-![Landing page](https://aksharahegde.xyz/screenshot.png)
+Landing page
 
 #### Performance
 
-The template is tuned for a fast portfolio experience and includes current performance audit artifacts in `public/`:
+Performance grade
 
-![Performance grade](public/perf_grade.png)
-
-`public/perf_grade.png` captures the overall performance grade from the latest audit.
-
-![Performance metrics](public/perf_metrics.png)
-
-`public/perf_metrics.png` captures the supporting performance metrics behind the grade.
+Performance metrics
 
 ## Features
 
@@ -327,9 +321,9 @@ To enable content editing on your deployed site, you need to set up GitHub OAuth
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
 2. Click **New OAuth App**
 3. Configure:
-   - **Application name**: Your app name
-   - **Homepage URL**: `https://yourdomain.com`
-   - **Authorization callback URL**: `https://yourdomain.com`
+  - **Application name**: Your app name
+  - **Homepage URL**: `https://yourdomain.com`
+  - **Authorization callback URL**: `https://yourdomain.com`
 4. Copy your **Client ID** and **Client Secret**
 
 #### 2. Update Environment Variables
@@ -359,7 +353,7 @@ STUDIO_GITHUB_CLIENT_SECRET=your_github_client_secret
 
 **Tips**:
 
-- Use <kbd>Cmd/Ctrl</kbd> + <kbd>.</kbd> as a shortcut to open Studio
+- Use Cmd/Ctrl + . as a shortcut to open Studio
 - Studio works on any branch - just set `STUDIO_GITHUB_BRANCH_NAME` to target different branches
 
 ### Configuration
