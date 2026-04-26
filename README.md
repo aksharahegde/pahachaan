@@ -4,13 +4,13 @@
 
 #### Preview
 
-Landing page
+![Landing page](public/screenshot.png)
 
 #### Performance
 
-Performance grade
+![Performance grade](public/perf_grade.png)
 
-Performance metrics
+![Performance metrics](public/perf_metrics.png)
 
 ## Features
 
