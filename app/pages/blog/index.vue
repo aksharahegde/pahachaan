@@ -30,8 +30,7 @@ const { data: mainIndex } = await useAsyncData("mainIndex", () =>
 );
 
 const { title, description, icon } = mainIndex.value;
-defineOgImage({
-  component: "MyOg",
+defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title,
   description,

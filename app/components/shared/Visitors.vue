@@ -4,7 +4,9 @@
       class="fixed bottom-[4rem] md:bottom-[1rem] md:right-[1rem] p-1 rounded-full overflow-hidden z-10"
     >
       <UTooltip :text="`${visitors} viewers on website`">
-        <div
+        <NuxtLink
+          to="/visitors"
+          data-testid="visitor-count-open-visitors"
           class="flex items-center gap-1 bg-white shadow border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-xl px-2"
         >
           <span
@@ -21,7 +23,7 @@
             >{{ visitors }}
             <span class="sr-only">viewers on website</span></span
           >
-        </div>
+        </NuxtLink>
       </UTooltip>
     </div>
   </ClientOnly>

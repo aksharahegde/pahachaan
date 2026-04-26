@@ -6,7 +6,7 @@
       <Header class="mb-4" :title="doc.title" :description="doc.description" />
       <ContentRenderer :value="doc" />
     </div>
-    <SharedCredits />
+    <LazySharedCredits hydrate-on-visible />
   </main>
 </template>
 <script setup>
@@ -18,8 +18,7 @@ const { data: doc } = await useAsyncData("doc", () =>
 );
 
 const { title, description, icon } = doc.value;
-defineOgImage({
-  component: "MyOg",
+defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title,
   description,

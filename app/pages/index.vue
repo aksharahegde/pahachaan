@@ -16,8 +16,8 @@
     <div>
       <ContentRenderer v-if="indexContent" :value="indexContent" class="mt-2" />
     </div>
-    <ProjectList class="mt-2" />
-    <BlogRecent class="mt-2" />
+    <LazyProjectList class="mt-2" hydrate-on-visible />
+    <LazyBlogRecent class="mt-2" hydrate-on-visible />
   </main>
 </template>
 
@@ -41,7 +41,7 @@ const payload = {
   url: config.public.baseURL,
   siteName: config.public.ownerName,
 };
-defineOgImage({ component: "MyOg", ...payload });
+defineOgImage("MyOg", payload);
 
 useHead({
   title: seo.value.title,
