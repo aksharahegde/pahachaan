@@ -4,11 +4,13 @@
 
 #### Preview
 
-![Landing page](https://aksharahegde.xyz/screenshot.png)
+Landing page
 
 #### Performance
 
-![Performance](/public/performance.png)
+Performance grade
+
+Performance metrics
 
 ## Features
 
@@ -20,8 +22,15 @@ A minimal, content-driven template for personal portfolios that's free to use.
 - **Dynamic Content**: Automatically displays latest blog articles on homepage
 - **Flexible Contact Links**: Social media profile links loaded from content
 - **Light & Dark Mode**: Built-in theme switching
+- **Custom Theme Picker**: Visitors can tune primary color, neutral palette, border radius, and color mode
+- **Live Visitor Counter**: Real-time visitor presence powered by `nuxt-visitors`
+- **Status Monitoring Widget**: Optional OpenStatus badge for public uptime visibility
 - **SEO Optimized**: 100% SEO compatible with dynamic OG images for social media
+- **RSS & Sitemap Support**: Blog posts are exposed through `/rss.xml` and sitemap entries
+- **LLM-Friendly Metadata**: `nuxt-llms` support for AI-readable site context
 - **MDC Syntax**: Use Vue components directly in Markdown files
+- **Mermaid Diagrams**: Render Mermaid code blocks inside content pages
+- **Blog Reading Tools**: Pinned/collapsible table of contents and print-friendly article credits
 
 ## Quick Start
 
@@ -55,6 +64,10 @@ OWNER_NAME=Your Name
 
 # Openstatus widget slug (optional - for uptime monitoring)
 STATUS_SITE_SLUG=your-slug
+
+# Umami analytics (optional)
+NUXT_PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
+NUXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
 
 # Twitter handle (optional)
 TWITTER_HANDLE=@yourhandle
@@ -306,9 +319,9 @@ To enable content editing on your deployed site, you need to set up GitHub OAuth
 1. Go to [GitHub Developer Settings](https://github.com/settings/developers)
 2. Click **New OAuth App**
 3. Configure:
-   - **Application name**: Your app name
-   - **Homepage URL**: `https://yourdomain.com`
-   - **Authorization callback URL**: `https://yourdomain.com`
+  - **Application name**: Your app name
+  - **Homepage URL**: `https://yourdomain.com`
+  - **Authorization callback URL**: `https://yourdomain.com`
 4. Copy your **Client ID** and **Client Secret**
 
 #### 2. Update Environment Variables
@@ -338,7 +351,7 @@ STUDIO_GITHUB_CLIENT_SECRET=your_github_client_secret
 
 **Tips**:
 
-- Use <kbd>Cmd/Ctrl</kbd> + <kbd>.</kbd> as a shortcut to open Studio
+- Use Cmd/Ctrl + . as a shortcut to open Studio
 - Studio works on any branch - just set `STUDIO_GITHUB_BRANCH_NAME` to target different branches
 
 ### Configuration
