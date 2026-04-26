@@ -36,6 +36,10 @@ export default defineNuxtConfig({
     "nuxt-studio",
   ],
 
+  visitors: {
+    locations: true,
+  },
+
   css: ["~/assets/css/main.css"],
 
   app: {
