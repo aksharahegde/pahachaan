@@ -14,12 +14,56 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+  type WatchStopHandle,
+} from "vue";
+
+import {
+  toVisitorArcs,
+  toVisitorMarkers,
+  type GlobeArc,
+  type GlobeMarker,
+} from "~/utils/visitorGlobe";
+
+type CanvasSize = {
+  height: number;
+  width: number;
+};
+
+type GlobeUpdate = Partial<{
+  arcs: GlobeArc[];
+  markers: GlobeMarker[];
+  phi: number;
+} & CanvasSize>;
+
+type Globe = {
+  destroy(): void;
+  update(options: GlobeUpdate): void;
+};
+
+function getCanvasSize(
+  canvas: HTMLCanvasElement,
+  ratio: number,
+): CanvasSize {
+  return {
+    width: canvas.offsetWidth * ratio,
+    height: canvas.offsetHeight * ratio,
+  };
+}
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
-let globe: { destroy: () => void } | null = null;
+const { locations } = useVisitors();
+const markers = computed(() => toVisitorMarkers(locations.value));
+const arcs = computed(() => toVisitorArcs(markers.value));
+let globe: Globe | null = null;
 let resizeObserver: ResizeObserver | null = null;
 let frameId: number | null = null;
+let stopVisitorWatch: WatchStopHandle | null = null;
 let phi = 0;
 
 onMounted(async () => {
@@ -28,11 +72,12 @@ onMounted(async () => {
   const { default: createGlobe } = await import("cobe");
   const canvas = canvasRef.value;
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const { width, height } = getCanvasSize(canvas, ratio);
 
   globe = createGlobe(canvas, {
     devicePixelRatio: ratio,
-    width: canvas.offsetWidth * ratio,
-    height: canvas.offsetHeight * ratio,
+    width,
+    height,
     phi: 0,
     theta: 0.2,
     dark: 0,
@@ -43,23 +88,21 @@ onMounted(async () => {
     baseColor: [1, 1, 1],
     markerColor: [0.2, 0.4, 1],
     glowColor: [1, 1, 1],
-    markers: [
-      { location: [12.97, 77.59], size: 0.04, id: "blr" },
-      { location: [51.5, -0.12], size: 0.03, id: "ldn" },
-      { location: [40.71, -74], size: 0.03, id: "nyc" },
-      { location: [35.67, 139.65], size: 0.03, id: "tokyo" },
-    ],
-    arcs: [
-      { from: [12.97, 77.59], to: [40.71, -74] },
-      { from: [40.71, -74], to: [51.5, -0.12] },
-      { from: [12.97, 77.59], to: [35.67, 139.65] },
-    ],
+    markers: markers.value,
+    arcs: arcs.value,
     arcColor: [0.3, 0.5, 1],
     arcWidth: 0.5,
     arcHeight: 0.25,
     markerElevation: 0.02,
     scale: 1,
     opacity: 1,
+  });
+
+  stopVisitorWatch = watch([markers, arcs], ([nextMarkers, nextArcs]) => {
+    globe?.update({
+      markers: nextMarkers,
+      arcs: nextArcs,
+    });
   });
 
   const animate = () => {
@@ -70,9 +113,7 @@ onMounted(async () => {
   animate();
 
   resizeObserver = new ResizeObserver(() => {
-    const nextWidth = canvas.offsetWidth * ratio;
-    const nextHeight = canvas.offsetHeight * ratio;
-    globe?.update({ width: nextWidth, height: nextHeight });
+    globe?.update(getCanvasSize(canvas, ratio));
   });
   resizeObserver.observe(canvas);
 });
@@ -83,6 +124,8 @@ onBeforeUnmount(() => {
   }
   resizeObserver?.disconnect();
   resizeObserver = null;
+  stopVisitorWatch?.();
+  stopVisitorWatch = null;
   globe?.destroy();
   globe = null;
 });
