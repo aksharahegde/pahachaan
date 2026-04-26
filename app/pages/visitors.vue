@@ -8,7 +8,12 @@
     <canvas
       ref="canvasRef"
       data-testid="visitor-globe-view"
-      class="w-full aspect-square max-w-[560px] mx-auto"
+      class="w-full aspect-square max-w-[560px] mx-auto cursor-grab touch-none active:cursor-grabbing"
+      @pointerdown="handlePointerDown"
+      @pointermove="handlePointerMove"
+      @pointerup="handlePointerUp"
+      @pointercancel="handlePointerUp"
+      @pointerleave="handlePointerUp"
     />
   </main>
 </template>
@@ -46,6 +51,15 @@ type Globe = {
   update(options: GlobeUpdate): void;
 };
 
+function getMapSamples(): number {
+  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const lowEndDevice =
+    navigator.hardwareConcurrency !== undefined &&
+    navigator.hardwareConcurrency <= 4;
+
+  return coarsePointer || lowEndDevice ? 8000 : 16000;
+}
+
 function getCanvasSize(
   canvas: HTMLCanvasElement,
   ratio: number,
@@ -62,9 +76,35 @@ const markers = computed(() => toVisitorMarkers(locations.value));
 const arcs = computed(() => toVisitorArcs(markers.value));
 let globe: Globe | null = null;
 let resizeObserver: ResizeObserver | null = null;
+let visibilityObserver: IntersectionObserver | null = null;
 let frameId: number | null = null;
 let stopVisitorWatch: WatchStopHandle | null = null;
 let phi = 0;
+let isVisible = false;
+let pointerStartX: number | null = null;
+let rotationOffset = 0;
+let targetRotationOffset = 0;
+
+function handlePointerDown(event: PointerEvent) {
+  pointerStartX = event.clientX - targetRotationOffset * 200;
+  canvasRef.value?.setPointerCapture(event.pointerId);
+}
+
+function handlePointerMove(event: PointerEvent) {
+  if (pointerStartX === null) {
+    return;
+  }
+
+  targetRotationOffset = (event.clientX - pointerStartX) / 200;
+}
+
+function handlePointerUp(event: PointerEvent) {
+  pointerStartX = null;
+
+  if (canvasRef.value?.hasPointerCapture(event.pointerId)) {
+    canvasRef.value.releasePointerCapture(event.pointerId);
+  }
+}
 
 onMounted(async () => {
   if (!canvasRef.value) {
@@ -84,7 +124,7 @@ onMounted(async () => {
     theta: 0.2,
     dark: 0,
     diffuse: 1.2,
-    mapSamples: 16000,
+    mapSamples: getMapSamples(),
     mapBrightness: 6,
     mapBaseBrightness: 0,
     baseColor: [1, 1, 1],
@@ -108,11 +148,34 @@ onMounted(async () => {
   });
 
   const animate = () => {
+    if (!isVisible) {
+      frameId = null;
+      return;
+    }
+
     phi += 0.005;
-    globe?.update({ phi });
+    rotationOffset += (targetRotationOffset - rotationOffset) * 0.12;
+    globe?.update({ phi: phi + rotationOffset });
     frameId = window.requestAnimationFrame(animate);
   };
-  animate();
+
+  const startAnimation = () => {
+    if (frameId === null) {
+      frameId = window.requestAnimationFrame(animate);
+    }
+  };
+
+  visibilityObserver = new IntersectionObserver(([entry]) => {
+    isVisible = Boolean(entry?.isIntersecting);
+
+    if (isVisible) {
+      startAnimation();
+    } else if (frameId !== null) {
+      window.cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+  });
+  visibilityObserver.observe(canvas);
 
   resizeObserver = new ResizeObserver(() => {
     globe?.update(getCanvasSize(canvas, ratio));
@@ -126,6 +189,9 @@ onBeforeUnmount(() => {
   }
   resizeObserver?.disconnect();
   resizeObserver = null;
+  visibilityObserver?.disconnect();
+  visibilityObserver = null;
+  isVisible = false;
   stopVisitorWatch?.();
   stopVisitorWatch = null;
   globe?.destroy();
