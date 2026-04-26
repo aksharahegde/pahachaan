@@ -35,11 +35,11 @@ type CanvasSize = {
   width: number;
 };
 
-type GlobeUpdate = Partial<{
+type GlobeUpdate = Partial<CanvasSize & {
   arcs: GlobeArc[];
   markers: GlobeMarker[];
   phi: number;
-} & CanvasSize>;
+}>;
 
 type Globe = {
   destroy(): void;
@@ -57,7 +57,7 @@ function getCanvasSize(
 }
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
-const { locations } = useVisitors();
+const { locations } = useAblyVisitors();
 const markers = computed(() => toVisitorMarkers(locations.value));
 const arcs = computed(() => toVisitorArcs(markers.value));
 let globe: Globe | null = null;
@@ -67,7 +67,9 @@ let stopVisitorWatch: WatchStopHandle | null = null;
 let phi = 0;
 
 onMounted(async () => {
-  if (!canvasRef.value) return;
+  if (!canvasRef.value) {
+    return;
+  }
 
   const { default: createGlobe } = await import("cobe");
   const canvas = canvasRef.value;

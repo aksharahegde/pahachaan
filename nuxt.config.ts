@@ -18,27 +18,16 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  nitro: {
-    experimental: {
-      websocket: true,
-    },
-  },
-
   modules: [
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
     "@nuxt/image",
     "@nuxt/fonts",
-    "nuxt-visitors",
     "@nuxt/content",
     "nuxt-llms",
     "nuxt-studio",
   ],
-
-  visitors: {
-    locations: true,
-  },
 
   css: ["~/assets/css/main.css"],
 

@@ -23,7 +23,7 @@ A minimal, content-driven template for personal portfolios that's free to use.
 - **Flexible Contact Links**: Social media profile links loaded from content
 - **Light & Dark Mode**: Built-in theme switching
 - **Custom Theme Picker**: Visitors can tune primary color, neutral palette, border radius, and color mode
-- **Live Visitor Counter**: Real-time visitor presence powered by `nuxt-visitors`
+- **Live Visitor Counter**: Real-time visitor presence powered by Ably
 - **Status Monitoring Widget**: Optional OpenStatus badge for public uptime visibility
 - **SEO Optimized**: 100% SEO compatible with dynamic OG images for social media
 - **RSS & Sitemap Support**: Blog posts are exposed through `/rss.xml` and sitemap entries
@@ -68,6 +68,9 @@ STATUS_SITE_SLUG=your-slug
 # Umami analytics (optional)
 NUXT_PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
 NUXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
+
+# Ably realtime visitor presence (optional)
+ABLY_API_KEY=your_ably_api_key
 
 # Twitter handle (optional)
 TWITTER_HANDLE=@yourhandle
