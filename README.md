@@ -8,7 +8,15 @@
 
 #### Performance
 
-![Performance](/public/performance.png)
+The template is tuned for a fast portfolio experience and includes current performance audit artifacts in `public/`:
+
+![Performance grade](public/perf_grade.png)
+
+`public/perf_grade.png` captures the overall performance grade from the latest audit.
+
+![Performance metrics](public/perf_metrics.png)
+
+`public/perf_metrics.png` captures the supporting performance metrics behind the grade.
 
 ## Features
 
@@ -20,8 +28,15 @@ A minimal, content-driven template for personal portfolios that's free to use.
 - **Dynamic Content**: Automatically displays latest blog articles on homepage
 - **Flexible Contact Links**: Social media profile links loaded from content
 - **Light & Dark Mode**: Built-in theme switching
+- **Custom Theme Picker**: Visitors can tune primary color, neutral palette, border radius, and color mode
+- **Live Visitor Counter**: Real-time visitor presence powered by `nuxt-visitors`
+- **Status Monitoring Widget**: Optional OpenStatus badge for public uptime visibility
 - **SEO Optimized**: 100% SEO compatible with dynamic OG images for social media
+- **RSS & Sitemap Support**: Blog posts are exposed through `/rss.xml` and sitemap entries
+- **LLM-Friendly Metadata**: `nuxt-llms` support for AI-readable site context
 - **MDC Syntax**: Use Vue components directly in Markdown files
+- **Mermaid Diagrams**: Render Mermaid code blocks inside content pages
+- **Blog Reading Tools**: Pinned/collapsible table of contents and print-friendly article credits
 
 ## Quick Start
 
@@ -57,6 +72,10 @@ OWNER_NAME=Your Name
 
 # Openstatus widget slug (optional - for uptime monitoring)
 STATUS_SITE_SLUG=your-slug
+
+# Umami analytics (optional)
+NUXT_PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
+NUXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
 
 # Twitter handle (optional)
 TWITTER_HANDLE=@yourhandle
