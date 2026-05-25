@@ -7,3 +7,5 @@
 - Portfolio projects on the site are defined as JSON under `content/projects/`; list ordering often relies on numeric filename prefixes.
 - `package.json` pins Bun via a `packageManager` field for reproducible installs.
 - `nuxt-llms` expects `llms.domain`; it is wired from `NUXT_PUBLIC_SITE_URL` with a localhost fallback when that env var is unset.
+- Visitor globe markers are driven from Ably Presence locations via `useAblyVisitors().locations`.
+- Live visitor presence is Vercel-safe through Ably; keep `ABLY_API_KEY` server-only and avoid reintroducing app-hosted Nitro WebSocket visitor routes on Vercel.
