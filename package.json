@@ -23,7 +23,8 @@
     "postinstall": "nuxt prepare"
   },
   "overrides": {
-    "picomatch": "2.3.2"
+    "picomatch": "2.3.2",
+    "nuxt-og-image": "^6.5.1"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
