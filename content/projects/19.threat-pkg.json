@@ -1,0 +1,11 @@
+{
+  "url": "https://tpkg.akshara.dev/",
+  "thumbnail": "/projects/logo/threat-pkg.png",
+  "thumbnailBg": "bg-slate-900",
+  "thumbnailAlt": "threat-pkg icon",
+  "category": "development",
+  "heading": "threat-pkg",
+  "description": "A public threat intelligence dashboard for npm, PyPI, Go, Rust (crates.io), Java (Maven), .NET (NuGet), RubyGems, PHP/Laravel (Packagist), and Dart/Flutter (pub.dev): compromised packages, malicious releases, and advisory identifiers (CVE, GHSA, OSV) in one searchable feed",
+  "status": "active",
+  "role": "Author"
+}
