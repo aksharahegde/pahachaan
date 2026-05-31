@@ -11,6 +11,7 @@
         class="flex items-center gap-2 group"
       >
         <UIcon
+          v-if="!isMinimalMode"
           :name="item.icon"
           class="text-gray-700 dark:text-gray-300 w-6 h-6 transition-all duration-500 group-hover:scale-110"
         />
@@ -30,4 +31,5 @@ const { data: contactData } = await useAsyncData("contact", () =>
 );
 
 const items = computed(() => contactData.value?.contact || []);
+const isMinimalMode = useMinimalMode()
 </script>
