@@ -89,12 +89,11 @@
 
 <script setup>
 const config = useRuntimeConfig();
+const isMinimalMode = useMinimalMode()
 
 const { data: footer } = await useAsyncData("footer", () => {
   return queryCollection("footer").first();
 });
-
-const isMinimalMode = useMinimalMode()
 </script>
 <style scoped>
 @reference "~/assets/css/main.css";
