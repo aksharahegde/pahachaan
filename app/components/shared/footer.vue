@@ -7,7 +7,7 @@
         color="neutral"
         variant="subtle"
         :title="footer.affiliate.title"
-        :avatar="{ src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
+        :avatar="isMinimalMode ? undefined : { src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
       >
         <template #title="{ title }">
           <h2 class="text-lg font-bold">{{ title }}</h2>
@@ -36,7 +36,7 @@
       <!-- Github repo -->
       <UAlert
         v-if="footer"
-        icon="i-simple-icons-github"
+        :icon="isMinimalMode ? undefined : 'i-simple-icons-github'"
         color="neutral"
         variant="subtle"
         :title="footer.title"
@@ -93,6 +93,8 @@ const config = useRuntimeConfig();
 const { data: footer } = await useAsyncData("footer", () => {
   return queryCollection("footer").first();
 });
+
+const isMinimalMode = useMinimalMode()
 </script>
 <style scoped>
 @reference "~/assets/css/main.css";
