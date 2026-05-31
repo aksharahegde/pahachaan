@@ -6,6 +6,7 @@
     external
   >
     <UChip
+      v-if="!isMinimalMode"
       :color="STATUS_COLORS[project.status]"
       size="md"
       variant="solid"
@@ -45,4 +46,6 @@ defineProps({
     required: true,
   },
 });
+
+const isMinimalMode = useMinimalMode()
 </script>

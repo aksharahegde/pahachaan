@@ -101,6 +101,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      minimalMode: process.env.NUXT_PUBLIC_MINIMAL_MODE === "true",
       statusSiteSlug: process.env.STATUS_SITE_SLUG,
       baseURL: process.env.NUXT_PUBLIC_SITE_URL,
       ownerName: process.env.OWNER_NAME,
