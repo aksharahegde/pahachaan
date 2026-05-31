@@ -4,5 +4,6 @@
     "thumbnailBg": "bg-gray-800",
     "heading": "Django Map Widgets",
     "description": "Contributed Polygon and Polyline Widgets.",
-    "role": "Contributor"
+    "role": "Contributor",
+    "status": "active"
 }

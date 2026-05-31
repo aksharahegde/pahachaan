@@ -24,7 +24,7 @@
 
 <script setup>
 const { data: projects } = await useAsyncData("projects-home", () =>
-  queryCollection("projects").where("status", "==", "active").limit(3).all()
+  queryCollection("projects").where("status", "==", "active").order("stem", "ASC").limit(3).all()
 );
 
 const colors = [
