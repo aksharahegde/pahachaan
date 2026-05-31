@@ -8,6 +8,7 @@
     </span>
     <div class="flex items-center gap-2">
       <UAvatar
+        v-if="!isMinimalMode"
         :src="article.thumbnail"
         :ui="{ rounded: 'rounded relative bg-gray-700' }"
         :alt="article.title"
@@ -39,4 +40,6 @@ onMounted(() => {
     "Do MMMM YYYY"
   ).value;
 });
+
+const isMinimalMode = useMinimalMode()
 </script>

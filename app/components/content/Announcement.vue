@@ -5,10 +5,7 @@
       :description="description"
       color="neutral"
       variant="subtle"
-      :avatar="{
-        src: image,
-        alt: title,
-      }"
+      :avatar="isMinimalMode ? undefined : { src: image, alt: title }"
     />
   </a>
 </template>
@@ -32,5 +29,7 @@ defineProps({
     required: true,
   },
 });
+
+const isMinimalMode = useMinimalMode()
 </script>
 
