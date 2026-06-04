@@ -1,0 +1,11 @@
+{
+  "url": "https://bwplayer.akshara.dev/",
+  "thumbnail": "/projects/logo/bwplayer.svg",
+  "thumbnailBg": "bg-gray-100",
+  "thumbnailAlt": "BW Player",
+  "category": "app",
+  "heading": "BW Player",
+  "description": "Monochrome music player for Android, iOS, and macOS",
+  "status": "active",
+  "role": "Author"
+}
