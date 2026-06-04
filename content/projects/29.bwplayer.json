@@ -5,7 +5,7 @@
   "thumbnailAlt": "BW Player",
   "category": "app",
   "heading": "BW Player",
-  "description": "Monochrome music player for Android, iOS, and macOS",
+  "description": "A calm, monochrome Flutter music player for Last.fm, Audius, and Jamendo with AI Smart Mix — Android, iOS, and macOS.",
   "status": "active",
   "role": "Author"
 }
