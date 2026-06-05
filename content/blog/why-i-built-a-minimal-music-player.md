@@ -91,4 +91,4 @@ That certainty is the whole point.
 
 ### Try It Out
 
-BW Player is live at **[bwplayer.akshara.dev](https://bwplayer.akshara.dev/)**. Android, iOS, and macOS.
+BW Player is live at **[dub.sh/bwplayer](https://dub.sh/bwplayer)**. Android, iOS, and macOS.
