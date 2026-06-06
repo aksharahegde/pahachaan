@@ -1,11 +1,7 @@
 <template>
   <section
-    class="liquid-glass-breakout relative overflow-hidden px-4 py-10 sm:px-8 sm:py-14"
-    :class="[
-      'liquid-glass-scene',
-      sceneClass,
-      backgroundClass,
-    ]"
+    class="liquid-glass-scene relative overflow-hidden rounded-2xl p-4 sm:p-6"
+    :class="[sceneClass, backgroundClass]"
     :style="accentStyle"
     data-testid="liquid-glass-demo"
   >
@@ -19,60 +15,30 @@
       <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--three" />
     </div>
 
-    <div class="relative mx-auto flex max-w-5xl flex-col gap-8">
-      <header class="max-w-2xl">
-        <NuxtLink
-          to="/labs"
-          class="liquid-glass-muted inline-flex items-center gap-1 text-sm font-medium transition hover:opacity-80"
-          data-testid="liquid-glass-back-labs"
-        >
-          <UIcon name="solar:arrow-left-outline" class="size-4" aria-hidden="true" />
-          All labs
-        </NuxtLink>
-        <p
-          class="liquid-glass-muted mt-4 text-sm font-medium uppercase tracking-[0.2em]"
-        >
-          Labs
-        </p>
-        <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Liquid Glass Card System
-        </h1>
-        <p
-          class="liquid-glass-muted mt-3 text-base leading-relaxed sm:text-lg"
-        >
-          Frosted panels with backdrop blur, aurora gradients, tilt hover, and
-          draggable cards. Built with Nuxt, Tailwind, and CSS
-          <code class="liquid-glass-code">backdrop-filter</code>.
-        </p>
-      </header>
-
-      <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-        <div class="grid gap-4">
-          <LabLiquidGlassThemeToggle />
-          <LabLiquidGlassMetrics />
-          <LabLiquidGlassAccentPicker />
-        </div>
-
-        <div class="grid gap-4 sm:grid-cols-2">
-          <LabLiquidGlassCard
-            v-for="card in staticCards"
-            :key="card.id"
-            :title="card.title"
-            :description="card.description"
-            :icon="card.icon"
-            :metric-label="card.metricLabel"
-            :metric-value="card.metricValue"
-            :test-id="`liquid-glass-card-${card.id}`"
-          />
-        </div>
+    <div class="relative flex flex-col gap-6">
+      <div class="grid gap-4">
+        <LabLiquidGlassThemeToggle />
+        <LabLiquidGlassMetrics />
+        <LabLiquidGlassAccentPicker />
       </div>
 
-      <div
-        class="liquid-glass-panel relative min-h-[22rem] overflow-hidden rounded-3xl p-4 sm:p-6"
-      >
+      <div class="grid gap-4 sm:grid-cols-2">
+        <LabLiquidGlassCard
+          v-for="card in staticCards"
+          :key="card.id"
+          :title="card.title"
+          :description="card.description"
+          :icon="card.icon"
+          :metric-label="card.metricLabel"
+          :metric-value="card.metricValue"
+          :test-id="`liquid-glass-card-${card.id}`"
+        />
+      </div>
+
+      <div class="liquid-glass-panel relative overflow-hidden rounded-2xl p-4">
         <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 class="text-lg font-semibold">Interactive layer</h2>
+            <h2 class="text-base font-semibold">Interactive layer</h2>
             <p class="liquid-glass-muted text-sm">
               Drag cards around the canvas. Tilt and glow stay on the static grid above.
             </p>
@@ -89,7 +55,7 @@
 
         <div
           ref="canvasRef"
-          class="liquid-glass-canvas relative h-[18rem] rounded-2xl sm:h-[20rem]"
+          class="liquid-glass-canvas relative h-[16rem] rounded-xl sm:h-[18rem]"
         >
           <LabLiquidGlassCard
             v-for="(card, index) in draggableCards"
@@ -99,7 +65,7 @@
             :icon="card.icon"
             draggable
             :tilt="false"
-            class-name="absolute w-[min(100%,16rem)]"
+            class-name="absolute w-[min(100%,14rem)]"
             :test-id="`liquid-glass-draggable-${card.id}`"
             :initial-x="initialPositions[index]?.x ?? 0"
             :initial-y="initialPositions[index]?.y ?? 0"
@@ -201,9 +167,9 @@ const draggableCards = [
 ];
 
 const initialPositions = [
-  { x: 16, y: 20 },
-  { x: 220, y: 48 },
-  { x: 72, y: 168 },
+  { x: 12, y: 16 },
+  { x: 150, y: 40 },
+  { x: 56, y: 132 },
 ];
 
 function resetDraggables() {

@@ -1,9 +1,3 @@
-.liquid-glass-breakout {
-  width: 100%;
-  max-width: none;
-  margin-inline: calc(50% - 50vw);
-  overflow-x: clip;
-}
 
 .liquid-glass-scene {
   color: var(--lg-text);

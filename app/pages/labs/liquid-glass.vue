@@ -1,5 +1,17 @@
 <template>
-  <LabLiquidGlassDemo />
+  <main class="min-h-screen">
+    <NuxtLink
+      to="/labs"
+      class="mb-4 inline-flex items-center gap-1 text-sm text-gray-600 transition hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400"
+      data-testid="liquid-glass-back-labs"
+    >
+      <UIcon name="solar:arrow-left-outline" class="size-4" aria-hidden="true" />
+      All labs
+    </NuxtLink>
+
+    <Header class="mb-6" :title="title" :description="description" />
+    <LabLiquidGlassDemo />
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -9,13 +21,12 @@ const config = useRuntimeConfig();
 const title = "Liquid Glass Cards";
 const description =
   "Interactive frosted-glass card system with aurora scenes, tilt hover, draggable layers, and live performance metrics.";
-const icon = "solar:mirror-left-outline";
 
 defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title,
   description,
-  icon,
+  icon: "solar:mirror-left-outline",
   url: route.fullPath,
 });
 
