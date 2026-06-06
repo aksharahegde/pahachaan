@@ -29,3 +29,7 @@ useSeoMeta({
   twitterImage: `${config.public.baseURL}/og_me.png`,
 });
 </script>
+
+<style>
+@import "~/assets/css/liquid-glass.css";
+</style>

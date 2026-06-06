@@ -1,8 +1,8 @@
 .liquid-glass-breakout {
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
+  overflow-x: clip;
 }
 
 .liquid-glass-scene {
@@ -108,8 +108,14 @@
     0 0 32px var(--lg-glow);
 }
 
-.liquid-glass-surface--morph:hover {
-  border-radius: 1.75rem;
+.liquid-glass-surface--morph {
+  border-radius: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .liquid-glass-surface--morph:hover {
+    border-radius: 1.75rem;
+  }
 }
 
 .liquid-glass-scene-bg {

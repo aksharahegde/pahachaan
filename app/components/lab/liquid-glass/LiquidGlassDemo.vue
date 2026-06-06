@@ -21,8 +21,17 @@
 
     <div class="relative mx-auto flex max-w-5xl flex-col gap-8">
       <header class="max-w-2xl">
+        <NuxtLink
+          to="/labs"
+          class="inline-flex items-center gap-1 text-sm font-medium transition hover:opacity-80"
+          :style="{ color: 'var(--lg-muted)' }"
+          data-testid="liquid-glass-back-labs"
+        >
+          <UIcon name="solar:arrow-left-outline" class="size-4" aria-hidden="true" />
+          All labs
+        </NuxtLink>
         <p
-          class="text-sm font-medium uppercase tracking-[0.2em]"
+          class="mt-4 text-sm font-medium uppercase tracking-[0.2em]"
           :style="{ color: 'var(--lg-muted)' }"
         >
           Labs
@@ -119,16 +128,8 @@ provide(LIQUID_GLASS_SCENE_KEY, scene);
 const canvasRef = ref<HTMLElement | null>(null);
 provide(LIQUID_GLASS_CANVAS_KEY, canvasRef);
 
-const { accent, accentCss } = useLiquidGlassAccents();
+const { accentCss, accentGlow } = useLiquidGlassAccents();
 const layoutSeed = ref(0);
-
-const accentGlowMap: Record<string, string> = {
-  sky: "rgb(14 165 233 / 0.45)",
-  violet: "rgb(139 92 246 / 0.45)",
-  emerald: "rgb(16 185 129 / 0.45)",
-  rose: "rgb(244 63 94 / 0.45)",
-  amber: "rgb(245 158 11 / 0.45)",
-};
 
 const sceneClass = computed(() => {
   if (scene.value === "aurora") return "liquid-glass-scene--aurora";
@@ -144,7 +145,7 @@ const backgroundClass = computed(() => {
 
 const accentStyle = computed(() => ({
   "--lg-accent": accentCss.value,
-  "--lg-glow": accentGlowMap[accent.value],
+  "--lg-glow": accentGlow.value,
 }));
 
 const staticCards = [

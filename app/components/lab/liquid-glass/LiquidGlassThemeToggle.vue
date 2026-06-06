@@ -5,7 +5,10 @@
     aria-label="Liquid glass scene modes"
     data-testid="liquid-glass-theme-toggle"
   >
-    <p class="mb-3 text-sm font-medium">Demo scene</p>
+    <p class="mb-1 text-sm font-medium">Demo scene</p>
+    <p class="mb-3 text-xs" :style="{ color: 'var(--lg-muted)' }">
+      Changes this lab preview only, not the site theme in the navbar.
+    </p>
     <div class="flex flex-wrap gap-2">
       <button
         v-for="mode in modes"

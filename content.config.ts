@@ -37,9 +37,9 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         icon: z.string(),
-        url: z.string(),
-        heading: z.string(),
         description: z.string(),
+        url: z.string().optional(),
+        heading: z.string().optional(),
       }),
     }),
     content: defineCollection({

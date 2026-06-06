@@ -83,14 +83,16 @@ const canvasElement = inject<Ref<HTMLElement | null | undefined>>(
 );
 
 const rootAttrs = computed(() =>
-  props.draggable ? { "aria-grabbed": "false" } : {}
+  props.draggable
+    ? { "aria-grabbed": isDragging.value ? "true" : "false" }
+    : {}
 );
 
 const tiltEnabled = computed(() => props.tilt && !props.draggable);
 const { tiltStyle } = useLiquidGlassTilt(surfaceRef, tiltEnabled);
 
 const draggableEnabled = computed(() => props.draggable && import.meta.client);
-const { style: draggableStyle } = useDraggable(surfaceRef, {
+const { style: draggableStyle, isDragging } = useDraggable(surfaceRef, {
   disabled: computed(() => !draggableEnabled.value),
   initialValue: { x: props.initialX, y: props.initialY },
   containerElement: canvasElement,

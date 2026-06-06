@@ -34,6 +34,16 @@
 import { usePreferredReducedMotion } from "@vueuse/core";
 import { useLiquidGlassMetrics } from "~/composables/useLiquidGlass";
 
-const { fps, frameMs, supportsBackdrop } = useLiquidGlassMetrics();
+const enabled = ref(false);
+
+onMounted(() => {
+  enabled.value = true;
+});
+
+onUnmounted(() => {
+  enabled.value = false;
+});
+
+const { fps, frameMs, supportsBackdrop } = useLiquidGlassMetrics({ enabled });
 const reducedMotion = usePreferredReducedMotion();
 </script>

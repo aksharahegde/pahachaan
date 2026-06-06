@@ -17,7 +17,7 @@
             ? 'border-white scale-110'
             : 'border-white/20 hover:scale-105'
         "
-        :style="{ background: accentMap[item] }"
+        :style="{ background: LIQUID_GLASS_ACCENT_TOKENS[item].rgb }"
         :aria-pressed="accent === item"
         :aria-label="`${item} accent`"
         :data-testid="`liquid-glass-accent-${item}`"
@@ -29,17 +29,9 @@
 
 <script setup lang="ts">
 import {
+  LIQUID_GLASS_ACCENT_TOKENS,
   useLiquidGlassAccents,
-  type LiquidGlassAccent,
 } from "~/composables/useLiquidGlass";
 
 const { accent, accents } = useLiquidGlassAccents();
-
-const accentMap: Record<LiquidGlassAccent, string> = {
-  sky: "rgb(14 165 233)",
-  violet: "rgb(139 92 246)",
-  emerald: "rgb(16 185 129)",
-  rose: "rgb(244 63 94)",
-  amber: "rgb(245 158 11)",
-};
 </script>
