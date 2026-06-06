@@ -1,22 +1,23 @@
 
 .liquid-glass-scene {
   color: var(--lg-text);
+  color-scheme: light;
   --lg-blur: 36px;
-  --lg-bg: rgb(255 255 255 / 0.24);
-  --lg-border: rgb(255 255 255 / 0.46);
+  --lg-bg: rgb(255 255 255 / 0.58);
+  --lg-border: rgb(255 255 255 / 0.72);
   --lg-shadow: 0 12px 40px rgb(15 23 42 / 0.16);
   --lg-text: rgb(15 23 42);
-  --lg-muted: rgb(30 41 59 / 0.78);
+  --lg-muted: rgb(30 41 59);
   --lg-glow: rgb(255 255 255 / 0.55);
   --lg-accent: rgb(14 165 233);
-  --lg-chrome-border: rgb(255 255 255 / 0.42);
-  --lg-chrome-bg: rgb(255 255 255 / 0.16);
-  --lg-chrome-bg-hover: rgb(255 255 255 / 0.24);
-  --lg-chrome-bg-strong: rgb(255 255 255 / 0.2);
-  --lg-inset-bg: rgb(255 255 255 / 0.18);
-  --lg-icon-border: rgb(255 255 255 / 0.44);
-  --lg-icon-bg: rgb(255 255 255 / 0.22);
-  --lg-panel-bg: rgb(255 255 255 / 0.12);
+  --lg-chrome-border: rgb(255 255 255 / 0.72);
+  --lg-chrome-bg: rgb(255 255 255 / 0.42);
+  --lg-chrome-bg-hover: rgb(255 255 255 / 0.52);
+  --lg-chrome-bg-strong: rgb(255 255 255 / 0.48);
+  --lg-inset-bg: rgb(255 255 255 / 0.36);
+  --lg-icon-border: rgb(255 255 255 / 0.72);
+  --lg-icon-bg: rgb(255 255 255 / 0.46);
+  --lg-panel-bg: rgb(255 255 255 / 0.34);
   --lg-sheen: linear-gradient(
     145deg,
     rgb(255 255 255 / 0.72) 0%,
@@ -26,11 +27,13 @@
 }
 
 .liquid-glass-scene--dark {
+  --lg-bg: rgb(255 255 255 / 0.64);
   --lg-shadow: 0 16px 44px rgb(15 23 42 / 0.28);
   --lg-glow: rgb(125 211 252 / 0.45);
 }
 
 .liquid-glass-scene--aurora {
+  --lg-bg: rgb(255 255 255 / 0.64);
   --lg-shadow: 0 16px 48px rgb(76 29 149 / 0.22);
   --lg-glow: rgb(192 132 252 / 0.5);
 }
@@ -121,7 +124,7 @@
 }
 
 .liquid-glass-surface:hover {
-  background: rgb(255 255 255 / 0.3);
+  background: rgb(255 255 255 / 0.66);
   box-shadow:
     var(--lg-shadow),
     inset 0 1px 0 rgb(255 255 255 / 0.72),
@@ -136,6 +139,14 @@
 
 .liquid-glass-muted {
   color: var(--lg-muted);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+.liquid-glass-surface h2,
+.liquid-glass-surface h3,
+.liquid-glass-surface dd,
+.liquid-glass-surface button {
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
 }
 
 .liquid-glass-code {
@@ -179,7 +190,7 @@
 
 .liquid-glass-canvas {
   border: 1px dashed var(--lg-chrome-border);
-  background: rgb(255 255 255 / 0.08);
+  background: rgb(255 255 255 / 0.28);
 }
 
 .liquid-glass-icon-chip {
