@@ -31,6 +31,17 @@ export default defineContentConfig({
         role: z.string(),
       }),
     }),
+    labs: defineCollection({
+      type: "data",
+      source: "labs/*.json",
+      schema: z.object({
+        title: z.string(),
+        icon: z.string(),
+        url: z.string(),
+        heading: z.string(),
+        description: z.string(),
+      }),
+    }),
     content: defineCollection({
       type: "page",
       source: "*.md",
