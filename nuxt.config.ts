@@ -66,6 +66,8 @@ export default defineNuxtConfig({
     "/resources": { prerender: true },
     "/blog/**": { swr: 3600 },
     "/projects": { swr: 3600 },
+    "/labs": { swr: 3600 },
+    "/labs/**": { swr: 3600 },
   },
 
   content: {
