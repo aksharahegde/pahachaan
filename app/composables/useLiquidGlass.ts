@@ -11,6 +11,12 @@ export type LiquidGlassScene = "light" | "dark" | "aurora";
 export const LIQUID_GLASS_SCENE_KEY = Symbol("liquid-glass-scene");
 export const LIQUID_GLASS_CANVAS_KEY = Symbol("liquid-glass-canvas");
 
+export const LIQUID_GLASS_NATURE_BACKGROUNDS: Record<LiquidGlassScene, string> = {
+  light: "/labs/nature-forest.jpg",
+  dark: "/labs/nature-mountains.jpg",
+  aurora: "/labs/nature-mist.jpg",
+};
+
 export const LIQUID_GLASS_ACCENT_TOKENS = {
   sky: { rgb: "rgb(14 165 233)", glow: "rgb(14 165 233 / 0.45)" },
   violet: { rgb: "rgb(139 92 246)", glow: "rgb(139 92 246 / 0.45)" },

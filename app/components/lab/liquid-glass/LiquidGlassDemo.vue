@@ -1,21 +1,30 @@
 <template>
   <section
-    class="liquid-glass-scene relative overflow-hidden rounded-2xl p-4 sm:p-6"
-    :class="[sceneClass, backgroundClass]"
+    class="liquid-glass-scene relative min-h-[34rem] overflow-hidden rounded-2xl p-4 sm:p-6"
+    :class="sceneClass"
     :style="accentStyle"
     data-testid="liquid-glass-demo"
   >
-    <div
-      v-if="scene === 'aurora'"
-      class="pointer-events-none absolute inset-0 overflow-hidden"
-      aria-hidden="true"
-    >
-      <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--one" />
-      <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--two" />
-      <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--three" />
+    <div class="liquid-glass-backdrop" aria-hidden="true">
+      <NuxtImg
+        :src="backgroundImage"
+        alt=""
+        class="liquid-glass-backdrop-image"
+        width="1400"
+        height="900"
+        sizes="(max-width: 768px) 100vw, 672px"
+        quality="80"
+        loading="eager"
+      />
+      <div class="liquid-glass-backdrop-overlay" :class="overlayClass" />
+      <template v-if="scene === 'aurora'">
+        <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--one" />
+        <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--two" />
+        <div class="liquid-glass-aurora-blob liquid-glass-aurora-blob--three" />
+      </template>
     </div>
 
-    <div class="relative flex flex-col gap-6">
+    <div class="relative z-10 flex flex-col gap-6">
       <div class="grid gap-4">
         <LabLiquidGlassThemeToggle />
         <LabLiquidGlassMetrics />
@@ -40,7 +49,7 @@
           <div>
             <h2 class="text-base font-semibold">Interactive layer</h2>
             <p class="liquid-glass-muted text-sm">
-              Drag cards around the canvas. Tilt and glow stay on the static grid above.
+              Drag cards over the nature backdrop. Frosted panels blur the photo beneath.
             </p>
           </div>
           <button
@@ -80,6 +89,7 @@
 import {
   LIQUID_GLASS_SCENE_KEY,
   LIQUID_GLASS_CANVAS_KEY,
+  LIQUID_GLASS_NATURE_BACKGROUNDS,
   useLiquidGlassAccents,
   type LiquidGlassScene,
 } from "~/composables/useLiquidGlass";
@@ -99,10 +109,14 @@ const sceneClass = computed(() => {
   return "";
 });
 
-const backgroundClass = computed(() => {
-  if (scene.value === "light") return "liquid-glass-scene-bg";
-  if (scene.value === "aurora") return "liquid-glass-scene-bg--aurora";
-  return "liquid-glass-scene-bg--dark";
+const backgroundImage = computed(
+  () => LIQUID_GLASS_NATURE_BACKGROUNDS[scene.value]
+);
+
+const overlayClass = computed(() => {
+  if (scene.value === "aurora") return "liquid-glass-backdrop-overlay--aurora";
+  if (scene.value === "dark") return "liquid-glass-backdrop-overlay--dark";
+  return "";
 });
 
 const accentStyle = computed(() => ({
@@ -117,7 +131,7 @@ const staticCards = [
     description: "Translucent panel with blur, sheen, and soft border highlights.",
     icon: "solar:mirror-left-outline",
     metricLabel: "Blur radius",
-    metricValue: "18px",
+    metricValue: "36px",
   },
   {
     id: "tilt",
@@ -133,15 +147,15 @@ const staticCards = [
     description: "Border radius eases on hover for a liquid, malleable glass feel.",
     icon: "solar:water-sun-outline",
     metricLabel: "Radius",
-    metricValue: "1.75rem",
+    metricValue: "1.625rem",
   },
   {
     id: "contrast",
-    title: "Accessible contrast",
-    description: "Scene tokens tune text and muted copy for readable glass overlays.",
+    title: "Nature backdrop",
+    description: "Photo scenery shows through the glass, similar to Apple liquid glass demos.",
     icon: "solar:eye-outline",
     metricLabel: "Scenes",
-    metricValue: "3 modes",
+    metricValue: "3 photos",
   },
 ];
 
@@ -155,7 +169,7 @@ const draggableCards = [
   {
     id: "layer",
     title: "Layered glass",
-    description: "Stack panels over vibrant gradients.",
+    description: "Stack panels over the landscape photo.",
     icon: "solar:layers-minimalistic-outline",
   },
   {

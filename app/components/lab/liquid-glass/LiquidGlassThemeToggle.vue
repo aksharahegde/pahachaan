@@ -39,8 +39,8 @@ import {
 const scene = useLiquidGlassScene();
 
 const modes: { value: LiquidGlassScene; label: string }[] = [
-  { value: "light", label: "Light" },
-  { value: "dark", label: "Dark" },
-  { value: "aurora", label: "Aurora" },
+  { value: "light", label: "Forest" },
+  { value: "dark", label: "Peaks" },
+  { value: "aurora", label: "Mist" },
 ];
 </script>
