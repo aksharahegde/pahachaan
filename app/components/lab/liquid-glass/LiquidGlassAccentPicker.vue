@@ -14,8 +14,8 @@
         class="size-9 rounded-full border-2 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         :class="
           accent === item
-            ? 'border-white scale-110'
-            : 'border-white/20 hover:scale-105'
+            ? 'scale-110 border-[var(--lg-accent)]'
+            : 'border-[var(--lg-chrome-border)] hover:scale-105'
         "
         :style="{ background: LIQUID_GLASS_ACCENT_TOKENS[item].rgb }"
         :aria-pressed="accent === item"

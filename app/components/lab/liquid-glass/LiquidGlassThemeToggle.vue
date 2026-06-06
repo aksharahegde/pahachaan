@@ -6,7 +6,7 @@
     data-testid="liquid-glass-theme-toggle"
   >
     <p class="mb-1 text-sm font-medium">Demo scene</p>
-    <p class="mb-3 text-xs" :style="{ color: 'var(--lg-muted)' }">
+    <p class="liquid-glass-muted mb-3 text-xs">
       Changes this lab preview only, not the site theme in the navbar.
     </p>
     <div class="flex flex-wrap gap-2">
@@ -14,11 +14,11 @@
         v-for="mode in modes"
         :key="mode.value"
         type="button"
-        class="rounded-full border px-3 py-1.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        class="rounded-full px-3 py-1.5 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lg-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         :class="
           scene === mode.value
-            ? 'border-[var(--lg-accent)] bg-[var(--lg-accent)]/15 text-[var(--lg-text)]'
-            : 'border-white/15 bg-white/5 hover:bg-white/10'
+            ? 'liquid-glass-chrome-btn liquid-glass-chrome-btn--active'
+            : 'liquid-glass-chrome-btn'
         "
         :aria-pressed="scene === mode.value"
         :data-testid="`liquid-glass-theme-${mode.value}`"

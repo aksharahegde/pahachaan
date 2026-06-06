@@ -23,16 +23,14 @@
       <header class="max-w-2xl">
         <NuxtLink
           to="/labs"
-          class="inline-flex items-center gap-1 text-sm font-medium transition hover:opacity-80"
-          :style="{ color: 'var(--lg-muted)' }"
+          class="liquid-glass-muted inline-flex items-center gap-1 text-sm font-medium transition hover:opacity-80"
           data-testid="liquid-glass-back-labs"
         >
           <UIcon name="solar:arrow-left-outline" class="size-4" aria-hidden="true" />
           All labs
         </NuxtLink>
         <p
-          class="mt-4 text-sm font-medium uppercase tracking-[0.2em]"
-          :style="{ color: 'var(--lg-muted)' }"
+          class="liquid-glass-muted mt-4 text-sm font-medium uppercase tracking-[0.2em]"
         >
           Labs
         </p>
@@ -40,12 +38,11 @@
           Liquid Glass Card System
         </h1>
         <p
-          class="mt-3 text-base leading-relaxed sm:text-lg"
-          :style="{ color: 'var(--lg-muted)' }"
+          class="liquid-glass-muted mt-3 text-base leading-relaxed sm:text-lg"
         >
           Frosted panels with backdrop blur, aurora gradients, tilt hover, and
           draggable cards. Built with Nuxt, Tailwind, and CSS
-          <code class="rounded bg-black/10 px-1.5 py-0.5 text-sm dark:bg-white/10">backdrop-filter</code>.
+          <code class="liquid-glass-code">backdrop-filter</code>.
         </p>
       </header>
 
@@ -71,19 +68,18 @@
       </div>
 
       <div
-        class="relative min-h-[22rem] overflow-hidden rounded-3xl border border-white/10 p-4 sm:p-6"
-        :style="{ background: 'rgb(0 0 0 / 0.08)' }"
+        class="liquid-glass-panel relative min-h-[22rem] overflow-hidden rounded-3xl p-4 sm:p-6"
       >
         <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 class="text-lg font-semibold">Interactive layer</h2>
-            <p class="text-sm" :style="{ color: 'var(--lg-muted)' }">
+            <p class="liquid-glass-muted text-sm">
               Drag cards around the canvas. Tilt and glow stay on the static grid above.
             </p>
           </div>
           <button
             type="button"
-            class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+            class="liquid-glass-chrome-btn rounded-full px-4 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lg-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             data-testid="liquid-glass-demo-reset"
             @click="resetDraggables"
           >
@@ -93,7 +89,7 @@
 
         <div
           ref="canvasRef"
-          class="relative h-[18rem] rounded-2xl border border-dashed border-white/15 sm:h-[20rem]"
+          class="liquid-glass-canvas relative h-[18rem] rounded-2xl sm:h-[20rem]"
         >
           <LabLiquidGlassCard
             v-for="(card, index) in draggableCards"

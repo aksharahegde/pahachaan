@@ -7,21 +7,21 @@
     <p class="mb-3 text-sm font-medium">Performance</p>
     <dl class="grid grid-cols-2 gap-3 text-sm">
       <div>
-        <dt :style="{ color: 'var(--lg-muted)' }">FPS</dt>
+        <dt class="liquid-glass-muted">FPS</dt>
         <dd class="font-semibold tabular-nums">{{ fps }}</dd>
       </div>
       <div>
-        <dt :style="{ color: 'var(--lg-muted)' }">Frame</dt>
+        <dt class="liquid-glass-muted">Frame</dt>
         <dd class="font-semibold tabular-nums">{{ frameMs }}ms</dd>
       </div>
       <div>
-        <dt :style="{ color: 'var(--lg-muted)' }">Backdrop blur</dt>
+        <dt class="liquid-glass-muted">Backdrop blur</dt>
         <dd class="font-semibold">
           {{ supportsBackdrop ? "Supported" : "Fallback" }}
         </dd>
       </div>
       <div>
-        <dt :style="{ color: 'var(--lg-muted)' }">Motion</dt>
+        <dt class="liquid-glass-muted">Motion</dt>
         <dd class="font-semibold">
           {{ reducedMotion === "reduce" ? "Reduced" : "Full" }}
         </dd>

@@ -6,51 +6,76 @@
 }
 
 .liquid-glass-scene {
+  color: var(--lg-text);
   --lg-blur: 18px;
-  --lg-bg: rgb(255 255 255 / 0.55);
-  --lg-border: rgb(255 255 255 / 0.65);
+  --lg-bg: rgb(255 255 255 / 0.78);
+  --lg-border: rgb(15 23 42 / 0.1);
   --lg-shadow: 0 8px 32px rgb(15 23 42 / 0.12);
   --lg-text: rgb(15 23 42);
   --lg-muted: rgb(51 65 85);
   --lg-glow: rgb(14 165 233 / 0.35);
   --lg-accent: rgb(14 165 233);
+  --lg-chrome-border: rgb(15 23 42 / 0.14);
+  --lg-chrome-bg: rgb(15 23 42 / 0.05);
+  --lg-chrome-bg-hover: rgb(15 23 42 / 0.09);
+  --lg-chrome-bg-strong: rgb(15 23 42 / 0.08);
+  --lg-inset-bg: rgb(15 23 42 / 0.06);
+  --lg-icon-border: rgb(15 23 42 / 0.12);
+  --lg-icon-bg: rgb(255 255 255 / 0.72);
+  --lg-panel-bg: rgb(255 255 255 / 0.42);
   --lg-sheen: linear-gradient(
     135deg,
-    rgb(255 255 255 / 0.75) 0%,
-    rgb(255 255 255 / 0.15) 45%,
-    rgb(255 255 255 / 0.05) 100%
+    rgb(255 255 255 / 0.85) 0%,
+    rgb(255 255 255 / 0.25) 45%,
+    rgb(255 255 255 / 0.08) 100%
   );
 }
 
 .liquid-glass-scene--dark {
-  --lg-bg: rgb(15 23 42 / 0.45);
-  --lg-border: rgb(148 163 184 / 0.22);
+  --lg-bg: rgb(15 23 42 / 0.68);
+  --lg-border: rgb(148 163 184 / 0.28);
   --lg-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
   --lg-text: rgb(248 250 252);
   --lg-muted: rgb(203 213 225);
   --lg-glow: rgb(56 189 248 / 0.4);
   --lg-accent: rgb(56 189 248);
+  --lg-chrome-border: rgb(255 255 255 / 0.2);
+  --lg-chrome-bg: rgb(255 255 255 / 0.08);
+  --lg-chrome-bg-hover: rgb(255 255 255 / 0.14);
+  --lg-chrome-bg-strong: rgb(255 255 255 / 0.12);
+  --lg-inset-bg: rgb(255 255 255 / 0.08);
+  --lg-icon-border: rgb(255 255 255 / 0.24);
+  --lg-icon-bg: rgb(255 255 255 / 0.12);
+  --lg-panel-bg: rgb(0 0 0 / 0.24);
   --lg-sheen: linear-gradient(
     135deg,
-    rgb(255 255 255 / 0.18) 0%,
-    rgb(255 255 255 / 0.06) 45%,
+    rgb(255 255 255 / 0.2) 0%,
+    rgb(255 255 255 / 0.07) 45%,
     rgb(255 255 255 / 0.02) 100%
   );
 }
 
 .liquid-glass-scene--aurora {
-  --lg-bg: rgb(15 23 42 / 0.38);
-  --lg-border: rgb(167 139 250 / 0.35);
+  --lg-bg: rgb(15 23 42 / 0.62);
+  --lg-border: rgb(167 139 250 / 0.38);
   --lg-shadow: 0 16px 48px rgb(76 29 149 / 0.35);
   --lg-text: rgb(248 250 252);
   --lg-muted: rgb(226 232 240);
   --lg-glow: rgb(192 132 252 / 0.55);
   --lg-accent: rgb(192 132 252);
+  --lg-chrome-border: rgb(255 255 255 / 0.22);
+  --lg-chrome-bg: rgb(255 255 255 / 0.1);
+  --lg-chrome-bg-hover: rgb(255 255 255 / 0.16);
+  --lg-chrome-bg-strong: rgb(255 255 255 / 0.14);
+  --lg-inset-bg: rgb(255 255 255 / 0.1);
+  --lg-icon-border: rgb(255 255 255 / 0.26);
+  --lg-icon-bg: rgb(255 255 255 / 0.14);
+  --lg-panel-bg: rgb(15 23 42 / 0.34);
   --lg-sheen: linear-gradient(
     135deg,
-    rgb(236 72 153 / 0.25) 0%,
-    rgb(59 130 246 / 0.15) 50%,
-    rgb(34 211 238 / 0.1) 100%
+    rgb(236 72 153 / 0.28) 0%,
+    rgb(59 130 246 / 0.18) 50%,
+    rgb(34 211 238 / 0.12) 100%
   );
 }
 
@@ -110,6 +135,60 @@
 
 .liquid-glass-surface--morph {
   border-radius: 1rem;
+}
+
+.liquid-glass-muted {
+  color: var(--lg-muted);
+}
+
+.liquid-glass-code {
+  border-radius: 0.375rem;
+  background: var(--lg-inset-bg);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--lg-text);
+}
+
+.liquid-glass-chrome-btn {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-chrome-bg);
+  color: var(--lg-text) !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.liquid-glass-chrome-btn:hover {
+  background: var(--lg-chrome-bg-hover);
+}
+
+.liquid-glass-chrome-btn--active {
+  border-color: var(--lg-accent);
+  background: color-mix(in srgb, var(--lg-accent) 16%, transparent);
+  color: var(--lg-text);
+}
+
+.liquid-glass-panel {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-panel-bg);
+}
+
+.liquid-glass-canvas {
+  border: 1px dashed var(--lg-chrome-border);
+}
+
+.liquid-glass-icon-chip {
+  border: 1px solid var(--lg-icon-border);
+  background: var(--lg-icon-bg);
+  color: var(--lg-text);
+}
+
+.liquid-glass-metric {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-inset-bg);
+  color: var(--lg-text);
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -15,7 +15,7 @@
       <div v-if="icon || title" class="flex items-start gap-3">
         <div
           v-if="icon"
-          class="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10"
+          class="liquid-glass-icon-chip flex size-10 shrink-0 items-center justify-center rounded-xl"
           aria-hidden="true"
         >
           <UIcon :name="icon" class="size-5" />
@@ -26,8 +26,7 @@
           </h3>
           <p
             v-if="description"
-            class="mt-1 text-sm leading-relaxed"
-            :style="{ color: 'var(--lg-muted)' }"
+            class="liquid-glass-muted mt-1 text-sm leading-relaxed"
           >
             {{ description }}
           </p>
@@ -38,9 +37,9 @@
 
       <div
         v-if="metricLabel && metricValue"
-        class="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-black/5 px-3 py-2 text-sm dark:bg-white/5"
+        class="liquid-glass-metric flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm"
       >
-        <span :style="{ color: 'var(--lg-muted)' }">{{ metricLabel }}</span>
+        <span class="liquid-glass-muted">{{ metricLabel }}</span>
         <span class="font-semibold tabular-nums">{{ metricValue }}</span>
       </div>
     </div>
