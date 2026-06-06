@@ -31,18 +31,6 @@ export default defineContentConfig({
         role: z.string(),
       }),
     }),
-    shop: defineCollection({
-      type: "data",
-      source: "shop/*.json",
-      schema: z.object({
-        title: z.string(),
-        icon: z.string(),
-        url: z.string(),
-        category: z.string(),
-        heading: z.string(),
-        description: z.string(),
-      }),
-    }),
     content: defineCollection({
       type: "page",
       source: "*.md",

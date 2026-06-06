@@ -72,10 +72,5 @@ const items = [
     path: "/resources",
     icon: "solar:bookmark-linear",
   },
-  {
-    name: "Shop",
-    path: "/shop",
-    icon: "solar:shop-2-outline",
-  },
 ];
 </script>
