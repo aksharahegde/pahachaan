@@ -1,0 +1,11 @@
+{
+  "url": "https://herald.akshara.dev",
+  "thumbnail": "/projects/logo/rss-herald.svg",
+  "thumbnailBg": "bg-stone-900",
+  "thumbnailAlt": "RSS Herald",
+  "category": "app",
+  "heading": "RSS Herald",
+  "description": "A newspaper-style RSS feed reader with customizable reading themes and browser text-to-speech.",
+  "status": "active",
+  "role": "Author"
+}
