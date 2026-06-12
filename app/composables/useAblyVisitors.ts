@@ -63,6 +63,19 @@ async function readVisitorLocation(): Promise<VisitorLocation | null> {
   return response.location;
 }
 
+function applyLocalVisitorFallback(
+  state: ReturnType<typeof useAblyVisitorState>,
+  location: VisitorLocation | null,
+) {
+  if (!location) {
+    return;
+  }
+
+  state.locations.value = [location];
+  state.visitors.value = 1;
+  state.isLoading.value = false;
+}
+
 function useAblyVisitorState() {
   const visitors = useState<number | null>("ably-visitors-count", () => null);
   const locations = useState<VisitorLocation[]>("ably-visitors-locations", () => []);
@@ -120,14 +133,19 @@ export async function initAblyVisitors() {
     state.isLoading.value = true;
     state.error.value = null;
 
-    try {
-      const [{ Realtime }, location] = await Promise.all([
-        import("ably"),
-        readVisitorLocation(),
-      ]);
-      const clientId = getVisitorClientId();
+    let location: VisitorLocation | null = null;
 
+    try {
+      location = await readVisitorLocation();
       state.myLocation.value = location;
+      applyLocalVisitorFallback(state, location);
+    } catch (err) {
+      console.error("Failed to read visitor location:", err);
+    }
+
+    try {
+      const { Realtime } = await import("ably");
+      const clientId = getVisitorClientId();
       client = new Realtime({
         authUrl: `/api/visitors/ably-token?clientId=${encodeURIComponent(clientId)}`,
         authMethod: "GET",
@@ -159,6 +177,7 @@ export async function initAblyVisitors() {
       state.isConnected.value = false;
       state.isLoading.value = false;
       state.error.value = "Visitor count unavailable";
+      applyLocalVisitorFallback(state, location ?? state.myLocation.value);
       initPromise = null;
     }
   })();
