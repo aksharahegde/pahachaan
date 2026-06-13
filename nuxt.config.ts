@@ -22,7 +22,6 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
-    "@nuxt/image",
     "@nuxt/fonts",
     "@nuxt/content",
     "nuxt-llms",
@@ -58,10 +57,6 @@ export default defineNuxtConfig({
             ]
           : [],
     },
-  },
-
-  image: {
-    provider: "none",
   },
 
   routeRules: {

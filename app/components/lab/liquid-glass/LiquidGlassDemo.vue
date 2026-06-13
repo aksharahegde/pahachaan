@@ -6,14 +6,12 @@
     data-testid="liquid-glass-demo"
   >
     <div class="liquid-glass-backdrop" aria-hidden="true">
-      <NuxtImg
+      <img
         :src="backgroundImage"
         alt=""
         class="liquid-glass-backdrop-image"
         width="1400"
         height="900"
-        sizes="(max-width: 768px) 100vw, 672px"
-        quality="80"
         loading="eager"
       />
       <div class="liquid-glass-backdrop-overlay" :class="overlayClass" />
