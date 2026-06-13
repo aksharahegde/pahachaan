@@ -60,6 +60,10 @@ export default defineNuxtConfig({
     },
   },
 
+  image: {
+    provider: "none",
+  },
+
   routeRules: {
     "/": { prerender: true },
     "/uses": { prerender: true },
