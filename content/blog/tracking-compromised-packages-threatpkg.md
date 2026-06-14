@@ -1,10 +1,10 @@
 ---
-title: I Built a Real-Time Supply Chain Threat Dashboard Because the One I Needed Didn't Exist
+title: Tracking Compromised Packages Across 9 Ecosystems with ThreatPkg
 description: ThreatPkg is a free, public dashboard for tracking compromised open-source packages and supply-chain incidents across 9 ecosystems — no sign-up, no paywalls.
-path: /blog/why-i-built-threatpkg
+path: /blog/tracking-compromised-packages-threatpkg
 published: 2026-06-14T12:00:00.000Z
-cover: /blog/why-i-built-threatpkg.png
-thumbnail: /blog/thumbnails/why-i-built-threatpkg.png
+cover: /blog/tracking-compromised-packages-threatpkg.png
+thumbnail: /blog/thumbnails/tracking-compromised-packages-threatpkg.png
 ---
 
 Supply chain attacks on open-source packages are not a new problem, but they're getting worse. The XZ Utils backdoor in 2024 came within a hair's breadth of compromising SSH on millions of Linux systems. The event-stream incident in 2018 showed how a single malicious maintainer could poison a package with 2 million weekly downloads. These aren't edge cases — they're a pattern, and the frequency is increasing.
