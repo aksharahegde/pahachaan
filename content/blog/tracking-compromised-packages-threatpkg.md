@@ -7,6 +7,8 @@ cover: /blog/tracking-compromised-packages-threatpkg.png
 thumbnail: /blog/thumbnails/tracking-compromised-packages-threatpkg.png
 ---
 
+<img src="/blog/tracking-compromised-packages-threatpkg.png" alt="Tracking Compromised Packages Across 9 Ecosystems with ThreatPkg">
+
 Supply chain attacks on open-source packages are not a new problem, but they're getting worse. The XZ Utils backdoor in 2024 came within a hair's breadth of compromising SSH on millions of Linux systems. The event-stream incident in 2018 showed how a single malicious maintainer could poison a package with 2 million weekly downloads. These aren't edge cases — they're a pattern, and the frequency is increasing.
 
 The frustrating part isn't that these incidents happen. It's that most developers don't find out until well after the damage is done.
