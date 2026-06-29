@@ -3,14 +3,14 @@
     <h3 class="section-heading">
       Recent articles
     </h3>
-    <div class="flex flex-col gap-4">
+    <div class="editorial-list">
       <BlogCard
         v-for="(article, id) in articles"
         :key="id"
         :article="article"
       />
     </div>
-    <div class="flex items-center justify-end mt-1 text-sm">
+    <div class="flex items-center justify-end pt-1 text-sm">
       <UButton
         label="All articles &rarr;"
         to="/blog"

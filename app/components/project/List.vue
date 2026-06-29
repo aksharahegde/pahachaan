@@ -3,14 +3,14 @@
     <h3 class="section-heading">
       Projects
     </h3>
-    <div class="flex flex-col gap-4">
+    <div class="editorial-list">
       <ProjectCard
         v-for="(project, id) in projects"
         :key="id"
         :project="project"
       />
     </div>
-    <div class="flex items-center justify-end mt-1 text-sm">
+    <div class="flex items-center justify-end pt-1 text-sm">
       <UButton
         label="All Projects &rarr;"
         to="/projects"

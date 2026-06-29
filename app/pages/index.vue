@@ -1,17 +1,17 @@
 <template>
   <main class="page-main">
-    <div>
-      <h1 class="font-display text-3xl font-bold mb-1">
+    <section class="max-w-3xl">
+      <h1 class="font-display text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
         {{ home.name }}
-        <sub class="text-base text-gray-500 font-normal">{{ home.pronouns }}</sub>
+        <sub class="text-sm text-gray-500 font-normal align-baseline">{{ home.pronouns }}</sub>
       </h1>
-      <h2 class="font-display text-xl font-medium text-gray-700 dark:text-gray-300 mb-3">
+      <h2 class="font-display text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300 mt-2">
         {{ home.title }}
       </h2>
-      <p class="text-base leading-relaxed prose max-w-3xl dark:prose-invert my-0">
+      <p class="mt-4 max-w-2xl text-base leading-8 text-gray-700 dark:text-gray-300">
         {{ home.bio }}
       </p>
-    </div>
+    </section>
     <Contact />
     <div>
       <ContentRenderer v-if="indexContent" :value="indexContent" />

@@ -21,6 +21,34 @@
     @apply font-display font-semibold text-lg md:text-xl text-zinc-800 dark:text-zinc-100;
   }
 
+  .section-kicker {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400;
+  }
+
+  .editorial-list {
+    @apply flex flex-col divide-y divide-gray-200/80 dark:divide-white/10;
+  }
+
+  .editorial-row {
+    @apply rounded-lg py-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-500 first:pt-0 last:pb-0 hover:text-primary-600 dark:hover:text-primary-400;
+  }
+
+  .editorial-row-title {
+    @apply font-display text-base font-semibold leading-snug text-zinc-800 transition-colors dark:text-zinc-100;
+  }
+
+  .editorial-row-copy {
+    @apply mt-1 text-base leading-relaxed text-gray-600 dark:text-gray-400;
+  }
+
+  .editorial-meta {
+    @apply font-display text-xs font-medium uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400;
+  }
+
+  .editorial-link {
+    @apply font-display text-sm font-semibold text-gray-600 underline-offset-4 transition-colors hover:text-primary-600 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-500 dark:text-gray-400 dark:hover:text-primary-400;
+  }
+
   .page-heading {
     @apply font-display text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100;
   }
