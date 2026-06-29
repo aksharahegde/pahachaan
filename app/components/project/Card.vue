@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    class="flex items-center gap-4 group p-2 -m-2 rounded-lg"
+    class="editorial-row group flex items-start gap-4"
     :to="project.url"
     target="_blank"
     external
@@ -21,16 +21,16 @@
         size="md"
       />
     </UChip>
-    <div>
+    <div class="min-w-0">
       <h3
-        class="text-base flex items-center gap-2 font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
+        class="editorial-row-title flex items-center gap-2 group-hover:text-primary-600 dark:group-hover:text-primary-400"
       >
         {{ project.heading }}
         <UBadge v-if="project.role" color="neutral" size="sm" variant="subtle">
           {{ project.role }}
         </UBadge>
       </h3>
-      <p class="dark:text-gray-400 text-gray-600 text-base">
+      <p class="editorial-row-copy">
         {{ project.description }}
       </p>
     </div>

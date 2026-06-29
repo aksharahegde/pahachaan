@@ -1,16 +1,16 @@
 <template>
-  <main class="min-h-screen prose dark:prose-invert">
+  <main class="min-h-screen prose prose-page dark:prose-invert">
     <UBreadcrumb
       separator-icon="i-lucide-chevron-right"
       :items="links"
       class="no-print"
     />
     <h1
-      class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-1"
+      class="font-display text-2xl md:text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 mb-2"
     >
       {{ doc.title }}
     </h1>
-    <div class="text-gray-600 dark:text-gray-300 text-sm">
+    <div class="text-gray-600 dark:text-gray-300 text-sm mb-6">
       Published on {{ useDateFormat(doc.published, "Do MMMM YYYY").value }}
     </div>
     <ClientOnly>

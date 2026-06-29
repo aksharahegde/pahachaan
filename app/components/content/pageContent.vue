@@ -1,10 +1,8 @@
 <template>
   <section
-    class="flex flex-col gap-2 py-4 text-gray-600 dark:text-gray-300 text-sm"
+    class="flex flex-col gap-3 py-6 text-gray-600 dark:text-gray-300 text-base"
   >
-    <h3
-      class="font-bold md:text-lg text-gray-700 dark:text-gray-200 prose-p:my-0"
-    >
+    <h3 class="section-heading prose-p:my-0">
       <slot />
     </h3>
     <slot name="description" />

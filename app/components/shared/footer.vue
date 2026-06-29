@@ -1,5 +1,5 @@
 <template>
-  <footer class="body-font max-w-2xl mx-auto">
+  <footer class="max-w-2xl mx-auto">
     <div class="flex flex-col gap-2 py-2">
       <!-- affiliate link -->
       <UAlert
@@ -10,7 +10,7 @@
         :avatar="isMinimalMode ? undefined : { src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
       >
         <template #title="{ title }">
-          <h2 class="text-lg font-bold">{{ title }}</h2>
+          <h2 class="font-display text-lg font-bold">{{ title }}</h2>
         </template>
         <template #description>
           <div class="flex flex-col relative">

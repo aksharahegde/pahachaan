@@ -1,17 +1,19 @@
 <template>
-  <main class="min-h-screen">
-    <Header
-      class="mb-4"
-      :title="mainIndex.title"
-      :description="mainIndex.description"
-    />
-    <div class="flex flex-col gap-4">
-      <BlogCard
-        v-for="article in articles"
-        :key="article.path"
-        :article="article"
+  <main class="page-main">
+    <section>
+      <Header
+        class="mb-8"
+        :title="mainIndex.title"
+        :description="mainIndex.description"
       />
-    </div>
+      <div class="page-section">
+        <BlogCard
+          v-for="article in articles"
+          :key="article.path"
+          :article="article"
+        />
+      </div>
+    </section>
   </main>
 </template>
 <script setup>

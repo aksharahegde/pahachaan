@@ -1,7 +1,9 @@
 <template>
-  <main class="min-h-screen">
-    <Header class="mb-4" :title="doc.title" :description="doc.description" />
-    <ContentRenderer :value="doc" />
+  <main class="page-main">
+    <div class="prose prose-page dark:prose-invert">
+      <Header class="mb-8" :title="doc.title" :description="doc.description" />
+      <ContentRenderer :value="doc" />
+    </div>
   </main>
 </template>
 <script setup>

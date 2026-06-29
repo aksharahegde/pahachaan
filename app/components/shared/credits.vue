@@ -1,8 +1,8 @@
 <template>
   <section
-    class="flex flex-col gap-2 py-4 text-gray-600 dark:text-gray-300 text-sm"
+    class="flex flex-col gap-3 py-6 text-gray-600 dark:text-gray-300 text-base"
   >
-    <div class="font-bold md:text-lg text-gray-600 dark:text-gray-200">
+    <div class="section-heading">
       This site uses,
     </div>
     <div

@@ -1,14 +1,16 @@
 <template>
-  <main class="min-h-screen">
-    <Header class="mb-4" :title="doc.title" :description="doc.description" />
-    <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-4" />
-    <div class="flex flex-col gap-4">
-      <ProjectCard
-        v-for="(project, id) in projects"
-        :key="id"
-        :project="project"
-      />
-    </div>
+  <main class="page-main">
+    <section>
+      <Header class="mb-8" :title="doc.title" :description="doc.description" />
+      <ProjectStatusLegend :legend="STATUS_LEGEND" class="mb-6" />
+      <div class="page-section">
+        <ProjectCard
+          v-for="(project, id) in projects"
+          :key="id"
+          :project="project"
+        />
+      </div>
+    </section>
   </main>
 </template>
 

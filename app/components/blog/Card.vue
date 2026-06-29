@@ -1,12 +1,12 @@
 <template>
   <NuxtLink
     :to="article.path"
-    class="flex items-start group p-2 -m-2 gap-1 rounded-lg flex-col"
+    class="editorial-row group flex flex-col"
   >
-    <span class="text-sm text-gray-500 dark:text-gray-400">
+    <span class="editorial-meta mb-2">
       {{ publishedDate }}
     </span>
-    <div class="flex items-center gap-2">
+    <div class="flex items-start gap-3">
       <UAvatar
         v-if="!isMinimalMode"
         :src="article.thumbnail"
@@ -14,13 +14,13 @@
         :alt="article.title"
         size="md"
       />
-      <div>
+      <div class="min-w-0">
         <h3
-          class="text-base font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
+          class="editorial-row-title group-hover:text-primary-600 dark:group-hover:text-primary-400"
         >
           {{ article.title }}
         </h3>
-        <p class="dark:text-gray-400 text-gray-600 text-base">
+        <p class="editorial-row-copy">
           {{ article.description }}
         </p>
       </div>

@@ -88,14 +88,6 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-.font-sans {
-  font-family:
-    "Barlow", "Barlow Fallback: BlinkMacSystemFont",
-    "Barlow Fallback: Segoe UI", "Barlow Fallback: Roboto",
-    "Barlow Fallback: Helvetica Neue", "Barlow Fallback: Arial", system-ui,
-    sans-serif;
-}
-
 .page-enter-active,
 .page-leave-active {
   transition: all 0.2s;
