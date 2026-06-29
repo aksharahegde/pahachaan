@@ -1,0 +1,11 @@
+{
+  "url": "https://bwplayer.akshara.dev/",
+  "thumbnail": "/projects/logo/bwplayer.svg",
+  "thumbnailBg": "bg-gray-100",
+  "thumbnailAlt": "BW Player",
+  "category": "app",
+  "heading": "BW Player",
+  "description": "A calm, monochrome Flutter music player for Last.fm, Audius, and Jamendo with AI Smart Mix — Android, iOS, and macOS.",
+  "status": "active",
+  "role": "Author"
+}

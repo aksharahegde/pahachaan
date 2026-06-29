@@ -1,5 +1,3 @@
-import { onBeforeUnmount, onMounted } from "vue";
-
 import {
   normalizePresenceLocations,
   VISITORS_CHANNEL_NAME,
@@ -42,11 +40,11 @@ type RealtimeClient = {
 
 const CLIENT_ID_STORAGE_KEY = "pahachaan.visitor.clientId";
 
-let activeConsumers = 0;
 let client: RealtimeClient | null = null;
 let channel: RealtimeChannel | null = null;
 let initPromise: Promise<void> | null = null;
 let hasEnteredPresence = false;
+let isShuttingDown = false;
 
 function getVisitorClientId(): string {
   const existing = window.sessionStorage.getItem(CLIENT_ID_STORAGE_KEY);
@@ -65,8 +63,21 @@ async function readVisitorLocation(): Promise<VisitorLocation | null> {
   return response.location;
 }
 
-export function useAblyVisitors() {
-  const visitors = useState("ably-visitors-count", () => 0);
+function applyLocalVisitorFallback(
+  state: ReturnType<typeof useAblyVisitorState>,
+  location: VisitorLocation | null,
+) {
+  if (!location) {
+    return;
+  }
+
+  state.locations.value = [location];
+  state.visitors.value = 1;
+  state.isLoading.value = false;
+}
+
+function useAblyVisitorState() {
+  const visitors = useState<number | null>("ably-visitors-count", () => null);
   const locations = useState<VisitorLocation[]>("ably-visitors-locations", () => []);
   const myLocation = useState<VisitorLocation | null>(
     "ably-visitors-location",
@@ -76,112 +87,6 @@ export function useAblyVisitors() {
   const isLoading = useState("ably-visitors-loading", () => true);
   const error = useState<string | null>("ably-visitors-error", () => null);
 
-  async function refreshPresence() {
-    if (!channel) {
-      return;
-    }
-
-    const members = await channel.presence.get();
-    locations.value = normalizePresenceLocations(members);
-    visitors.value = members.length;
-  }
-
-  const handlePresenceChange = () => {
-    refreshPresence().catch((err) => {
-      console.error("Failed to refresh visitor presence:", err);
-      error.value = "Unable to refresh visitors";
-    });
-  };
-
-  async function init() {
-    if (!import.meta.client) {
-      return;
-    }
-
-    if (initPromise) {
-      return initPromise;
-    }
-
-    initPromise = (async () => {
-      isLoading.value = true;
-      error.value = null;
-
-      try {
-        const [{ Realtime }, location] = await Promise.all([
-          import("ably"),
-          readVisitorLocation(),
-        ]);
-        const clientId = getVisitorClientId();
-
-        myLocation.value = location;
-        client = new Realtime({
-          authUrl: `/api/visitors/ably-token?clientId=${encodeURIComponent(clientId)}`,
-          authMethod: "GET",
-          autoConnect: true,
-        }) as RealtimeClient;
-        channel = client.channels.get(VISITORS_CHANNEL_NAME);
-
-        client.connection.on("connected", () => {
-          isConnected.value = true;
-          isLoading.value = false;
-          error.value = null;
-        });
-        client.connection.on("disconnected", () => {
-          isConnected.value = false;
-        });
-        client.connection.on("failed", (change) => {
-          isConnected.value = false;
-          isLoading.value = false;
-          error.value = change?.reason?.message ?? "Visitor connection failed";
-        });
-
-        await channel.presence.subscribe(handlePresenceChange);
-        await channel.presence.enter({ location });
-        hasEnteredPresence = true;
-        await refreshPresence();
-        isLoading.value = false;
-      } catch (err) {
-        console.error("Failed to initialize Ably visitors:", err);
-        isConnected.value = false;
-        isLoading.value = false;
-        error.value = "Visitor count unavailable";
-        initPromise = null;
-      }
-    })();
-
-    return initPromise;
-  }
-
-  async function cleanup() {
-    activeConsumers = Math.max(0, activeConsumers - 1);
-
-    if (activeConsumers > 0 || !channel) {
-      return;
-    }
-
-    channel.presence.unsubscribe(handlePresenceChange);
-
-    if (hasEnteredPresence) {
-      await channel.presence.leave().catch(() => {});
-      hasEnteredPresence = false;
-    }
-
-    client?.close();
-    client = null;
-    channel = null;
-    initPromise = null;
-    isConnected.value = false;
-  }
-
-  onMounted(() => {
-    activeConsumers += 1;
-    init();
-  });
-
-  onBeforeUnmount(() => {
-    cleanup();
-  });
-
   return {
     visitors,
     locations,
@@ -189,6 +94,134 @@ export function useAblyVisitors() {
     isConnected,
     isLoading,
     error,
-    reconnect: init,
+  };
+}
+
+async function refreshPresence() {
+  const state = useAblyVisitorState();
+
+  if (!channel) {
+    return;
+  }
+
+  const members = await channel.presence.get();
+  state.locations.value = normalizePresenceLocations(members);
+  state.visitors.value = members.length;
+}
+
+function handlePresenceChange() {
+  const state = useAblyVisitorState();
+
+  refreshPresence().catch((err) => {
+    console.error("Failed to refresh visitor presence:", err);
+    state.error.value = "Unable to refresh visitors";
+  });
+}
+
+export async function initAblyVisitors() {
+  if (!import.meta.client || isShuttingDown) {
+    return;
+  }
+
+  if (initPromise) {
+    return initPromise;
+  }
+
+  const state = useAblyVisitorState();
+
+  initPromise = (async () => {
+    state.isLoading.value = true;
+    state.error.value = null;
+
+    let location: VisitorLocation | null = null;
+
+    try {
+      location = await readVisitorLocation();
+      state.myLocation.value = location;
+      applyLocalVisitorFallback(state, location);
+    } catch (err) {
+      console.error("Failed to read visitor location:", err);
+    }
+
+    try {
+      const { Realtime } = await import("ably");
+      const clientId = getVisitorClientId();
+      client = new Realtime({
+        authUrl: `/api/visitors/ably-token?clientId=${encodeURIComponent(clientId)}`,
+        authMethod: "GET",
+        autoConnect: true,
+      }) as RealtimeClient;
+      channel = client.channels.get(VISITORS_CHANNEL_NAME);
+
+      client.connection.on("connected", () => {
+        state.isConnected.value = true;
+        state.isLoading.value = false;
+        state.error.value = null;
+      });
+      client.connection.on("disconnected", () => {
+        state.isConnected.value = false;
+      });
+      client.connection.on("failed", (change) => {
+        state.isConnected.value = false;
+        state.isLoading.value = false;
+        state.error.value = change?.reason?.message ?? "Visitor connection failed";
+      });
+
+      await channel.presence.subscribe(handlePresenceChange);
+      await channel.presence.enter({ location });
+      hasEnteredPresence = true;
+      await refreshPresence();
+      state.isLoading.value = false;
+    } catch (err) {
+      console.error("Failed to initialize Ably visitors:", err);
+      state.isConnected.value = false;
+      state.isLoading.value = false;
+      state.error.value = "Visitor count unavailable";
+      applyLocalVisitorFallback(state, location ?? state.myLocation.value);
+      initPromise = null;
+    }
+  })();
+
+  return initPromise;
+}
+
+export async function shutdownAblyVisitors() {
+  if (!import.meta.client || !channel) {
+    return;
+  }
+
+  isShuttingDown = true;
+
+  if (initPromise) {
+    try {
+      await initPromise;
+    } catch {
+      // Ignore in-flight init failures during shutdown.
+    }
+  }
+
+  channel.presence.unsubscribe(handlePresenceChange);
+
+  if (hasEnteredPresence) {
+    await channel.presence.leave().catch(() => {});
+    hasEnteredPresence = false;
+  }
+
+  client?.close();
+  client = null;
+  channel = null;
+  initPromise = null;
+  isShuttingDown = false;
+
+  const state = useAblyVisitorState();
+  state.isConnected.value = false;
+}
+
+export function useAblyVisitors() {
+  const state = useAblyVisitorState();
+
+  return {
+    ...state,
+    reconnect: initAblyVisitors,
   };
 }

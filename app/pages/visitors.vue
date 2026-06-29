@@ -42,8 +42,21 @@ type CanvasSize = {
   width: number;
 };
 
+type RgbColor = [number, number, number];
+
+type GlobeTheme = {
+  baseColor: RgbColor;
+  dark: number;
+  glowColor: RgbColor;
+  markerColor: RgbColor;
+};
+
 type GlobeUpdate = Partial<CanvasSize & {
   arcs: GlobeArc[];
+  baseColor: RgbColor;
+  dark: number;
+  glowColor: RgbColor;
+  markerColor: RgbColor;
   markers: GlobeMarker[];
   phi: number;
 }>;
@@ -72,17 +85,29 @@ function getCanvasSize(
   };
 }
 
+function getGlobeTheme(isDark: boolean): GlobeTheme {
+  return {
+    dark: isDark ? 1 : 0,
+    baseColor: isDark ? [0.22, 0.22, 0.24] : [1, 1, 1],
+    glowColor: isDark ? [0.12, 0.12, 0.14] : [1, 1, 1],
+    markerColor: isDark ? [0.45, 0.65, 1] : [0.2, 0.4, 1],
+  };
+}
+
 const canvasRef = ref<HTMLCanvasElement | null>(null);
+const colorMode = useColorMode();
 const { locations } = useAblyVisitors();
 const markers = computed(() => toVisitorMarkers(locations.value));
 const arcs = computed(() => toVisitorArcs(markers.value));
+const globeTheme = computed(() => getGlobeTheme(colorMode.value === "dark"));
 let globe: Globe | null = null;
 let resizeObserver: ResizeObserver | null = null;
 let visibilityObserver: IntersectionObserver | null = null;
 let frameId: number | null = null;
 let stopVisitorWatch: WatchStopHandle | null = null;
+let stopThemeWatch: WatchStopHandle | null = null;
 let phi = 0;
-let isVisible = false;
+let isVisible = true;
 let pointerStartX: number | null = null;
 let rotationOffset = 0;
 let targetRotationOffset = 0;
@@ -117,6 +142,7 @@ onMounted(async () => {
   const canvas = canvasRef.value;
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   const { width, height } = getCanvasSize(canvas, ratio);
+  const theme = globeTheme.value;
 
   globe = createGlobe(canvas, {
     devicePixelRatio: ratio,
@@ -124,17 +150,14 @@ onMounted(async () => {
     height,
     phi: 0,
     theta: 0.2,
-    dark: 0,
     diffuse: 1.2,
     mapSamples: getMapSamples(),
     mapBrightness: 6,
     mapBaseBrightness: 0,
-    baseColor: [1, 1, 1],
-    markerColor: [0.2, 0.4, 1],
-    glowColor: [1, 1, 1],
+    ...theme,
     markers: markers.value,
     arcs: arcs.value,
-    arcColor: [0.3, 0.5, 1],
+    arcColor: theme.markerColor,
     arcWidth: 0.5,
     arcHeight: 0.25,
     markerElevation: 0.02,
@@ -146,6 +169,13 @@ onMounted(async () => {
     globe?.update({
       markers: nextMarkers,
       arcs: nextArcs,
+    });
+  });
+
+  stopThemeWatch = watch(globeTheme, (nextTheme) => {
+    globe?.update({
+      ...nextTheme,
+      arcColor: nextTheme.markerColor,
     });
   });
 
@@ -178,6 +208,7 @@ onMounted(async () => {
     }
   });
   visibilityObserver.observe(canvas);
+  startAnimation();
 
   resizeObserver = new ResizeObserver(() => {
     globe?.update(getCanvasSize(canvas, ratio));
@@ -196,6 +227,8 @@ onBeforeUnmount(() => {
   isVisible = false;
   stopVisitorWatch?.();
   stopVisitorWatch = null;
+  stopThemeWatch?.();
+  stopThemeWatch = null;
   globe?.destroy();
   globe = null;
 });

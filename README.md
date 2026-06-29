@@ -23,6 +23,7 @@ A minimal, content-driven template for personal portfolios that's free to use.
 - **Flexible Contact Links**: Social media profile links loaded from content
 - **Light & Dark Mode**: Built-in theme switching
 - **Custom Theme Picker**: Visitors can tune primary color, neutral palette, border radius, and color mode
+- **Minimal Mode**: Optional env flag to hide decorative icons across contact links, projects, blog cards, announcements, and footer banners
 - **Live Visitor Counter**: Real-time visitor presence powered by Ably
 - **Status Monitoring Widget**: Optional OpenStatus badge for public uptime visibility
 - **SEO Optimized**: 100% SEO compatible with dynamic OG images for social media
@@ -71,6 +72,9 @@ NUXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
 
 # Ably realtime visitor presence (optional)
 ABLY_API_KEY=your_ably_api_key
+
+# Minimal mode — hide icons in links, projects, blog, announcements, and footer (optional)
+NUXT_PUBLIC_MINIMAL_MODE=false
 
 # Twitter handle (optional)
 TWITTER_HANDLE=@yourhandle
@@ -433,6 +437,18 @@ Edit `content/contact.json` to add, remove, or modify social links. Find icons a
 ### Changing Colors and Theme
 
 Edit `content/seo.json` to change the theme color and default color mode.
+
+### Minimal Mode
+
+Set `NUXT_PUBLIC_MINIMAL_MODE=true` to strip decorative icons from the UI while keeping text and links intact. This affects:
+
+- Contact link icons on the homepage
+- Project card thumbnails
+- Blog card cover images
+- Announcement avatars
+- Footer banner icons (for example GitHub and affiliate avatars)
+
+Useful when you want a cleaner, text-first layout without editing individual content files.
 
 ## Deployment
 

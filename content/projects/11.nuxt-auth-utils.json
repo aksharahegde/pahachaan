@@ -4,5 +4,6 @@
   "thumbnailBg": "bg-slate-600",
   "heading": "Nuxt Auth Utils",
   "description": "Contributed with Google as OAuth provider.",
-  "role": "Contributor"
+  "role": "Contributor",
+  "status": "active"
 }

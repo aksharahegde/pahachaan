@@ -1,0 +1,284 @@
+
+.liquid-glass-scene {
+  color: var(--lg-text);
+  color-scheme: light;
+  --lg-blur: 36px;
+  --lg-bg: rgb(255 255 255 / 0.58);
+  --lg-border: rgb(255 255 255 / 0.72);
+  --lg-shadow: 0 12px 40px rgb(15 23 42 / 0.16);
+  --lg-text: rgb(15 23 42);
+  --lg-muted: rgb(30 41 59);
+  --lg-glow: rgb(255 255 255 / 0.55);
+  --lg-accent: rgb(14 165 233);
+  --lg-chrome-border: rgb(255 255 255 / 0.72);
+  --lg-chrome-bg: rgb(255 255 255 / 0.42);
+  --lg-chrome-bg-hover: rgb(255 255 255 / 0.52);
+  --lg-chrome-bg-strong: rgb(255 255 255 / 0.48);
+  --lg-inset-bg: rgb(255 255 255 / 0.36);
+  --lg-icon-border: rgb(255 255 255 / 0.72);
+  --lg-icon-bg: rgb(255 255 255 / 0.46);
+  --lg-panel-bg: rgb(255 255 255 / 0.34);
+  --lg-sheen: linear-gradient(
+    145deg,
+    rgb(255 255 255 / 0.72) 0%,
+    rgb(255 255 255 / 0.18) 38%,
+    rgb(255 255 255 / 0.04) 100%
+  );
+}
+
+.liquid-glass-scene--dark {
+  --lg-bg: rgb(255 255 255 / 0.64);
+  --lg-shadow: 0 16px 44px rgb(15 23 42 / 0.28);
+  --lg-glow: rgb(125 211 252 / 0.45);
+}
+
+.liquid-glass-scene--aurora {
+  --lg-bg: rgb(255 255 255 / 0.64);
+  --lg-shadow: 0 16px 48px rgb(76 29 149 / 0.22);
+  --lg-glow: rgb(192 132 252 / 0.5);
+}
+
+.liquid-glass-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.liquid-glass-backdrop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+}
+
+.liquid-glass-backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / 0.06);
+  transition: background 0.45s ease;
+}
+
+.liquid-glass-backdrop-overlay--dark {
+  background: linear-gradient(
+    180deg,
+    rgb(15 23 42 / 0.18) 0%,
+    rgb(15 23 42 / 0.34) 100%
+  );
+}
+
+.liquid-glass-backdrop-overlay--aurora {
+  background:
+    linear-gradient(135deg, rgb(236 72 153 / 0.18), rgb(59 130 246 / 0.14)),
+    linear-gradient(180deg, rgb(15 23 42 / 0.08), rgb(15 23 42 / 0.28));
+}
+
+.liquid-glass-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--lg-text);
+  background: var(--lg-bg);
+  border: 1px solid var(--lg-border);
+  box-shadow:
+    var(--lg-shadow),
+    inset 0 1px 0 rgb(255 255 255 / 0.58),
+    inset 0 -1px 0 rgb(255 255 255 / 0.08);
+  backdrop-filter: blur(var(--lg-blur)) saturate(195%);
+  -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(195%);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-radius 0.45s ease,
+    background-color 0.35s ease;
+}
+
+.liquid-glass-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-sheen);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.liquid-glass-surface::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--lg-spot-x, 50%) var(--lg-spot-y, 0%),
+    var(--lg-glow),
+    transparent 58%
+  );
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.35s ease;
+}
+
+.liquid-glass-surface:hover::after,
+.liquid-glass-surface:focus-within::after {
+  opacity: 1;
+}
+
+.liquid-glass-surface:hover {
+  background: rgb(255 255 255 / 0.66);
+  box-shadow:
+    var(--lg-shadow),
+    inset 0 1px 0 rgb(255 255 255 / 0.72),
+    inset 0 -1px 0 rgb(255 255 255 / 0.1),
+    0 0 0 1px rgb(255 255 255 / 0.24),
+    0 0 36px var(--lg-glow);
+}
+
+.liquid-glass-surface--morph {
+  border-radius: 1.125rem;
+}
+
+.liquid-glass-muted {
+  color: var(--lg-muted);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+.liquid-glass-surface h2,
+.liquid-glass-surface h3,
+.liquid-glass-surface dd,
+.liquid-glass-surface button {
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.35);
+}
+
+.liquid-glass-code {
+  border-radius: 0.375rem;
+  background: var(--lg-inset-bg);
+  border: 1px solid var(--lg-chrome-border);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--lg-text);
+}
+
+.liquid-glass-chrome-btn {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-chrome-bg);
+  color: var(--lg-text) !important;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.liquid-glass-chrome-btn:hover {
+  background: var(--lg-chrome-bg-hover);
+}
+
+.liquid-glass-chrome-btn--active {
+  border-color: color-mix(in srgb, var(--lg-accent) 55%, white);
+  background: color-mix(in srgb, var(--lg-accent) 18%, rgb(255 255 255 / 0.24));
+  color: var(--lg-text);
+}
+
+.liquid-glass-panel {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-panel-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.liquid-glass-canvas {
+  border: 1px dashed var(--lg-chrome-border);
+  background: rgb(255 255 255 / 0.28);
+}
+
+.liquid-glass-icon-chip {
+  border: 1px solid var(--lg-icon-border);
+  background: var(--lg-icon-bg);
+  color: var(--lg-text);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.liquid-glass-metric {
+  border: 1px solid var(--lg-chrome-border);
+  background: var(--lg-inset-bg);
+  color: var(--lg-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .liquid-glass-surface--morph:hover {
+    border-radius: 1.625rem;
+  }
+
+  .liquid-glass-backdrop-image {
+    animation: liquid-glass-ken-burns 24s ease-in-out infinite alternate;
+  }
+}
+
+.liquid-glass-aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(72px);
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  animation: liquid-glass-aurora-drift 18s ease-in-out infinite alternate;
+}
+
+.liquid-glass-aurora-blob--one {
+  width: 16rem;
+  height: 16rem;
+  top: -3rem;
+  left: -2rem;
+  background: rgb(236 72 153 / 0.55);
+}
+
+.liquid-glass-aurora-blob--two {
+  width: 14rem;
+  height: 14rem;
+  top: 18%;
+  right: -3rem;
+  background: rgb(59 130 246 / 0.5);
+  animation-delay: -6s;
+}
+
+.liquid-glass-aurora-blob--three {
+  width: 12rem;
+  height: 12rem;
+  bottom: -2rem;
+  left: 38%;
+  background: rgb(34 211 238 / 0.45);
+  animation-delay: -12s;
+}
+
+@keyframes liquid-glass-ken-burns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@keyframes liquid-glass-aurora-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5rem, -1rem, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-glass-surface,
+  .liquid-glass-surface::after,
+  .liquid-glass-backdrop-overlay {
+    transition: none;
+  }
+
+  .liquid-glass-aurora-blob,
+  .liquid-glass-backdrop-image {
+    animation: none;
+  }
+}

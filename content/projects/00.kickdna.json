@@ -1,0 +1,11 @@
+{
+  "url": "https://www.kickdna.com",
+  "thumbnail": "/projects/logo/kickdna.svg",
+  "thumbnailBg": "bg-emerald-50",
+  "thumbnailAlt": "KickDNA",
+  "category": "app",
+  "heading": "KickDNA",
+  "description": "AI-powered FIFA World Cup personality quiz that matches you to a national team.",
+  "status": "active",
+  "role": "Author"
+}

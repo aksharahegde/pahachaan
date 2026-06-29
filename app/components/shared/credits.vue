@@ -15,7 +15,7 @@
         :key="index"
         class="flex justify-center items-center p-4 md:justify-start group"
       >
-        <NuxtImg
+        <img
           class="w-32 h-12 mx-auto group-hover:scale-110 transition-all duration-300"
           :src="item.icon"
           :alt="item.label"

@@ -21,7 +21,7 @@ const route = useRoute();
 const config = useRuntimeConfig();
 
 const { data: projects } = await useAsyncData("projects-all", () =>
-  queryCollection("projects").where("title", "<>", "Projects").all()
+  queryCollection("projects").where("title", "<>", "Projects").order("stem", "ASC").all()
 );
 
 const { data: doc } = await useAsyncData(route.path, () => {

@@ -1,6 +1,6 @@
 {
   "name": "pahachaan",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "packageManager": "bun@1.3.6",
   "author": "aksharahegde <https://github.com/aksharahegde>",
   "license": "MIT",
@@ -42,7 +42,6 @@
     "@iconify-json/simple-icons": "latest",
     "@iconify-json/solar": "latest",
     "@nuxt/content": "latest",
-    "@nuxt/image": "^2.0.0",
     "@nuxt/kit": "latest",
     "@nuxt/ui": "latest",
     "@resvg/resvg-js": "^2.6.2",
@@ -57,7 +56,6 @@
     "micromatch": "^4.0.8",
     "mime": "^4.1.0",
     "nuxt-llms": "latest",
-    "playwright-core": "^1.59.1",
     "satori": "^0.26.0"
   }
 }

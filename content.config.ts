@@ -31,16 +31,15 @@ export default defineContentConfig({
         role: z.string(),
       }),
     }),
-    shop: defineCollection({
+    labs: defineCollection({
       type: "data",
-      source: "shop/*.json",
+      source: "labs/*.json",
       schema: z.object({
         title: z.string(),
         icon: z.string(),
-        url: z.string(),
-        category: z.string(),
-        heading: z.string(),
         description: z.string(),
+        url: z.string().optional(),
+        heading: z.string().optional(),
       }),
     }),
     content: defineCollection({

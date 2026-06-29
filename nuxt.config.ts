@@ -22,7 +22,6 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
-    "@nuxt/image",
     "@nuxt/fonts",
     "@nuxt/content",
     "nuxt-llms",
@@ -66,7 +65,8 @@ export default defineNuxtConfig({
     "/resources": { prerender: true },
     "/blog/**": { swr: 3600 },
     "/projects": { swr: 3600 },
-    "/shop": { swr: 3600 },
+    "/labs": { swr: 3600 },
+    "/labs/**": { swr: 3600 },
   },
 
   content: {
