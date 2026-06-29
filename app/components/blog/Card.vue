@@ -16,7 +16,7 @@
       />
       <div>
         <h3
-          class="text-base font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
+          class="font-display text-base font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
         >
           {{ article.title }}
         </h3>

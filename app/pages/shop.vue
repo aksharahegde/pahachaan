@@ -1,13 +1,15 @@
 <template>
-  <main class="min-h-screen">
-    <Header class="mb-4" :title="doc.title" :description="doc.description" />
-    <div class="flex flex-col gap-4">
-      <ProductCard
-        v-for="(product, id) in products"
-        :key="id"
-        :product="product"
-      />
-    </div>
+  <main class="page-main">
+    <section>
+      <Header class="mb-8" :title="doc.title" :description="doc.description" />
+      <div class="page-section">
+        <ProductCard
+          v-for="(product, id) in products"
+          :key="id"
+          :product="product"
+        />
+      </div>
+    </section>
   </main>
 </template>
 

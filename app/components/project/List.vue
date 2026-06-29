@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <h3 class="font-bold md:text-lg text-gray-700 dark:text-gray-200">
+  <div class="page-section">
+    <h3 class="section-heading">
       Projects
     </h3>
     <div class="flex flex-col gap-4">
@@ -10,7 +10,7 @@
         :project="project"
       />
     </div>
-    <div class="flex items-center justify-end mt-4 text-sm">
+    <div class="flex items-center justify-end mt-1 text-sm">
       <UButton
         label="All Projects &rarr;"
         to="/projects"

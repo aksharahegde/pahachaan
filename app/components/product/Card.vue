@@ -6,11 +6,11 @@
     external
   >
     <h3
-      class="text-sm font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
+      class="font-display text-base font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
     >
       {{ product.heading }}
     </h3>
-    <p class="dark:text-gray-400 text-gray-600 text-sm py-1">
+    <p class="dark:text-gray-400 text-gray-600 text-base py-1">
       {{ product.description }}
     </p>
   </NuxtLink>

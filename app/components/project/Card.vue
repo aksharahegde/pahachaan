@@ -23,7 +23,7 @@
     </UChip>
     <div>
       <h3
-        class="text-base flex items-center gap-2 font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
+        class="font-display text-base flex items-center gap-2 font-medium group-hover:text-primary-600 dark:group-hover:text-primary-500"
       >
         {{ project.heading }}
         <UBadge v-if="project.role" color="neutral" size="sm" variant="subtle">

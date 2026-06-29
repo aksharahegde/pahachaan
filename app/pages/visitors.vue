@@ -1,20 +1,22 @@
 <template>
-  <main class="min-h-screen">
-    <Header
-      class="mb-4"
-      title="Live Visitors"
-      description="A rotating visitors view powered by Cobe."
-    />
-    <canvas
-      ref="canvasRef"
-      data-testid="visitor-globe-view"
-      class="w-full aspect-square max-w-[560px] mx-auto cursor-grab touch-none active:cursor-grabbing"
-      @pointerdown="handlePointerDown"
-      @pointermove="handlePointerMove"
-      @pointerup="handlePointerUp"
-      @pointercancel="handlePointerUp"
-      @pointerleave="handlePointerUp"
-    />
+  <main class="page-main">
+    <section>
+      <Header
+        class="mb-8"
+        title="Live Visitors"
+        description="A rotating visitors view powered by Cobe."
+      />
+      <canvas
+        ref="canvasRef"
+        data-testid="visitor-globe-view"
+        class="mt-6 w-full aspect-square max-w-[560px] mx-auto cursor-grab touch-none active:cursor-grabbing"
+        @pointerdown="handlePointerDown"
+        @pointermove="handlePointerMove"
+        @pointerup="handlePointerUp"
+        @pointercancel="handlePointerUp"
+        @pointerleave="handlePointerUp"
+      />
+    </section>
   </main>
 </template>
 

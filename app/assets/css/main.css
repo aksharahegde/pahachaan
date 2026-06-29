@@ -3,6 +3,43 @@
 
 @theme {
   --spacing: 0.25rem;
+  --font-sans: "Barlow", system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer components {
+  .page-main {
+    @apply min-h-screen flex flex-col gap-10 md:gap-12;
+  }
+
+  .page-section {
+    @apply flex flex-col gap-4;
+  }
+
+  .section-heading {
+    @apply font-display font-semibold text-lg md:text-xl text-zinc-800 dark:text-zinc-100;
+  }
+
+  .page-heading {
+    @apply font-display text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100;
+  }
+
+  .page-lead {
+    @apply mt-2 text-lg leading-relaxed text-gray-600 dark:text-gray-400;
+  }
+
+  .prose-page {
+    @apply max-w-none;
+  }
+
+  .prose-page p {
+    @apply leading-relaxed;
+  }
+
+  .prose-page :where(h1, h2, h3, h4, h5, h6) {
+    @apply font-display;
+  }
 }
 
 .only-print {
