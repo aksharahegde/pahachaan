@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const studioEnabled = Boolean(
+  process.env.STUDIO_ENABLED === "true" &&
+    process.env.STUDIO_GITHUB_OWNER &&
+    process.env.STUDIO_GITHUB_REPO,
+);
+
 export default defineNuxtConfig({
   experimental: {
-    payloadExtraction: "client",
+    payloadExtraction: false,
     writeEarlyHints: true,
     defaults: {
       nuxtLink: {
@@ -25,7 +31,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/content",
     "nuxt-llms",
-    "nuxt-studio",
+    ...(studioEnabled ? ["nuxt-studio"] : []),
   ],
 
   css: ["~/assets/css/main.css"],
@@ -37,7 +43,7 @@ export default defineNuxtConfig({
         lang: "en",
       },
       bodyAttrs: {
-        class: "antialiased bg-gray-50 dark:bg-gray-900 min-h-screen font-sans",
+        class: "antialiased bg-white dark:bg-zinc-950 min-h-screen font-sans",
       },
       script:
         process.env.NODE_ENV === "production"
@@ -87,17 +93,19 @@ export default defineNuxtConfig({
     },
   },
 
-  studio: {
-    // Studio admin route (default: '/_studio')
-    route: process.env.STUDIO_ROUTE,
-    repository: {
-      provider: "github",
-      owner: process.env.STUDIO_GITHUB_OWNER as string,
-      repo: process.env.STUDIO_GITHUB_REPO as string,
-      branch: process.env.STUDIO_GITHUB_BRANCH_NAME,
-      rootDir: "",
-    },
-  },
+  studio: studioEnabled
+    ? {
+        // Studio admin route (default: '/_studio')
+        route: process.env.STUDIO_ROUTE,
+        repository: {
+          provider: "github",
+          owner: process.env.STUDIO_GITHUB_OWNER as string,
+          repo: process.env.STUDIO_GITHUB_REPO as string,
+          branch: process.env.STUDIO_GITHUB_BRANCH_NAME,
+          rootDir: "",
+        },
+      }
+    : undefined,
 
   runtimeConfig: {
     public: {

@@ -1,6 +1,7 @@
 ## Learned User Preferences
 
 - Use Bun for package installs and lockfile work in this repository (`bun install`, `bun run` for scripts); avoid defaulting to npm for dependency installs.
+- Do not run `bun run build` after every task when changes are content-only or rules-only; reserve builds for code, styling, config, dependency, or behavior changes that need compilation verification.
 
 ## Learned Workspace Facts
 

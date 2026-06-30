@@ -6,6 +6,10 @@
   "category": "development",
   "heading": "man-tui",
   "description": "A fast, keyboard-first terminal UI for browsing Linux/macOS man pages.",
+  "tech": ["Rust", "Ratatui", "CLI"],
+  "updated": "Updated 1w ago",
+  "stars": "1.2k",
+  "forks": "210",
   "status": "active",
   "role": "Author"
 }

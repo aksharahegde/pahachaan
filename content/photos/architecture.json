@@ -1,0 +1,53 @@
+{
+  "title": "Architecture",
+  "slug": "architecture",
+  "description": "Temples, monuments, and built forms in monochrome.",
+  "photos": [
+    {
+      "slug": "matrimandir-auroville",
+      "title": "Matrimandir",
+      "src": "/photos/matrimandir-auroville.jpg",
+      "alt": "The golden geodesic Matrimandir dome surrounded by trees in Auroville",
+      "location": "Auroville",
+      "year": "2026",
+      "aspect": "16 / 9",
+      "featured": true
+    },
+    {
+      "slug": "vishalakshi-mantap",
+      "title": "Vishalakshi Mantap",
+      "src": "/photos/vishalakshi-mantap.jpg",
+      "alt": "The tiered white Vishalakshi Mantap meditation hall under a clear sky",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "1 / 1"
+    },
+    {
+      "slug": "adiyogi-shiva-night",
+      "title": "Adiyogi at Night",
+      "src": "/photos/adiyogi-shiva-night.jpg",
+      "alt": "The illuminated Adiyogi Shiva statue against a dark night sky",
+      "location": "Coimbatore",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "ornate-temple-gopuram",
+      "title": "Ornate Gopuram",
+      "src": "/photos/ornate-temple-gopuram.jpg",
+      "alt": "A towering Hindu temple gopuram covered in detailed stone carvings",
+      "location": "South India",
+      "year": "2026",
+      "aspect": "9 / 16"
+    },
+    {
+      "slug": "temple-gopuram-cityscape",
+      "title": "Temple Over the City",
+      "src": "/photos/temple-gopuram-cityscape.jpg",
+      "alt": "A white temple tower and trishula overlooking a sprawling city skyline",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9"
+    }
+  ]
+}

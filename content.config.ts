@@ -29,6 +29,10 @@ export default defineContentConfig({
         description: z.string(),
         status: z.string(),
         role: z.string(),
+        tech: z.array(z.string()).optional(),
+        updated: z.string().optional(),
+        stars: z.string().optional(),
+        forks: z.string().optional(),
       }),
     }),
     labs: defineCollection({
@@ -40,6 +44,41 @@ export default defineContentConfig({
         description: z.string(),
         url: z.string().optional(),
         heading: z.string().optional(),
+      }),
+    }),
+    resources: defineCollection({
+      type: "data",
+      source: "resources/*.json",
+      schema: z.object({
+        tag: z.string(),
+        slug: z.string(),
+        links: z.array(
+          z.object({
+            title: z.string().optional(),
+            url: z.string(),
+          })
+        ),
+      }),
+    }),
+    photos: defineCollection({
+      type: "data",
+      source: "photos/*.json",
+      schema: z.object({
+        title: z.string(),
+        slug: z.string(),
+        description: z.string().optional(),
+        photos: z.array(
+          z.object({
+            slug: z.string().optional(),
+            title: z.string(),
+            src: z.string(),
+            alt: z.string(),
+            location: z.string().optional(),
+            year: z.string().optional(),
+            aspect: z.string().optional(),
+            featured: z.boolean().optional(),
+          })
+        ),
       }),
     }),
     content: defineCollection({
@@ -86,6 +125,33 @@ export default defineContentConfig({
         pronouns: z.string(),
         title: z.string(),
         bio: z.string(),
+        focus: z.array(z.string()),
+        now: z.array(
+          z.object({
+            label: z.string(),
+            title: z.string(),
+            icon: z.string(),
+          })
+        ),
+        experiments: z.array(
+          z.object({
+            id: z.string(),
+            title: z.string(),
+            description: z.string(),
+            meta: z.array(z.string()),
+            status: z.string(),
+            url: z.string(),
+          })
+        ),
+        toolkit: z.array(
+          z.object({
+            id: z.string(),
+            title: z.string(),
+            description: z.string(),
+            icon: z.string(),
+            url: z.string(),
+          })
+        ),
       }),
     }),
     contact: defineCollection({

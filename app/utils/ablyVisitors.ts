@@ -42,7 +42,9 @@ function isLongitude(value: number): boolean {
   return value >= -180 && value <= 180;
 }
 
-function isValidLocation(location: VisitorLocation | null | undefined): boolean {
+function isValidLocation(
+  location: VisitorLocation | null | undefined,
+): location is VisitorLocation {
   const latitude = toCoordinate(location?.latitude);
   const longitude = toCoordinate(location?.longitude);
 

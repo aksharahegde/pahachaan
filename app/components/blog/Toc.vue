@@ -20,9 +20,9 @@
     }"
   >
     <div
-      class="flex items-center justify-between w-full gap-2 sticky top-0 bg-gray-100 dark:bg-gray-950 py-2 -mt-2 -mx-2 px-2 rounded-md"
+      class="flex w-full items-center justify-between gap-2 sticky top-0 bg-gray-100 dark:bg-gray-950 py-2 -mt-2 -mx-2 px-2 rounded-md"
     >
-      <div class="flex items-center gap-2 no-print">
+      <div class="flex min-w-0 items-center gap-2 no-print">
         <SharedPin
           v-if="isPinned"
           @click="handlePinToggle"
@@ -35,7 +35,7 @@
           class="cursor-pointer hover:text-primary-500 transition-colors"
           style="view-transition-name: pin-icon"
         />
-        <h1 class="text-lg mb-0" style="view-transition-name: toc-title">
+        <h1 class="mb-0 truncate text-sm font-semibold" style="view-transition-name: toc-title">
           Table of Contents
         </h1>
       </div>
@@ -43,7 +43,7 @@
         :aria-expanded="isOpen"
         @click="toggle()"
         aria-controls="toc-content"
-        class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-print"
+        class="shrink-0 whitespace-nowrap text-xs text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors no-print"
       >
         [ {{ isOpen ? "Hide" : "Show" }} ]
       </button>

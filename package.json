@@ -31,10 +31,12 @@
     "@nuxt/devtools": "^3.2.4",
     "@nuxt/fonts": "latest",
     "@nuxtjs/seo": "^5.1.3",
+    "@types/bun": "^1.3.14",
     "@vueuse/core": "latest",
     "@vueuse/nuxt": "latest",
     "nuxt": "^4.4.6",
     "nuxt-studio": "^1.6.1",
+    "to-ico": "^1.1.5",
     "vue": "latest",
     "vue-router": "^5.0.6"
   },

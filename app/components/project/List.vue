@@ -8,6 +8,7 @@
         v-for="(project, id) in projects"
         :key="id"
         :project="project"
+        :variant="variant"
       />
     </div>
     <div class="flex items-center justify-end pt-1 text-sm">
@@ -23,8 +24,19 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  variant: {
+    type: String,
+    default: "default",
+  },
+  limit: {
+    type: Number,
+    default: 3,
+  },
+});
+
 const { data: projects } = await useAsyncData("projects-home", () =>
-  queryCollection("projects").where("status", "==", "active").order("stem", "ASC").limit(3).all()
+  queryCollection("projects").where("status", "==", "active").order("stem", "ASC").limit(props.limit).all()
 );
 
 const colors = [

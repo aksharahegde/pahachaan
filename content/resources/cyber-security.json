@@ -1,0 +1,10 @@
+{
+  "tag": "Cyber Security",
+  "slug": "cyber-security",
+  "links": [
+    {
+      "title": "OSV",
+      "url": "https://osv.dev/"
+    }
+  ]
+}

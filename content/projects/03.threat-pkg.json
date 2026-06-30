@@ -6,6 +6,10 @@
   "category": "development",
   "heading": "threat-pkg",
   "description": "A public threat intelligence dashboard for various programming languages: compromised packages, malicious releases, and advisory identifiers (CVE, GHSA, OSV) in one searchable feed",
+  "tech": ["Python", "OSV", "GitHub"],
+  "updated": "Updated 1w ago",
+  "stars": "610",
+  "forks": "80",
   "status": "active",
   "role": "Author"
 }

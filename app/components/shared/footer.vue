@@ -1,107 +1,75 @@
 <template>
-  <footer class="max-w-2xl mx-auto">
-    <div class="flex flex-col gap-2 py-2">
-      <!-- affiliate link -->
-      <UAlert
-        v-if="footer.affiliate"
-        color="neutral"
-        variant="subtle"
-        :title="footer.affiliate.title"
-        :avatar="isMinimalMode ? undefined : { src: '/credits/dubco.png', alt: 'Dub.co', size: 'sm' }"
+  <footer class="mx-auto max-w-6xl px-4 pb-4 pt-1 text-[11px] text-zinc-500 sm:px-6 lg:px-8 dark:text-zinc-500">
+    <section class="mb-6 grid gap-3 md:grid-cols-2">
+      <NuxtLink
+        v-if="footerContent.affiliate"
+        :to="footerContent.affiliate.url"
+        target="_blank"
+        external
+        data-testid="portfolio-dub-signup-link"
+        class="group grid grid-cols-[1fr_20px] gap-4 rounded-xl border border-zinc-200 p-4 text-[12px] transition hover:bg-white/40 dark:border-zinc-800 dark:hover:bg-white/5"
       >
-        <template #title="{ title }">
-          <h2 class="font-display text-lg font-bold">{{ title }}</h2>
-        </template>
-        <template #description>
-          <div class="flex flex-col relative">
-            <p class="text-base">{{ footer.affiliate.description }}</p>
-            <UButton
-              :to="footer.affiliate.url"
-              target="_blank"
-              variant="soft"
-              color="white"
-              class="mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2 w-fit p-0"
-              external
-            >
-              <span>Signup to Dub</span>
-            </UButton>
-            <span
-              class="absolute top-0 right-0 -translate-y-1/2 hidden lg:block text-5xl px-2 py-1 opacity-30 rounded-full animate-pulse"
-              >20% off</span
-            >
-          </div>
-        </template>
-      </UAlert>
+        <div>
+          <p class="font-semibold text-zinc-950 dark:text-zinc-50">{{ footerContent.affiliate.title }}</p>
+          <p class="mt-1 text-zinc-500 dark:text-zinc-400">{{ footerContent.affiliate.description }}</p>
+          <p class="mt-3 text-zinc-700 transition group-hover:text-zinc-950 dark:text-zinc-300 dark:group-hover:text-white">
+            Signup to Dub
+          </p>
+        </div>
+        <UIcon
+          name="i-solar-arrow-right-up-linear"
+          class="size-4 justify-self-end text-zinc-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-zinc-900 dark:group-hover:text-white"
+        />
+      </NuxtLink>
 
-      <!-- Github repo -->
-      <UAlert
-        v-if="footer"
-        :icon="isMinimalMode ? undefined : 'i-simple-icons-github'"
-        color="neutral"
-        variant="subtle"
-        :title="footer.title"
+      <NuxtLink
+        v-if="footerContent.github"
+        :to="footerContent.github"
+        target="_blank"
+        external
+        data-testid="portfolio-template-download-link"
+        class="group grid grid-cols-[1fr_20px] gap-4 rounded-xl border border-zinc-200 p-4 text-[12px] transition hover:bg-white/40 dark:border-zinc-800 dark:hover:bg-white/5"
       >
-        <template #icon="{ icon }">
-          <UIcon :name="icon" class="w-8 h-8" />
-        </template>
-        <template #title="{ title }">
-          <span>{{ title }}</span>
-        </template>
-        <template #description>
-          This site is opensource template and can be used for free.
-          <NuxtLink
-            :to="footer.github"
-            target="_blank"
-            class="text-sm mt-2 hover:text-primary-500 transition-all duration-300 underline flex items-center gap-2"
-            external
-            >Click to get the template</NuxtLink
-          >
-        </template>
-      </UAlert>
-    </div>
-    <div
-      class="container flex flex-col items-center px-4 py-2 mx-auto border-t-2 border-gray-400 md:px-8 sm:flex-row"
-    >
-      <p
-        class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 text-center md:text-left"
-      >
-        © {{ new Date().getFullYear() }} {{ config.public.ownerName }}. All
-        Rights Reserved.
-      </p>
-      <div
-        class="flex items-center justify-between md:justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
-      >
+        <div>
+          <p class="font-semibold text-zinc-950 dark:text-zinc-50">Use this template</p>
+          <p class="mt-1 text-zinc-500 dark:text-zinc-400">
+            This site is an open-source portfolio template and free to use.
+          </p>
+          <p class="mt-3 text-zinc-700 transition group-hover:text-zinc-950 dark:text-zinc-300 dark:group-hover:text-white">
+            Click to get the template
+          </p>
+        </div>
+        <UIcon
+          name="i-simple-icons-github"
+          class="size-4 justify-self-end text-zinc-400 transition group-hover:text-zinc-900 dark:group-hover:text-white"
+        />
+      </NuxtLink>
+    </section>
+
+    <div class="flex flex-col gap-3 border-t border-zinc-200 pt-4 dark:border-zinc-800 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-4">
         <SharedOpenstatusWidget />
-        <UTooltip text="Blog">
-          <UButton
-            color="gray"
-            variant="ghost"
-            :to="footer?.blog"
-            target="_blank"
-            icon="i-simple-icons-blogger"
-            external
-          />
-        </UTooltip>
+        <NuxtLink
+          to="https://ink.aksharahegde.xyz"
+          target="_blank"
+          external
+          class="inline-flex items-center gap-2 transition hover:text-zinc-950 dark:hover:text-white"
+        >
+          <span>Ink</span>
+        </NuxtLink>
       </div>
+      <p>© {{ currentYear }} {{ config.public.ownerName || "Akshara Hegde" }}</p>
     </div>
   </footer>
 </template>
 
 <script setup>
 const config = useRuntimeConfig();
-const isMinimalMode = useMinimalMode()
+const currentYear = new Date().getFullYear();
 
-const { data: footer } = await useAsyncData("footer", () => {
-  return queryCollection("footer").first();
-});
+const { data: footerData } = await useAsyncData("footer-shared", () =>
+  queryCollection("footer").first()
+);
+
+const footerContent = computed(() => footerData.value || {});
 </script>
-<style scoped>
-@reference "~/assets/css/main.css";
-
-.link {
-  @apply text-gray-500 hover:text-primary-500 text-lg flex justify-center items-center;
-}
-.link svg {
-  @apply w-12 h-12;
-}
-</style>

@@ -4,6 +4,10 @@
     "thumbnailBg": "bg-red-100",
     "heading": "Django JET Calm",
     "description": "Modern template for Django-4 admin interface with improved functionality.",
+    "tech": ["Python", "Django"],
+    "updated": "Updated 3d ago",
+    "stars": "1.2k",
+    "forks": "210",
     "role": "Maintainer",
     "status": "active"
 }

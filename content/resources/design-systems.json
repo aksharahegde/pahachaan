@@ -1,0 +1,82 @@
+{
+  "tag": "Design Systems",
+  "slug": "design-systems",
+  "links": [
+    {
+      "title": "Acorn - Firefox Design Systems",
+      "url": "http://acorn.firefox.com/"
+    },
+    {
+      "title": "Airbnb Design",
+      "url": "https://airbnb.design/"
+    },
+    {
+      "title": "Arco Design - 企业级产品的完整设计和开发解决方案",
+      "url": "https://arco.design/"
+    },
+    {
+      "title": "Base Design System",
+      "url": "https://base.uber.com/6d2425e9f/p/294ab4-base-design-system"
+    },
+    {
+      "title": "Brand Guidelines - Duolingo",
+      "url": "https://design.duolingo.com/"
+    },
+    {
+      "title": "Carbon Design System",
+      "url": "https://carbondesignsystem.com/"
+    },
+    {
+      "title": "Cloudscape - Cloudscape Design System",
+      "url": "https://cloudscape.design/"
+    },
+    {
+      "title": "Forma 36 - The Contentful Design System",
+      "url": "https://f36.contentful.com/"
+    },
+    {
+      "title": "Human Interface Guidelines | Apple Developer Documentation",
+      "url": "https://developer.apple.com/design/human-interface-guidelines"
+    },
+    {
+      "title": "Lightning Design System",
+      "url": "https://www.lightningdesignsystem.com/"
+    },
+    {
+      "title": "Open design systems from the Figma Community",
+      "url": "https://www.designsystems.com/open-design-systems/"
+    },
+    {
+      "title": "Overview - Get started - Atlassian Design System",
+      "url": "https://atlassian.design/"
+    },
+    {
+      "title": "Oxygen UI | by WSO2",
+      "url": "https://wso2.github.io/oxygen-ui/"
+    },
+    {
+      "title": "Primer",
+      "url": "https://primer.style/"
+    },
+    {
+      "title": "Redefining Progress",
+      "url": "https://www.audi.com/ci/en/renewed-brand.html"
+    },
+    {
+      "title": "Shopify Polaris",
+      "url": "https://polaris.shopify.com/"
+    },
+    {
+      "title": "Skiff Design System",
+      "url": "https://skiff.com/ui/"
+    },
+    {
+      "title": "Styleguide — Marvel",
+      "url": "https://marvelapp.com/styleguide/overview/introduction"
+    },
+    {
+      "title": "Ubuntu Design",
+      "url": "https://design.ubuntu.com/"
+    }
+  ]
+}

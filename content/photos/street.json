@@ -1,0 +1,62 @@
+{
+  "title": "Street",
+  "slug": "street",
+  "description": "Cafes, signs, food, and everyday public moments.",
+  "photos": [
+    {
+      "slug": "heaven-chai-shop",
+      "title": "Heaven Chai",
+      "src": "/photos/heaven-chai-shop.jpg",
+      "alt": "The Heaven Chai logo above a tea preparation counter with pots and glasses",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9",
+      "featured": true
+    },
+    {
+      "slug": "brewed-in-luru-neon",
+      "title": "Brewed in 'Luru",
+      "src": "/photos/brewed-in-luru-neon.jpg",
+      "alt": "A glowing neon sign reading Brewed in Luru on a dark cafe wall",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "neon-highrate-sign",
+      "title": "#Highrate",
+      "src": "/photos/neon-highrate-sign.jpg",
+      "alt": "A circular neon sign with the hashtag Highrate in a dim interior",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "espresso-cup-foam",
+      "title": "Espresso Foam",
+      "src": "/photos/espresso-cup-foam.jpg",
+      "alt": "A white cup of espresso with thick crema on a metal tabletop",
+      "location": "Cafe",
+      "year": "2026",
+      "aspect": "1 / 1"
+    },
+    {
+      "slug": "tiramisu-dessert",
+      "title": "Tiramisu",
+      "src": "/photos/tiramisu-dessert.jpg",
+      "alt": "A layered tiramisu dessert served in a glass on a cafe tray",
+      "location": "Cafe",
+      "year": "2026",
+      "aspect": "9 / 16"
+    },
+    {
+      "slug": "paper-lantern-lights",
+      "title": "Paper Lanterns",
+      "src": "/photos/paper-lantern-lights.jpg",
+      "alt": "Glowing spherical paper lantern lights hanging from a ceiling",
+      "location": "Interior",
+      "year": "2026",
+      "aspect": "16 / 9"
+    }
+  ]
+}
