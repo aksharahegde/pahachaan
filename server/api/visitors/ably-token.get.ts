@@ -1,4 +1,4 @@
-import { createError, getQuery, setResponseHeader } from "h3";
+import { getQuery, setResponseHeader, setResponseStatus } from "h3";
 import { SignJWT } from "jose";
 
 import { VISITORS_CHANNEL_NAME } from "~~/app/utils/ablyVisitors";
@@ -17,10 +17,8 @@ export default defineEventHandler(async (event) => {
   const [keyName, keySecret] = apiKey?.split(":") ?? [];
 
   if (!keyName || !keySecret) {
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Ably API key is not configured",
-    });
+    setResponseStatus(event, 204);
+    return "";
   }
 
   const clientId = readClientId(getQuery(event).clientId);

@@ -6,6 +6,10 @@
     "category": "development",
     "heading": "Ink",
     "description": "A simple, fast, and beautiful template to showcase your writings.",
+    "tech": ["Nuxt", "Content", "Tailwind"],
+    "updated": "Updated 1w ago",
+    "stars": "480",
+    "forks": "60",
     "status": "active",
     "role": "Author"
 }

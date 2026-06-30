@@ -2,5 +2,91 @@
   "name": "Akshara Hegde",
   "pronouns": "he/him",
   "title": "Full Stack Engineer and Opensource Contributor",
-  "bio": "I am a full-stack engineer based in Bengaluru, India, specializing in building AI-powered web applications and developer tools. I work extensively with Nuxt, Python, and modern LLM ecosystems to create scalable, automation-first products."
+  "bio": "I build products, developer tools and AI applications. Open source is my playground. I also write about systems, productivity and the things I learn while shipping.",
+  "focus": ["Builder", "Open Source", "Writer"],
+  "now": [
+    {
+      "label": "Building",
+      "title": "Hermes Dashboard",
+      "icon": "i-solar-code-square-linear"
+    },
+    {
+      "label": "Reading",
+      "title": "Atomic Habits",
+      "icon": "i-solar-book-2-linear"
+    },
+    {
+      "label": "Writing",
+      "title": "AI Agents for Content",
+      "icon": "i-solar-pen-new-square-linear"
+    },
+    {
+      "label": "Shipping",
+      "title": "RSS Herald v2",
+      "icon": "i-solar-rocket-linear"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "nokia-1100",
+      "title": "Nokia 1100",
+      "description": "Interactive web recreation of the classic Nokia 1100.",
+      "meta": ["JavaScript", "Canvas", "WebAudio"],
+      "status": "Experiment",
+      "url": "/labs"
+    },
+    {
+      "id": "ai-command-center",
+      "title": "AI Command Center",
+      "description": "Terminal-style dashboard for AI workflows.",
+      "meta": ["Vue", "TypeScript", "Monaco"],
+      "status": "Prototype",
+      "url": "/labs"
+    },
+    {
+      "id": "scooter-hud",
+      "title": "Scooter HUD",
+      "description": "Navigation display for smart scooters.",
+      "meta": ["Bluetooth", "Hardware"],
+      "status": "Prototype",
+      "url": "/labs"
+    }
+  ],
+  "toolkit": [
+    {
+      "id": "nuxt-modules",
+      "title": "Nuxt Modules",
+      "description": "Modules I use across projects",
+      "icon": "i-simple-icons-nuxtdotjs",
+      "url": "/uses"
+    },
+    {
+      "id": "claude-skills",
+      "title": "Claude Skills",
+      "description": "Custom skills for Claude Code",
+      "icon": "i-solar-command-linear",
+      "url": "/resources"
+    },
+    {
+      "id": "cursor-rules",
+      "title": "Cursor Rules",
+      "description": "Rules and preferences for Cursor",
+      "icon": "i-solar-settings-linear",
+      "url": "/resources"
+    },
+    {
+      "id": "prompt-library",
+      "title": "Prompt Library",
+      "description": "Prompts that I use and reuse",
+      "icon": "i-solar-archive-linear",
+      "url": "/resources"
+    },
+    {
+      "id": "ui-components",
+      "title": "UI Components",
+      "description": "Internal components I build often",
+      "icon": "i-solar-widget-2-linear",
+      "url": "/resources"
+    }
+  ]
 }

@@ -1,0 +1,33 @@
+{
+  "tag": "Data Science",
+  "slug": "data-science",
+  "links": [
+    {
+      "url": "https://airflow.apache.org/"
+    },
+    {
+      "url": "https://docs.getdbt.com/"
+    },
+    {
+      "url": "https://evidence.dev/"
+    },
+    {
+      "url": "https://matplotlib.org/"
+    },
+    {
+      "url": "https://meltano.com/"
+    },
+    {
+      "url": "https://superset.apache.org/"
+    },
+    {
+      "url": "https://www.mage.ai/"
+    },
+    {
+      "url": "https://www.metabase.com/"
+    },
+    {
+      "url": "https://www.rilldata.com/"
+    }
+  ]
+}

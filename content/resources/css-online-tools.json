@@ -1,0 +1,42 @@
+{
+  "tag": "CSS Online tools",
+  "slug": "css-online-tools",
+  "links": [
+    {
+      "title": "Base64 Image Encoder",
+      "url": "https://www.base64-image.de/"
+    },
+    {
+      "title": "Clippy - CSS clip-path maker",
+      "url": "https://bennettfeely.com/clippy/"
+    },
+    {
+      "title": "Create custom and Instagram like photo filters for CSS",
+      "url": "https://www.cssfilters.co/"
+    },
+    {
+      "title": "CSS Glow Generator - CSS Bud",
+      "url": "https://cssbud.com/css-generator/css-glow-generator/"
+    },
+    {
+      "title": "Fancy Border Radius Generator",
+      "url": "https://9elements.github.io/fancy-border-radius/"
+    },
+    {
+      "title": "Glassmorphism CSS Generator | Hype4 Academy",
+      "url": "https://hype4.academy/tools/glassmorphism-generator"
+    },
+    {
+      "title": "Neumorphism/Soft UI CSS shadow generator",
+      "url": "https://neumorphism.io/#e0e0e0"
+    },
+    {
+      "title": "QQ - Quantity Queries Builder",
+      "url": "https://quantityqueries.com/"
+    },
+    {
+      "title": "Smooth Shadow",
+      "url": "https://shadows.brumm.af/"
+    }
+  ]
+}

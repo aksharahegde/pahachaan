@@ -1,0 +1,18 @@
+{
+  "tag": "Tools & Utilities",
+  "slug": "tools-utilities",
+  "links": [
+    {
+      "title": "allinone.tools | Free & useful tools.",
+      "url": "https://allinone.tools/"
+    },
+    {
+      "title": "Get OSSEC - OSSEC",
+      "url": "https://www.ossec.net/ossec-downloads/"
+    },
+    {
+      "title": "Wazuh · The Open Source Security Platform",
+      "url": "https://wazuh.com/"
+    }
+  ]
+}

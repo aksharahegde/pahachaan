@@ -1,0 +1,26 @@
+{
+  "tag": "CSS Animations",
+  "slug": "css-animations",
+  "links": [
+    {
+      "title": "Animista - CSS Animations on Demand",
+      "url": "https://animista.net/play"
+    },
+    {
+      "title": "argyleink/transition.css",
+      "url": "https://www.transition.style/"
+    },
+    {
+      "title": "cubic-bezier.com",
+      "url": "https://cubic-bezier.com/#.17,.67,.83,.67"
+    },
+    {
+      "title": "Keyframes.app",
+      "url": "https://keyframes.app/animate"
+    },
+    {
+      "title": "WAIT! Animate",
+      "url": "https://waitanimate.wstone.uk/"
+    }
+  ]
+}

@@ -6,6 +6,10 @@
   "category": "development",
   "heading": "Crawlboy",
   "description": "Turn any sitemap into clean Markdown. Built for Crawl4AI workflows.",
+  "tech": ["Python", "SQLite"],
+  "updated": "Updated 2w ago",
+  "stars": "890",
+  "forks": "120",
   "status": "active",
   "role": "Author"
 }

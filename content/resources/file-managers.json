@@ -1,0 +1,12 @@
+{
+  "tag": "File managers",
+  "slug": "file-managers",
+  "links": [
+    {
+      "url": "https://github.com/antonmedv"
+    },
+    {
+      "url": "https://github.com/antonmedv/llama"
+    }
+  ]
+}

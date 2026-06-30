@@ -1,15 +1,16 @@
 <template>
-  <UApp class="bg-default">
+  <UApp class="bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
     <NuxtLoadingIndicator color="primary" />
     <SharedNavbar class="no-print" />
-    <div class="h-4 md:h-24" />
-    <UContainer>
-      <NuxtPage class="mx-auto px-2 lg:px-8 max-w-2xl" />
+    <SharedCommandPalette class="no-print" />
+    <div class="h-8 md:h-10" />
+    <UContainer class="max-w-6xl">
+      <NuxtPage class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl" />
     </UContainer>
-    <div class="h-4 md:h-32" />
+    <div class="h-12 md:h-20" />
     <SharedVisitors class="no-print" />
     <SharedFooter class="no-print" />
-    <div class="h-16 md:hidden" />
+    <div class="h-8 md:hidden" />
   </UApp>
 </template>
 <script setup lang="ts">
@@ -27,55 +28,21 @@ useHead({
   htmlAttrs: {
     lang: "en",
   },
-  link: [
-    {
-      rel: "icon",
-      type: "image/png",
-      href: "/icon.png",
-    },
+  meta: () => [
+    { name: "theme-color", content: "#18181b" },
+    { name: "msapplication-TileColor", content: "#18181b" },
+    { property: "og:url", content: `${config.public.baseURL}${route.path}` },
+    { name: "twitter:site", content: `@${config.public.twitter}` },
+    { name: "twitter:creator", content: `@${config.public.twitter}` },
+  ],
+  link: () => [
+    { rel: "canonical", href: `${config.public.baseURL}${route.path}` },
+    { rel: "manifest", href: "/manifest.json" },
+    { rel: "mask-icon", color: "#18181b", href: "/logo.svg" },
+    { rel: "alternate", type: "application/rss+xml", href: "/rss.xml" },
+    { rel: "feed", type: "application/rss+xml", href: "/rss.xml" },
   ],
 });
-
-if (import.meta.server) {
-  const PATH_RE = /([^/]+)\/?$/;
-  const { path = "/" } = route.fullPath.match(PATH_RE)?.groups ?? {};
-  const url = `${config.public.baseURL}${path}`;
-
-  useHead({
-    meta: () => [
-      { name: "theme-color", content: "#0ea5e9" },
-      { name: "msapplication-TileColor", content: "#0ea5e9" },
-      { property: "og:url", content: url },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: `@${config.public.twitter}` },
-      { name: "twitter:creator", content: `@${config.public.twitter}` },
-    ],
-    link: [
-      { rel: "canonical", href: url },
-      { rel: "mask-icon", color: "#fff", href: "/favicon.ico" },
-      { rel: "icon", type: "image/ico", href: "/favicon.ico" },
-      { rel: "alternate", type: "application/rss+xml", href: "/rss.xml" },
-      {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/icon-192x192.png",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "32x32",
-        href: "/favicon-32x32.png",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        sizes: "16x16",
-        href: "/favicon-16x16.png",
-      },
-      { rel: "feed", type: "application/rss+xml", href: "/rss.xml" },
-    ],
-  });
-}
 </script>
 <style>
 :host,

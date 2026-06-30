@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <Header class="mb-4" :title="doc.title" :description="doc.description" />
+    <Header class="mb-4" :title="pageMeta.title" :description="pageMeta.description" />
     <div class="flex flex-col gap-4">
       <LabCard v-for="(lab, id) in labs" :key="id" :lab="lab" />
     </div>
@@ -19,22 +19,28 @@ const { data: doc } = await useAsyncData("labs-index", () =>
   queryCollection("labs").where("title", "==", "Labs").first()
 );
 
-const { title, description, icon } = doc.value;
+const pageMeta = computed(() => ({
+  title: "Shop",
+  description: "Products and digital goods.",
+  icon: "solar:shop-2-outline",
+  ...(doc.value || {}),
+}));
+
 defineOgImage("MyOg", {
   headline: config.public.ownerName,
-  title,
-  description,
-  icon,
+  title: pageMeta.value.title,
+  description: pageMeta.value.description,
+  icon: pageMeta.value.icon,
   url: route.fullPath,
 });
 
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  twitterTitle: title,
-  twitterDescription: description,
+  title: pageMeta.value.title,
+  description: pageMeta.value.description,
+  ogTitle: pageMeta.value.title,
+  ogDescription: pageMeta.value.description,
+  twitterTitle: pageMeta.value.title,
+  twitterDescription: pageMeta.value.description,
   twitterImage: `${config.public.baseURL}/og_me.png`,
 });
 </script>

@@ -1,0 +1,61 @@
+{
+  "title": "Nature",
+  "slug": "nature",
+  "description": "Landscapes, water, and quiet natural scenes in light and shadow.",
+  "photos": [
+    {
+      "slug": "fallen-tree-lake",
+      "title": "Fallen Tree",
+      "src": "/photos/fallen-tree-lake.jpg",
+      "alt": "A large leafless tree fallen across a calm lake with hills in the distance",
+      "location": "Western Ghats",
+      "year": "2026",
+      "aspect": "4 / 3",
+      "featured": true
+    },
+    {
+      "slug": "hazy-mountain-landscape",
+      "title": "Hazy Hills",
+      "src": "/photos/hazy-mountain-landscape.jpg",
+      "alt": "A wide view of misty mountains and a valley under an overcast sky",
+      "location": "Hill country",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "beach-waves-rocks",
+      "title": "Rocky Shore",
+      "src": "/photos/beach-waves-rocks.jpg",
+      "alt": "Waves breaking over dark rocks along a sandy coastline",
+      "location": "Coast",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "rocky-stream",
+      "title": "Rocky Stream",
+      "src": "/photos/rocky-stream.jpg",
+      "alt": "Shallow water flowing over stones in a rocky creek bed",
+      "location": "Outdoors",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "flower-buds-macro",
+      "title": "Flower Buds",
+      "src": "/photos/flower-buds-macro.jpg",
+      "alt": "A macro close-up of pale flower buds on thin stems",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "monkey-on-ledge-night",
+      "title": "Night Watch",
+      "src": "/photos/monkey-on-ledge-night.png",
+      "alt": "A monkey sitting on a concrete ledge at night with bokeh lights behind",
+      "location": "Outdoors",
+      "year": "2026",
+      "aspect": "1 / 1"
+    }
+  ]
+}

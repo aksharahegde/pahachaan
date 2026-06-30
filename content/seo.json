@@ -3,7 +3,7 @@
     "headline": "Hello, I'm",
     "title": "Akshara Hegde | Fullstack Dev, OSS Contributor & Writer",
     "description": "Explore Akshara Hegde's portfolio, blog, and projects. Discover the skills, experience, and insights on various topics. Connect today!",
-    "coverImage": "/avatar.jpg",
-    "theme": "#374151",
-    "colorMode": "dark"
+    "coverImage": "/avatar-bw.jpg",
+    "theme": "#18181b",
+    "colorMode": "light"
 }
