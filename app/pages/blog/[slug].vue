@@ -92,7 +92,7 @@ defineOgImage("BlogOgImage", {
   description,
   url: route.fullPath,
   coverImage: ogImage,
-  colorMode: "dark",
+  colorMode: "light",
 });
 
 useSchemaOrg([

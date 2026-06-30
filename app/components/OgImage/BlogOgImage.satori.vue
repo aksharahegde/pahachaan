@@ -12,157 +12,88 @@ const props = defineProps({
   icon: { type: [String, Boolean], required: false },
   siteName: { type: String, required: false },
   siteLogo: { type: String, required: false },
-  theme: { type: String, required: false, default: "#ffffff" },
+  theme: { type: String, required: false, default: "#18181b" },
   coverImage: { type: String, required: false },
   colorMode: { type: String, required: false },
 });
 
-const HexRegex = /^#([0-9a-f]{3}){1,2}$/i;
-
-const colorMode = computed(() => {
-  return props.colorMode || "dark";
-});
-
-const themeHex = computed(() => {
-  // regex test if valid hex
-  if (HexRegex.test(props.theme)) return props.theme;
-
-  // if it's hex without the hash, just add the hash
-  if (HexRegex.test(`#${props.theme}`)) return `#${props.theme}`;
-
-  // if it's rgb or rgba, we convert it to hex
-  if (props.theme.startsWith("rgb")) {
-    const rgb = props.theme
-      .replace("rgb(", "")
-      .replace("rgba(", "")
-      .replace(")", "")
-      .split(",")
-      .map((v) => Number.parseInt(v.trim(), 10));
-    const hex = rgb
-      .map((v) => {
-        const hex = v.toString(16);
-        return hex.length === 1 ? `0${hex}` : hex;
-      })
-      .join("");
-    return `#${hex}`;
-  }
-  return "#FFFFFF";
-});
-
-const themeRgb = computed(() => {
-  // we want to convert it so it's just `<red>, <green>, <blue>` (255, 255, 255)
-  return themeHex.value
-    .replace("#", "")
-    .match(/.{1,2}/g)
-    ?.map((v) => Number.parseInt(v, 16))
-    .join(", ");
-});
+const resolvedColorMode = computed(() => props.colorMode || "light");
+const isLight = computed(() => resolvedColorMode.value === "light");
 
 const siteConfig = useSiteConfig();
-const siteName = computed(() => {
-  return props.siteName || siteConfig.name;
-});
-const siteLogo = computed(() => {
-  return props.siteLogo || siteConfig.logo;
-});
+const displaySiteName = computed(() => props.siteName || siteConfig.name || "akshara.dev");
+const displaySiteLogo = computed(() => props.siteLogo || siteConfig.logo || "/logo.svg");
+const displayTitle = computed(() => (props.title || "").slice(0, 80));
+const displayDescription = computed(() => (props.description || "").slice(0, 200));
 </script>
 
 <template>
-  <div
-    class="w-full h-full flex justify-between relative"
-    :class="[
-      colorMode === 'light'
-        ? ['bg-white', 'text-gray-900']
-        : ['bg-black', 'text-gray-50'],
-    ]"
-    :style="{
-      background: Boolean(coverImage) ? `url(${coverImage})` : '',
-    }"
-  >
-    <svg
-      class="absolute right-0 top-0"
-      width="629"
-      height="593"
-      viewBox="0 0 629 593"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_f_199_94966)">
-        <path
-          d="M628.5 -578L639.334 -94.4223L806.598 -548.281L659.827 -87.387L965.396 -462.344L676.925 -74.0787L1087.69 -329.501L688.776 -55.9396L1160.22 -164.149L694.095 -34.9354L1175.13 15.7948L692.306 -13.3422L1130.8 190.83L683.602 6.50012L1032.04 341.989L668.927 22.4412L889.557 452.891L649.872 32.7537L718.78 511.519L628.5 36.32L538.22 511.519L607.128 32.7537L367.443 452.891L588.073 22.4412L224.955 341.989L573.398 6.50012L126.198 190.83L564.694 -13.3422L81.8734 15.7948L562.905 -34.9354L96.7839 -164.149L568.224 -55.9396L169.314 -329.501L580.075 -74.0787L291.604 -462.344L597.173 -87.387L450.402 -548.281L617.666 -94.4223L628.5 -578Z"
-          :fill="theme"
-        />
-      </g>
-      <defs>
-        <filter
-          id="filter0_f_199_94966"
-          x="0.873535"
-          y="-659"
-          width="1255.25"
-          height="1251.52"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="40.5"
-            result="effect1_foregroundBlur_199_94966"
-          />
-        </filter>
-      </defs>
-    </svg>
+  <div class="flex h-full w-full font-sans">
     <div
-      class="p-[60px]"
-      :style="{
-        background:
-          colorMode !== 'light'
-            ? 'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(17, 24, 39, 0.8), rgb(0, 0, 0))'
-            : 'linear-gradient(to left, rgb(55, 65, 81, 0.5), rgb(255, 255, 255, 0.7), rgb(255, 255, 255))',
-      }"
+      class="flex flex-col justify-between p-[72px]"
+      :class="isLight ? 'bg-white text-[#09090b]' : 'bg-[#09090b] text-[#fafafa]'"
+      style="width: 58%"
     >
-      <div class="h-full w-full justify-between relative">
-        <div class="flex flex-row justify-between items-start">
-          <div class="flex flex-col w-full max-w-[65%]">
-            <h1 class="m-0 font-bold mb-[30px] text-[54px]">{{ title }}</h1>
-            <p
-              v-if="description"
-              class="text-[28px]"
-              :class="[
-                colorMode === 'light' ? ['text-gray-700'] : ['text-gray-300'],
-              ]"
-            >
-              {{ description.slice(0, 200) }}
-            </p>
-          </div>
-        </div>
-        <div class="flex flex-row justify-center items-center text-left w-full">
-          <img v-if="siteLogo" :src="siteLogo" height="30" alt="Site logo" />
-          <template v-else>
-            <svg
-              height="50"
-              width="50"
-              class="mr-3"
-              viewBox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                :fill="theme.includes('#') ? theme : `#${theme}`"
-                d="M62.3,-53.9C74.4,-34.5,73.5,-9,67.1,13.8C60.6,36.5,48.7,56.5,30.7,66.1C12.7,75.7,-11.4,74.8,-31.6,65.2C-51.8,55.7,-67.9,37.4,-73.8,15.7C-79.6,-6,-75.1,-31.2,-61.1,-51C-47.1,-70.9,-23.6,-85.4,0.8,-86C25.1,-86.7,50.2,-73.4,62.3,-53.9Z"
-                transform="translate(100 100)"
-              />
-            </svg>
-            <p v-if="siteName" style="font-size: 25px" class="font-bold">
-              {{ siteName }}
-            </p>
-          </template>
-        </div>
+      <div>
+        <p
+          v-if="headline"
+          class="m-0 text-[20px] uppercase tracking-[0.18em]"
+          :class="isLight ? 'text-[#71717a]' : 'text-[#a1a1aa]'"
+        >
+          {{ headline }}
+        </p>
+        <h1
+          class="m-0 mt-[28px] text-[54px] leading-none tracking-[-0.06em]"
+          style="font-family: Georgia, 'Times New Roman', serif"
+        >
+          {{ displayTitle }}
+        </h1>
+        <p
+          v-if="description"
+          class="m-0 mt-[32px] text-[28px] leading-snug"
+          :class="isLight ? 'text-[#52525b]' : 'text-[#d4d4d8]'"
+        >
+          {{ displayDescription }}
+        </p>
       </div>
+
+      <div class="flex items-center gap-[16px]">
+        <img :src="displaySiteLogo" width="36" height="36" alt="">
+        <p
+          class="m-0 text-[28px] tracking-tight"
+          style="font-family: Georgia, 'Times New Roman', serif"
+        >
+          {{ displaySiteName === "Akshara Hegde" ? "akshara.dev" : displaySiteName }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      v-if="coverImage"
+      class="relative flex-1 overflow-hidden"
+    >
+      <img
+        :src="coverImage"
+        alt=""
+        class="h-full w-full grayscale"
+        style="object-fit: cover"
+      >
+      <div
+        class="absolute inset-0"
+        :style="{
+          background: isLight
+            ? 'linear-gradient(to right, rgb(255 255 255) 0%, rgb(255 255 255 / 0.82) 18%, transparent 42%)'
+            : 'linear-gradient(to right, rgb(9 9 11) 0%, rgb(9 9 11 / 0.82) 18%, transparent 42%)',
+        }"
+      />
+    </div>
+
+    <div
+      v-else
+      class="flex flex-1 items-center justify-center"
+      :class="isLight ? 'bg-[#f4f4f5]' : 'bg-[#18181b]'"
+    >
+      <img :src="displaySiteLogo" width="120" height="120" alt="">
     </div>
   </div>
 </template>

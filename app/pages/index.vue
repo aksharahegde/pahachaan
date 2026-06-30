@@ -176,9 +176,9 @@ const defaultHome = {
 const defaultSeo = {
   title: "Akshara Hegde",
   description: "Portfolio and blog of Akshara Hegde",
-  coverImage: "/avatar.jpg",
-  theme: "#374151",
-  colorMode: "dark",
+  coverImage: "/avatar-bw.jpg",
+  theme: "#18181b",
+  colorMode: "light",
 };
 
 const homeContent = computed(() => ({

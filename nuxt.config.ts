@@ -36,6 +36,12 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
+  fonts: {
+    families: [
+      { name: "Barlow", weights: [400, 600, 700], global: true },
+    ],
+  },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -140,6 +146,12 @@ export default defineNuxtConfig({
   },
   seo: {
     treeShakeUseSeoMeta: false,
+  },
+  ogImage: {
+    defaults: {
+      colorMode: "light",
+      coverImage: "/avatar-bw.jpg",
+    },
   },
   vite: {
     optimizeDeps: {
