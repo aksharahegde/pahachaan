@@ -5,23 +5,17 @@
 
 import { computed } from "vue";
 
-// convert to typescript props
-const props = withDefaults(
-  defineProps<{
-    colorMode?: "dark" | "light";
-    title?: string;
-    description?: string;
-    icon?: string | boolean;
-    siteName?: string;
-    siteLogo?: string;
-    theme?: string;
-    coverImage?: string;
-  }>(),
-  {
-    theme: "#ffffff",
-    title: "title",
-  }
-);
+const props = defineProps({
+  headline: { type: String, required: false },
+  title: { type: String, required: false, default: "title" },
+  description: { type: String, required: false },
+  icon: { type: [String, Boolean], required: false },
+  siteName: { type: String, required: false },
+  siteLogo: { type: String, required: false },
+  theme: { type: String, required: false, default: "#ffffff" },
+  coverImage: { type: String, required: false },
+  colorMode: { type: String, required: false },
+});
 
 const HexRegex = /^#([0-9a-f]{3}){1,2}$/i;
 

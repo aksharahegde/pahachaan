@@ -6,23 +6,17 @@
 import { computed, defineComponent, h, resolveComponent } from "vue";
 import { useSiteConfig } from "#imports";
 
-// convert to typescript props
-const props = withDefaults(
-  defineProps<{
-    colorMode?: "dark" | "light";
-    title?: string;
-    description?: string;
-    icon?: string | boolean;
-    siteName?: string;
-    siteLogo?: string;
-    theme?: string;
-    coverImage?: string;
-  }>(),
-  {
-    theme: "#ffffff",
-    title: "title",
-  }
-);
+const props = defineProps({
+  headline: { type: String, required: false },
+  title: { type: String, required: false, default: "title" },
+  description: { type: String, required: false },
+  icon: { type: [String, Boolean], required: false },
+  siteName: { type: String, required: false },
+  siteLogo: { type: String, required: false },
+  theme: { type: String, required: false, default: "#ffffff" },
+  coverImage: { type: String, required: false },
+  colorMode: { type: String, required: false },
+});
 
 const HexRegex = /^#([0-9a-f]{3}){1,2}$/i;
 
@@ -146,6 +140,12 @@ if (
     <div class="h-full w-full justify-between relative">
       <div class="flex flex-row justify-between items-start">
         <div class="flex flex-col w-full max-w-[65%]">
+          <p
+            v-if="headline"
+            class="m-0 mb-3 text-[24px] font-bold uppercase text-zinc-400"
+          >
+            {{ headline }}
+          </p>
           <h1 class="m-0 font-bold mb-[30px] text-[44px]">
             {{ title }}
           </h1>

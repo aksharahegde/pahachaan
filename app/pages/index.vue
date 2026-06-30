@@ -201,9 +201,14 @@ const toolkitItems = computed(() =>
 );
 
 const payload = {
-  ...pageSeo.value,
-  url: config.public.baseURL,
+  headline: pageSeo.value.headline,
+  title: pageSeo.value.title,
+  description: pageSeo.value.description,
+  coverImage: pageSeo.value.coverImage,
+  theme: pageSeo.value.theme,
+  colorMode: pageSeo.value.colorMode,
   siteName: config.public.ownerName,
+  url: config.public.baseURL,
 };
 defineOgImage("MyOg", payload);
 
