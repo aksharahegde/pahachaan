@@ -1,0 +1,11 @@
+{
+  "url": "https://dub.sh/monochr",
+  "thumbnail": "/projects/logo/monochrome.png",
+  "thumbnailBg": "bg-gray-100",
+  "thumbnailAlt": "Monochrome",
+  "category": "app",
+  "heading": "Monochrome",
+  "description": "A Glaze desktop app that converts photos to black and white with smart contrast, dynamic range optimization, shadow enhancement, and optional Claude fine-tuning.",
+  "status": "active",
+  "role": "Author"
+}
