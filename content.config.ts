@@ -97,11 +97,15 @@ export default defineContentConfig({
         linkedin: z.string(),
         twitter: z.string(),
         blog: z.string(),
-        affiliate: z.object({
-          title: z.string(),
-          description: z.string(),
-          url: z.string(),
-        }),
+        affiliates: z.array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            url: z.string(),
+            cta: z.string(),
+            testId: z.string().optional(),
+          })
+        ),
       }),
     }),
     seo: defineCollection({

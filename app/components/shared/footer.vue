@@ -1,19 +1,20 @@
 <template>
   <footer class="mx-auto max-w-6xl px-4 pb-4 pt-1 text-[11px] text-zinc-500 sm:px-6 lg:px-8 dark:text-zinc-500">
-    <section class="mb-6 grid gap-3 md:grid-cols-2">
+    <section class="mb-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
       <NuxtLink
-        v-if="footerContent.affiliate"
-        :to="footerContent.affiliate.url"
+        v-for="affiliate in footerContent.affiliates || []"
+        :key="affiliate.url"
+        :to="affiliate.url"
         target="_blank"
         external
-        data-testid="portfolio-dub-signup-link"
+        :data-testid="affiliate.testId"
         class="group grid grid-cols-[1fr_20px] gap-4 rounded-xl border border-zinc-200 p-4 text-[12px] transition hover:bg-white/40 dark:border-zinc-800 dark:hover:bg-white/5"
       >
         <div>
-          <p class="font-semibold text-zinc-950 dark:text-zinc-50">{{ footerContent.affiliate.title }}</p>
-          <p class="mt-1 text-zinc-500 dark:text-zinc-400">{{ footerContent.affiliate.description }}</p>
+          <p class="font-semibold text-zinc-950 dark:text-zinc-50">{{ affiliate.title }}</p>
+          <p class="mt-1 text-zinc-500 dark:text-zinc-400">{{ affiliate.description }}</p>
           <p class="mt-3 text-zinc-700 transition group-hover:text-zinc-950 dark:text-zinc-300 dark:group-hover:text-white">
-            Signup to Dub
+            {{ affiliate.cta }}
           </p>
         </div>
         <UIcon

@@ -4,9 +4,20 @@
     "blog": "https://ink.aksharahegde.xyz",
     "linkedin": "https://www.linkedin.com/in/aksharadt/",
     "twitter": "https://x.com/akshara_dev",
-    "affiliate": {
-        "title": "20% off for 3 months",
-        "description": "Signup to Dub.co and get 20% off for 3 months",
-        "url": "https://refer.dub.co/akshara-hegde"
-    }
+    "affiliates": [
+        {
+            "title": "20% off for 3 months",
+            "description": "Signup to Dub.co and get 20% off for 3 months",
+            "url": "https://refer.dub.co/akshara-hegde",
+            "cta": "Signup to Dub",
+            "testId": "portfolio-dub-signup-link"
+        },
+        {
+            "title": "50% off for first month",
+            "description": "Sign up to Cursor and get 50% off for the first month",
+            "url": "https://dub.sh/cursor",
+            "cta": "Try Cursor",
+            "testId": "portfolio-cursor-referral-link"
+        }
+    ]
 }

@@ -22,7 +22,7 @@ icon: solar:monitor-smartphone-outline
 ##### AI for coding
 
 - [Claude](https://claude.ai/){.uses-row-link}
-- [Cursor](https://cursor.com/){.uses-row-link}
+- [Cursor](https://dub.sh/cursor){.uses-row-link}
 - [Opencode](https://opencode.ai/){.uses-row-link}
 - Codadmin
   - Custom app by me with memory for agents
