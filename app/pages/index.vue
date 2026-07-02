@@ -14,22 +14,7 @@
           {{ homeContent.bio }}
         </p>
 
-        <div
-          data-testid="portfolio-social-links"
-          class="mt-8 flex flex-wrap gap-5 text-[12px] text-zinc-700 dark:text-zinc-300"
-        >
-          <NuxtLink
-            v-for="item in contactItems"
-            :key="item.name"
-            :to="item.url"
-            target="_blank"
-            external
-            class="flex items-center gap-2 transition hover:text-zinc-950 dark:hover:text-white"
-          >
-            <UIcon :name="item.icon" class="size-4" />
-            <span>{{ item.name }}</span>
-          </NuxtLink>
-        </div>
+        <SharedPortfolioSocialLinks :items="contactItems" />
       </div>
     </section>
 
@@ -191,7 +176,7 @@ const pageSeo = computed(() => ({
   ...(seo.value || {}),
 }));
 
-const contactItems = computed(() => contactData.value?.contact?.slice(0, 5) || []);
+const contactItems = computed(() => contactData.value?.contact || []);
 const focusItems = computed(() => homeContent.value.focus.filter(Boolean));
 const experimentItems = computed(() =>
   homeContent.value.experiments.filter((item) => item?.id && item?.title)
