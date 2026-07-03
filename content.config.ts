@@ -171,5 +171,21 @@ export default defineContentConfig({
         ),
       }),
     }),
+    certifications: defineCollection({
+      type: "data",
+      source: "certifications/*.json",
+      schema: z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        icon: z.string().optional(),
+        heading: z.string().optional(),
+        issuer: z.string().optional(),
+        issued: z.string().optional(),
+        credentialId: z.string().optional(),
+        url: z.string().optional(),
+        badge: z.string().optional(),
+        badgeBg: z.string().optional(),
+      }),
+    }),
   },
 });
