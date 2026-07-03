@@ -88,6 +88,26 @@
         />
       </div>
 
+      <div v-if="recentCertifications.length">
+        <div class="mb-4 grid grid-cols-[1fr_auto] items-center gap-4">
+          <h2 class="font-serif text-2xl tracking-[-0.04em] text-zinc-950 dark:text-zinc-50">Certifications</h2>
+          <NuxtLink
+            to="/certifications"
+            data-testid="portfolio-certifications-view-link"
+            class="text-[11px] text-zinc-700 transition hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+          >
+            View all certifications →
+          </NuxtLink>
+        </div>
+        <CertificationCard
+          v-for="certification in recentCertifications"
+          :key="certification.heading"
+          :certification="certification"
+          variant="compact"
+          test-domain="portfolio-certifications"
+        />
+      </div>
+
       <div>
         <div class="mb-4 grid grid-cols-[1fr_auto] items-center gap-4">
           <h2 class="font-serif text-2xl tracking-[-0.04em] text-zinc-950 dark:text-zinc-50">Developer Toolkit</h2>
@@ -145,6 +165,10 @@ const { data: articles } = await useAsyncData("home-writing", () =>
     .all()
 );
 
+const { data: certifications } = await useAsyncData("home-certifications", () =>
+  queryCollection("certifications").order("issued", "DESC").all()
+);
+
 const { data: seo } = await useAsyncData("seo", () =>
   queryCollection("seo").first()
 );
@@ -183,6 +207,11 @@ const experimentItems = computed(() =>
 );
 const toolkitItems = computed(() =>
   homeContent.value.toolkit.filter((item) => item?.id && item?.title)
+);
+const recentCertifications = computed(() =>
+  (certifications.value || [])
+    .filter((item) => item?.heading && item?.url)
+    .slice(0, 4)
 );
 
 const payload = {

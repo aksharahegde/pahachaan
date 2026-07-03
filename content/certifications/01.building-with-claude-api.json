@@ -1,0 +1,11 @@
+{
+  "heading": "Building with the Claude API",
+  "issuer": "Anthropic",
+  "issued": "2026-04-01",
+  "description": "Foundations for building applications with the Claude API.",
+  "credentialId": "7nsjj59cuez4",
+  "url": "https://verify.skilljar.com/c/7nsjj59cuez4",
+  "badge": "/certifications/claude.svg",
+  "badgeBg": "bg-amber-100 dark:bg-amber-950",
+  "icon": "i-simple-icons-anthropic"
+}
