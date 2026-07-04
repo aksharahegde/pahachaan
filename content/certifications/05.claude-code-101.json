@@ -5,7 +5,5 @@
   "description": "Essentials for working effectively with Claude Code.",
   "credentialId": "5v4rrw6egim7",
   "url": "https://verify.skilljar.com/c/5v4rrw6egim7",
-  "badge": "/certifications/claude.svg",
-  "badgeBg": "bg-amber-100 dark:bg-amber-950",
   "icon": "i-simple-icons-anthropic"
 }

@@ -17,12 +17,10 @@
         size="sm"
       />
       <div class="min-w-0">
-        <div class="flex min-w-0 items-center gap-2">
+        <h3 class="flex min-w-0 items-center gap-2 font-semibold text-zinc-950 dark:text-zinc-50">
           <span class="size-1.5 shrink-0 rounded-full" :class="statusDotClass(project.status)" />
-          <h3 class="truncate font-semibold text-zinc-950 dark:text-zinc-50">
-            {{ project.heading }}
-          </h3>
-        </div>
+          <span class="truncate">{{ project.heading }}</span>
+        </h3>
         <p class="line-clamp-1 text-zinc-500 dark:text-zinc-400">
           {{ project.description }}
         </p>
@@ -92,9 +90,9 @@
       />
       <div class="min-w-0">
         <div class="flex flex-wrap items-center gap-2">
-          <span class="size-1.5 rounded-full" :class="statusDotClass(project.status)" />
-          <h3 class="text-xl font-semibold tracking-[-0.04em] text-zinc-950 transition group-hover:text-primary-600 dark:text-zinc-50 dark:group-hover:text-primary-500">
-            {{ project.heading }}
+          <h3 class="inline-flex items-center gap-2 text-xl font-semibold tracking-[-0.04em] text-zinc-950 transition group-hover:text-primary-600 dark:text-zinc-50 dark:group-hover:text-primary-500">
+            <span class="size-1.5 shrink-0 rounded-full" :class="statusDotClass(project.status)" />
+            <span>{{ project.heading }}</span>
           </h3>
           <UBadge v-if="project.role" color="neutral" size="xs" variant="subtle">
             {{ project.role }}
@@ -119,27 +117,20 @@
     target="_blank"
     external
   >
-    <UChip
+    <UAvatar
       v-if="!isMinimalMode"
-      :color="STATUS_COLORS[project.status]"
+      :src="project.thumbnail"
+      :ui="{ rounded: 'rounded px-[2px] py-[4px] relative' }"
+      :alt="project.heading"
+      :class="project.thumbnailBg"
       size="md"
-      variant="solid"
-      position="top-left"
-      inset
-    >
-      <UAvatar
-        :src="project.thumbnail"
-        :ui="{ rounded: 'rounded px-[2px] py-[4px] relative' }"
-        :alt="project.heading"
-        :class="project.thumbnailBg"
-        size="md"
-      />
-    </UChip>
+    />
     <div class="min-w-0">
       <h3
         class="editorial-row-title flex items-center gap-2 group-hover:text-primary-600 dark:group-hover:text-primary-400"
       >
-        {{ project.heading }}
+        <span class="size-1.5 shrink-0 rounded-full" :class="statusDotClass(project.status)" />
+        <span>{{ project.heading }}</span>
         <UBadge v-if="project.role" color="neutral" size="sm" variant="subtle">
           {{ project.role }}
         </UBadge>
@@ -152,8 +143,6 @@
 </template>
 
 <script setup>
-import { STATUS_COLORS } from "~/constants";
-
 const props = defineProps({
   project: {
     type: Object,

@@ -5,7 +5,5 @@
   "description": "Getting started with MCP for tool-connected AI workflows.",
   "credentialId": "3mxgx8yiryog",
   "url": "https://verify.skilljar.com/c/3mxgx8yiryog",
-  "badge": "/certifications/claude.svg",
-  "badgeBg": "bg-amber-100 dark:bg-amber-950",
   "icon": "i-simple-icons-anthropic"
 }

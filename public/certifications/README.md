@@ -1,3 +1,3 @@
 # Certification badges
 
-Replace `claude.svg` with an official Anthropic badge image, or update `badge` paths in `content/certifications/*.json`.
+Certifications use the `icon` field (e.g. `i-simple-icons-anthropic`) for monochrome issuer logos. Optional `badge` paths can point to assets here if a custom image is needed.
