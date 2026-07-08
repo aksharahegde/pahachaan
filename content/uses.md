@@ -13,6 +13,8 @@ icon: solar:monitor-smartphone-outline
 - [Zebronics mechanical USB wired keyboard Max Plus (RGB)](https://www.flipkart.com/zebronics-mechanical-max-plus-wired-usb-multi-device-keyboard/p/itmeyyfbhhahpd8e){.uses-row-link}
 - [(2x4)ft plywood table](https://www.flipkart.com/spacepanda-fusion-4-x-2-5-ft-multi-purpose-folding-ply-laminated-top-table-metal-frame-base-computer-banquet-office-home-engineered-wood-study/p/itm2a1362a851b6e){.uses-row-link}
 - [Some rotating cusioned chair](https://www.amazon.in/dp/B09F6CGKBT/ref=twister_B09YHBFQKY?_encoding=UTF8&psc=1){.uses-row-link}
+- [Lenovo 300 FHD Webcam](https://www.amazon.in/LenovoTM-Megapixel-Ultra-Wide-Rotation-GXC1B34793/dp/B08KT89BWX){.uses-row-link}
+- [Kreo Ring Light 12"](https://www.amazon.in/Kreo-Ring-Light-Tripod-Professional/dp/B0BH98BQKR){.uses-row-link}
 
 ##### IDEs
 
@@ -61,6 +63,7 @@ icon: solar:monitor-smartphone-outline
 ##### Audio
 
 - [Realme Buds Wireless 5 ANC (meetings & calls)](https://www.amazon.in/realme-Wireless-Bluetooth-Headphones-Connection/dp/B0DNPWJLQC){.uses-row-link}
+- [Fifine K669B USB Microphone](https://www.amazon.in/Fifine-Condenser-Recording-Microphone-669B/dp/B06XCKGLTP){.uses-row-link}
 - [boAt Rockerz 480 (songs & movies tech)](https://www.flipkart.com/boat-rockerz-480-w-beast-mode-rgb-leds-6-light-modes-60hrs-playback-enx-tech-bluetooth/p/itm7362b8da6ff74){.uses-row-link}
 - [Mi portable BT Speaker 16W (outdoor fun)](https://www.amazon.in/dp/B08WWNS6Z8/ref=emc_bcc_2_i){.uses-row-link}
 - [Philips 2.1 amplifier system (home theatre)](https://www.amazon.in/Philips-MMS2625B-Bluetooth-Multimedia-Speakers/dp/B07W41VQ91){.uses-row-link}
