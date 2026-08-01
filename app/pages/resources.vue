@@ -10,6 +10,16 @@
       <p class="mt-4 max-w-xl text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
         {{ pageMeta.description }}
       </p>
+      <a
+        href="/DESIGN.md"
+        download="DESIGN.md"
+        data-testid="resource-design-download-link"
+        class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-zinc-700 transition hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+      >
+        <UIcon name="i-solar-download-minimalistic-linear" class="size-4" />
+        <span>Download DESIGN.md</span>
+        <span class="font-normal text-zinc-500 dark:text-zinc-400">— design tokens and UI guidelines</span>
+      </a>
     </section>
 
     <section class="space-y-12">
