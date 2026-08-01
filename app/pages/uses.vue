@@ -11,6 +11,12 @@
         <p class="mt-7 max-w-xl text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
           {{ pageMeta.description }}
         </p>
+        <img
+          v-if="pageMeta.cover"
+          :src="pageMeta.cover"
+          alt="Workspace development environment"
+          class="mt-7 w-full rounded-lg border border-zinc-200 dark:border-zinc-800"
+        >
       </div>
 
       <aside>
@@ -107,7 +113,7 @@ defineOgImage("MyOg", {
   headline: config.public.ownerName,
   title: pageMeta.value.title,
   description: pageMeta.value.description,
-  icon: pageMeta.value.icon,
+  coverImage: pageMeta.value.cover,
   url: route.fullPath,
 });
 
@@ -116,9 +122,10 @@ useSeoMeta({
   description: pageMeta.value.description,
   ogTitle: pageMeta.value.title,
   ogDescription: pageMeta.value.description,
+  ogImage: `${config.public.baseURL}${pageMeta.value.cover}`,
   twitterTitle: pageMeta.value.title,
   twitterDescription: pageMeta.value.description,
-  twitterImage: `${config.public.baseURL}/og_me.png`,
+  twitterImage: `${config.public.baseURL}${pageMeta.value.cover}`,
 });
 </script>
 <style>

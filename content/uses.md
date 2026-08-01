@@ -2,6 +2,7 @@
 title: Uses
 description: Explore my daily tech setup. See the tools and software I use to maximize productivity and get things done. Discover my workflow!
 icon: solar:monitor-smartphone-outline
+cover: /uses.png
 ---
 
 ##### Workstation
