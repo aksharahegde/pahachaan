@@ -32,6 +32,7 @@ A minimal, content-driven template for personal portfolios that's free to use.
 - **MDC Syntax**: Use Vue components directly in Markdown files
 - **Mermaid Diagrams**: Render Mermaid code blocks inside content pages
 - **Blog Reading Tools**: Pinned/collapsible table of contents and print-friendly article credits
+- **Design System Documentation**: [DESIGN.md](./DESIGN.md) documents the Editorial Technical visual identity with machine-readable tokens ([Google DESIGN.md](https://github.com/google-labs-code/design.md) format)
 
 ## Quick Start
 
@@ -298,6 +299,27 @@ Shop items or products:
   "description": "Product description"
 }
 ```
+
+## Design System
+
+Visual identity, typography, colors, layout, components, and guardrails live in [DESIGN.md](./DESIGN.md). The site follows an **Editorial Technical** direction: zinc neutrals, serif headings, Barlow body text, bordered list rows, and minimal motion.
+
+`DESIGN.md` uses the open [Google DESIGN.md](https://github.com/google-labs-code/design.md) format — YAML design tokens in frontmatter plus prose sections — so humans and AI coding agents share one source of truth for UI decisions.
+
+| Topic | Where |
+| --- | --- |
+| Colors, type scale, spacing, radius | YAML tokens in `DESIGN.md` |
+| Component patterns (navbar, list rows, cards) | `DESIGN.md` → Components |
+| Voice, audience, positioning | [PRODUCT.md](./PRODUCT.md) |
+| Theme defaults | `app/app.config.ts` |
+
+Validate the design file locally:
+
+```bash
+npx @google/design.md lint DESIGN.md
+```
+
+When customizing UI, read `DESIGN.md` before changing shared styles. Prefer updating tokens and documented patterns over one-off Tailwind in page components.
 
 ## Editing with Nuxt Studio
 
