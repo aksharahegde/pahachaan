@@ -89,6 +89,7 @@ const pageMeta = computed(() => ({
   description: "Tools, services, and setup I use.",
   icon: "solar:monitor-smartphone-outline",
   ...(doc.value || {}),
+  ...(doc.value?.meta || {}),
 }));
 
 const coreStack = [

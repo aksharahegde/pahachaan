@@ -87,6 +87,9 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         path: z.string(),
+        description: z.string().optional(),
+        icon: z.string().optional(),
+        cover: z.string().optional(),
       }),
     }),
     footer: defineCollection({
