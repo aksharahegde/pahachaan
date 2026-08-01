@@ -10,54 +10,14 @@
       </NuxtLink>
 
       <ul class="hidden items-center gap-8 text-zinc-700 dark:text-zinc-300 md:flex">
-        <li>
+        <li v-for="item in desktopNav" :key="item.to">
           <ULink
-            to="/projects"
-            data-testid="portfolio-work-nav-link"
+            :to="item.to"
+            :data-testid="item.testId"
             class="transition hover:text-zinc-950 dark:hover:text-white"
             active-class="text-zinc-950 dark:text-white"
           >
-            Work
-          </ULink>
-        </li>
-        <li>
-          <ULink
-            to="/blog"
-            data-testid="portfolio-writing-nav-link"
-            class="transition hover:text-zinc-950 dark:hover:text-white"
-            active-class="text-zinc-950 dark:text-white"
-          >
-            Writing
-          </ULink>
-        </li>
-        <li>
-          <ULink
-            to="/resources"
-            data-testid="portfolio-toolkit-nav-link"
-            class="transition hover:text-zinc-950 dark:hover:text-white"
-            active-class="text-zinc-950 dark:text-white"
-          >
-            Resources
-          </ULink>
-        </li>
-        <li>
-          <ULink
-            to="/photos"
-            data-testid="portfolio-photos-nav-link"
-            class="transition hover:text-zinc-950 dark:hover:text-white"
-            active-class="text-zinc-950 dark:text-white"
-          >
-            Photos
-          </ULink>
-        </li>
-        <li>
-          <ULink
-            to="/uses"
-            data-testid="portfolio-about-nav-link"
-            class="transition hover:text-zinc-950 dark:hover:text-white"
-            active-class="text-zinc-950 dark:text-white"
-          >
-            Uses
+            {{ item.label }}
           </ULink>
         </li>
       </ul>
@@ -80,5 +40,7 @@
 </template>
 
 <script setup lang="ts">
+import { desktopNav } from "~/constants/siteNav";
+
 const { openCommandPalette } = useCommandPalette();
 </script>

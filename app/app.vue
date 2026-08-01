@@ -10,7 +10,8 @@
     <div class="h-12 md:h-20" />
     <SharedVisitors class="no-print" />
     <SharedFooter class="no-print" />
-    <div class="h-8 md:hidden" />
+    <SharedMobileBottomNav class="no-print" />
+    <div class="h-[calc(4rem+env(safe-area-inset-bottom))] md:h-0" />
   </UApp>
 </template>
 <script setup lang="ts">
