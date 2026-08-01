@@ -12,6 +12,7 @@ export default defineContentConfig({
         path: z.string(),
         cover: z.string(),
         thumbnail: z.string(),
+        rawbody: z.string(),
       }),
     }),
     projects: defineCollection({
@@ -90,6 +91,7 @@ export default defineContentConfig({
         description: z.string().optional(),
         icon: z.string().optional(),
         cover: z.string().optional(),
+        rawbody: z.string(),
       }),
     }),
     footer: defineCollection({

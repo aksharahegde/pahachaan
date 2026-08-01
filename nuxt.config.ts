@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxt/ui",
+    "@comark/nuxt",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
     "@nuxt/fonts",
@@ -84,18 +85,6 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: "https://api.nuxt.studio",
-    },
-    build: {
-      markdown: {
-        highlight: {
-          theme: {
-            default: "monokai",
-          },
-        },
-        toc: {
-          depth: 3,
-        },
-      },
     },
   },
 

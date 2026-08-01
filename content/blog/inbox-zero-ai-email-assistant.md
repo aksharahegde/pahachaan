@@ -8,7 +8,9 @@ thumbnail: /blog/thumbnails/inbox-zero-ai-email-assistant.png
 
 ![Inbox Zero, Partly Thanks to AI - How I Built an Email Assistant That Doesn't Suck](/blog/inbox-zero-ai-email-assistant.png)
 
-I'm the kind of person who leaves emails unread until it's embarrassing. I tried every productivity hack, but nothing stuck. So I did what any lazy developer does: I automated it.--- Unknown node: hardBreak ---ai-email is my take on an AI-powered Gmail assistant that actually respects you; no weird hallucinations, no sending emails you didn't mean to. It's a small tool, but it's changed how I work. Here's the story.
+I'm the kind of person who leaves emails unread until it's embarrassing. I tried every productivity hack, but nothing stuck. So I did what any lazy developer does: I automated it.
+
+ai-email is my take on an AI-powered Gmail assistant that actually respects you; no weird hallucinations, no sending emails you didn't mean to. It's a small tool, but it's changed how I work. Here's the story.
 
 ## The Goal Was Simple (Ha)
 
