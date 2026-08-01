@@ -32,12 +32,14 @@
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-start">
         <aside class="no-print lg:order-2 lg:sticky lg:top-24">
           <ClientOnly>
-            <LazyBlogToc :links="doc.body?.toc?.links || []" hydrate-on-visible />
+            <LazyBlogToc :links="tree.meta?.toc?.links || []" hydrate-on-visible />
           </ClientOnly>
         </aside>
 
         <div class="prose prose-page dark:prose-invert max-w-none lg:order-1">
-          <ContentRenderer v-if="doc" :value="doc" />
+          <Suspense>
+            <ArticleRenderer v-if="tree" :tree="tree" />
+          </Suspense>
           <LazyBlogPrintCredit
             :article-url="articleUrl"
             hydrate-on-visible
@@ -48,22 +50,29 @@
   </main>
 </template>
 <script setup>
+import { parse } from "comark";
 import { useDateFormat } from "@vueuse/core";
 import { defineArticle } from "@unhead/schema-org/vue";
+import { articlePlugins, ArticleRenderer } from "~/composables/comark";
 
 const route = useRoute();
 const { slug } = route.params;
 const config = useRuntimeConfig();
 
-const { data: doc } = await useAsyncData(route.path, () =>
-  queryCollection("blog").where("path", "==", route.path).first()
-);
+const { data: page } = await useAsyncData(route.path, async () => {
+  const doc = await queryCollection("blog").where("path", "==", route.path).first();
+  if (!doc?.rawbody) return null;
+  const tree = await parse(doc.rawbody, { plugins: articlePlugins });
+  return { doc, tree };
+});
 
-if (!doc.value) {
+if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: "Not found" });
 }
 
-const { title, description, published, cover } = doc.value;
+const doc = page.value.doc;
+const tree = page.value.tree;
+const { title, description, published, cover } = doc;
 const base = config.public.baseURL?.replace(/\/$/, "") ?? "";
 const articleUrl = `${base}${route.path}`;
 const ogImage = `${base}/blog/${slug}.png`;

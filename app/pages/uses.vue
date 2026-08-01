@@ -48,7 +48,9 @@
       </div>
 
       <div ref="usesContentEl" class="uses-content">
-        <ContentRenderer v-if="doc" :value="doc" />
+        <Suspense>
+          <UsesComark v-if="doc?.rawbody">{{ doc.rawbody }}</UsesComark>
+        </Suspense>
       </div>
     </section>
 
@@ -58,6 +60,8 @@
   </main>
 </template>
 <script setup>
+import { UsesComark } from "~/composables/comark";
+
 const route = useRoute();
 const config = useRuntimeConfig();
 
