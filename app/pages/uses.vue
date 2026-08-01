@@ -11,13 +11,14 @@
         <p class="mt-7 max-w-xl text-[15px] leading-7 text-zinc-700 dark:text-zinc-300">
           {{ pageMeta.description }}
         </p>
-        <img
-          v-if="pageMeta.cover"
-          :src="pageMeta.cover"
-          alt="Workspace development environment"
-          class="mt-7 w-full rounded-lg border border-zinc-200 dark:border-zinc-800"
-        >
       </div>
+
+      <img
+        v-if="pageMeta.cover"
+        :src="pageMeta.cover"
+        alt="Workspace development environment"
+        class="w-full rounded-lg border border-zinc-200 dark:border-zinc-800"
+      >
 
       <aside>
         <h2 class="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-950 dark:text-zinc-50">
