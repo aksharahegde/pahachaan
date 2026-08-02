@@ -57,6 +57,33 @@
       "location": "Interior",
       "year": "2026",
       "aspect": "16 / 9"
+    },
+    {
+      "slug": "daysie-exterior-sign",
+      "title": "Daysie",
+      "src": "/photos/daysie-1.jpg",
+      "alt": "A backlit Daysie sign with a daisy on the letter i, framed by foliage and a parked scooter",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9"
+    },
+    {
+      "slug": "daysie-letter-board",
+      "title": "Daysie Letter Board",
+      "src": "/photos/daysie-2.jpg",
+      "alt": "A crossword-style illuminated letter board spelling Daysie, Charm, Drink, Cozy, and other words",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "10 / 7"
+    },
+    {
+      "slug": "daysie-bar-interior",
+      "title": "Daysie Bar",
+      "src": "/photos/daysie-3.jpg",
+      "alt": "The Daysie bar interior with arched backlit bottle shelves and staff behind the counter",
+      "location": "Bengaluru",
+      "year": "2026",
+      "aspect": "16 / 9"
     }
   ]
 }
