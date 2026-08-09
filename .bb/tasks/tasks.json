@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Verify Autonomous Backlog end-to-end",
+      "description": "Seed task confirming agent-discovered backlog items persist in .bb/tasks/tasks.json and render in the Autonomous Backlog panel.",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "tech_debt",
+      "source_thread_id": "",
+      "target_files": [
+        ".bb/tasks/tasks.json"
+      ],
+      "suggested_prompt": "Confirm the Autonomous Backlog plugin reads and writes .bb/tasks/tasks.json, then mark TASK-001 completed with a short resolution summary.",
+      "created_at": "2026-08-08T15:16:27.218Z",
+      "created_by": "user",
+      "assigned_thread_id": null,
+      "resolution_summary": null,
+      "completed_at": null
+    }
+  ]
+}

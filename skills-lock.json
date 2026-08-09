@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "comark": {
+      "source": "comark.dev",
+      "sourceType": "well-known",
+      "computedHash": "ef778da2afdf9e2ab00d6ab73d4c16d911b746a55f1b7cdeea835cd392015725"
+    },
+    "migrate-mdc-to-comark": {
+      "source": "comark.dev",
+      "sourceType": "well-known",
+      "computedHash": "9bb7aae6202779f1c7b2e31a5d38382219feaadf676c793d0761bd32b6955121"
+    }
+  }
+}
