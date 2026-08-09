@@ -62,7 +62,13 @@
   }
 
   .prose-page p {
-    @apply leading-relaxed;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: calc(var(--spacing) * 7) !important;
+  }
+
+  .prose-page p + p {
+    margin-top: calc(var(--spacing) * 2) !important;
   }
 
   .prose-page :where(h1, h2, h3, h4, h5, h6) {
