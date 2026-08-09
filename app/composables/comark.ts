@@ -1,6 +1,6 @@
 import highlight from "@comark/nuxt/plugins/highlight";
 import toc from "@comark/nuxt/plugins/toc";
-import { defineComarkComponent, defineComarkRendererComponent } from "@comark/vue";
+import { defineMarkdownComponent, defineMarkdownDocumentComponent } from "@comark/vue";
 import Announcement from "~/components/content/Announcement.vue";
 
 const highlightPlugin = highlight({
@@ -9,16 +9,16 @@ const highlightPlugin = highlight({
 
 export const articlePlugins = [highlightPlugin, toc({ depth: 3 })];
 
-export const ArticleComark = defineComarkComponent({
+export const ArticleComark = defineMarkdownComponent({
   name: "ArticleComark",
   plugins: articlePlugins,
 });
 
-export const ArticleRenderer = defineComarkRendererComponent({
+export const ArticleRenderer = defineMarkdownDocumentComponent({
   name: "ArticleRenderer",
 });
 
-export const UsesComark = defineComarkComponent({
+export const UsesComark = defineMarkdownComponent({
   name: "UsesComark",
   plugins: [highlightPlugin],
   components: { announcement: Announcement },
