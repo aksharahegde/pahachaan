@@ -22,9 +22,10 @@
         </p>
 
         <img
-          :src="imageUrl"
+          v-if="cover"
+          :src="cover"
           :alt="doc.title"
-          class="mt-8 rounded-lg lg:hidden"
+          class="mt-8 w-full rounded-lg lg:hidden"
         >
 
       </header>
