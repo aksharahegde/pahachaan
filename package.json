@@ -24,7 +24,8 @@
   },
   "overrides": {
     "picomatch": "2.3.2",
-    "nuxt-og-image": "^6.5.1",
+    "nuxt-og-image": "^6.7.5",
+    "nuxtseo-shared": "5.3.10",
     "estree-walker": "2.0.2"
   },
   "devDependencies": {
