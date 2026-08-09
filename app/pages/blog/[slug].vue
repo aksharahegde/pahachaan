@@ -38,7 +38,7 @@
 
         <div class="prose prose-page dark:prose-invert max-w-none lg:order-1">
           <Suspense>
-            <ArticleRenderer v-if="tree" :tree="tree" />
+            <ArticleRenderer v-if="tree" :value="tree" />
           </Suspense>
           <LazyBlogPrintCredit
             :article-url="articleUrl"
@@ -50,10 +50,12 @@
   </main>
 </template>
 <script setup>
-import { parse } from "comark";
+import { createMarkdownParser } from "comark";
 import { useDateFormat } from "@vueuse/core";
 import { defineArticle } from "@unhead/schema-org/vue";
 import { articlePlugins, ArticleRenderer } from "~/composables/comark";
+
+const parseMarkdown = createMarkdownParser({ plugins: articlePlugins });
 
 const route = useRoute();
 const { slug } = route.params;
@@ -62,7 +64,7 @@ const config = useRuntimeConfig();
 const { data: page } = await useAsyncData(route.path, async () => {
   const doc = await queryCollection("blog").where("path", "==", route.path).first();
   if (!doc?.rawbody) return null;
-  const tree = await parse(doc.rawbody, { plugins: articlePlugins });
+  const tree = await parseMarkdown(doc.rawbody);
   return { doc, tree };
 });
 
