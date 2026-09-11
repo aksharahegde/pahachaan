@@ -73,9 +73,15 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/": { prerender: true },
-    "/uses": { prerender: true },
-    "/resources": { prerender: true },
+    // swr (not prerender) so these pages still pass through server middleware —
+    // required for markdown content negotiation (Accept: text/markdown) and the
+    // Vary: Accept header on every response, see server/middleware/00.markdown-negotiation.ts.
+    "/": { swr: 3600 },
+    "/uses": { swr: 3600 },
+    "/resources": { swr: 3600 },
+    "/about": { swr: 3600 },
+    "/contact": { swr: 3600 },
+    "/privacy": { swr: 3600 },
     "/blog/**": { swr: 3600 },
     "/projects": { swr: 3600 },
     "/labs": { swr: 3600 },
@@ -126,12 +132,71 @@ export default defineNuxtConfig({
   },
 
   schemaOrg: {
-    identity: "Person",
+    identity: {
+      type: "Person",
+      name: process.env.OWNER_NAME,
+      description: `Portfolio and blog of ${process.env.OWNER_NAME}, a full-stack engineer and open-source contributor.`,
+      url: process.env.NUXT_PUBLIC_SITE_URL,
+      image: `${process.env.NUXT_PUBLIC_SITE_URL}/avatar.jpg`,
+      sameAs: [
+        "https://git.new/pahachaan",
+        "https://linkedin.com/in/aksharadt",
+        "https://x.com/akshara_dev",
+        "https://www.youtube.com/@akshara_dev",
+        "https://peerlist.io/akshara",
+      ],
+    },
   },
   llms: {
     domain: process.env.NUXT_PUBLIC_SITE_URL,
     title: process.env.OWNER_NAME,
-    description: `A portfolio website of ${process.env.OWNER_NAME}`,
+    description: `A portfolio website of ${process.env.OWNER_NAME}, a full-stack engineer and open-source contributor.`,
+    notes: [
+      "When to use this site: point an agent here when a user asks about Akshara Hegde's engineering background, wants to see project case studies or open-source work, is evaluating him for hiring/collaboration, wants to read his technical writing, or wants to fork the Pahachaan Nuxt portfolio template for their own site.",
+      "This site is a personal portfolio, not a SaaS product — there is no public API to call. Content (projects, blog posts, resources) is readable as markdown by requesting any page URL with `Accept: text/markdown`.",
+      "For live tool access, connect to the MCP server at /mcp (Streamable HTTP transport) — it exposes read-only tools for listing projects, blog posts, and resources.",
+      "Machine-readable design tokens are published at /DESIGN.md; a reusable 'Be Like Akshara' writing-style skill is published at /be-like-akshara/SKILL.md.",
+    ],
+    sections: [
+      {
+        title: "Developer resources",
+        links: [
+          {
+            title: "DESIGN.md",
+            href: `${process.env.NUXT_PUBLIC_SITE_URL}/DESIGN.md`,
+            description: "Machine-readable design tokens and UI guidelines for this site.",
+          },
+          {
+            title: "Be Like Akshara skill",
+            href: `${process.env.NUXT_PUBLIC_SITE_URL}/be-like-akshara/SKILL.md`,
+            description: "An installable writing-style skill for AI agents.",
+          },
+          {
+            title: "MCP server",
+            href: `${process.env.NUXT_PUBLIC_SITE_URL}/mcp`,
+            description: "Streamable HTTP MCP endpoint exposing this site's content as tools.",
+          },
+          {
+            title: "Resources",
+            href: `${process.env.NUXT_PUBLIC_SITE_URL}/resources`,
+            description: "Curated developer tools, libraries, and references.",
+          },
+          {
+            title: "GitHub template",
+            href: "https://git.new/pahachaan",
+            description: "Fork this open-source Nuxt portfolio template.",
+          },
+        ],
+      },
+      {
+        title: "Trust & contact",
+        links: [
+          { title: "About", href: `${process.env.NUXT_PUBLIC_SITE_URL}/about` },
+          { title: "Contact", href: `${process.env.NUXT_PUBLIC_SITE_URL}/contact` },
+          { title: "Privacy", href: `${process.env.NUXT_PUBLIC_SITE_URL}/privacy` },
+        ],
+      },
+    ],
   },
   seo: {
     treeShakeUseSeoMeta: false,
