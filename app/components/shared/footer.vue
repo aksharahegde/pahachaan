@@ -58,6 +58,9 @@
         >
           <span>Ink</span>
         </NuxtLink>
+        <NuxtLink to="/about" class="transition hover:text-zinc-950 dark:hover:text-white">About</NuxtLink>
+        <NuxtLink to="/contact" class="transition hover:text-zinc-950 dark:hover:text-white">Contact</NuxtLink>
+        <NuxtLink to="/privacy" class="transition hover:text-zinc-950 dark:hover:text-white">Privacy</NuxtLink>
       </div>
       <p>© {{ currentYear }} {{ config.public.ownerName || "Akshara Hegde" }}</p>
     </div>
