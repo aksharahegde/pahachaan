@@ -19,6 +19,11 @@ export default defineEventHandler(async (event) => {
   }
 
   appendHeader(event, "Vary", "Accept");
+  // Never let a shared/edge cache store these responses: Vercel's edge and ISR
+  // cache does not partition its cache key by the Accept header, so caching a
+  // negotiated response here can serve the wrong variant (e.g. markdown) to
+  // every subsequent visitor regardless of what they asked for.
+  setHeader(event, "Cache-Control", "private, no-store");
 
   const accept = getRequestHeader(event, "accept");
   if (!prefersMarkdown(accept)) return;
