@@ -73,19 +73,12 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // swr (not prerender) so these pages still pass through server middleware —
-    // required for markdown content negotiation (Accept: text/markdown) and the
-    // Vary: Accept header on every response, see server/middleware/00.markdown-negotiation.ts.
-    "/": { swr: 3600 },
-    "/uses": { swr: 3600 },
-    "/resources": { swr: 3600 },
-    "/about": { swr: 3600 },
-    "/contact": { swr: 3600 },
-    "/privacy": { swr: 3600 },
-    "/blog/**": { swr: 3600 },
-    "/projects": { swr: 3600 },
-    "/labs": { swr: 3600 },
-    "/labs/**": { swr: 3600 },
+    // No swr/prerender here: these pages go through markdown content negotiation
+    // (Accept: text/markdown) in server/middleware/00.markdown-negotiation.ts, and
+    // Vercel's edge/ISR cache does not vary its cache key by the Accept header —
+    // caching a route here previously caused the markdown variant to get served to
+    // every visitor regardless of what they asked for (a real production incident).
+    // These routes render per-request instead.
   },
 
   content: {
