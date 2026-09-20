@@ -54,7 +54,7 @@ const IconComponent = runtimeConfig.hasNuxtIcon
         </p>
         <h1
           class="m-0 mt-[28px] text-[58px] leading-none tracking-[-0.06em]"
-          style="font-family: Georgia, 'Times New Roman', serif"
+          style="font-family: serif"
         >
           {{ displayTitle }}
         </h1>
@@ -108,7 +108,7 @@ const IconComponent = runtimeConfig.hasNuxtIcon
       <img :src="displaySiteLogo" width="36" height="36" alt="">
       <p
         class="m-0 text-[28px] tracking-tight"
-        style="font-family: Georgia, 'Times New Roman', serif"
+        style="font-family: serif"
       >
         {{ displaySiteName === "Akshara Hegde" ? "akshara.dev" : displaySiteName }}
       </p>
