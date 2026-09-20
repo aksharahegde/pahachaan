@@ -16,6 +16,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "cp DESIGN.md public/DESIGN.md",
+    "predev": "cp DESIGN.md public/DESIGN.md",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
