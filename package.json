@@ -37,8 +37,8 @@
     "@nuxt/fonts": "^0.14.0",
     "@nuxtjs/seo": "^5.3.16",
     "@types/bun": "^1.4.2",
-    "@vueuse/core": "^14.4.0",
-    "@vueuse/nuxt": "^14.4.0",
+    "@vueuse/core": "^15.0.0",
+    "@vueuse/nuxt": "^15.0.0",
     "nuxt": "^4.5.2",
     "nuxt-studio": "^1.7.0",
     "to-ico": "^1.1.5",
@@ -46,7 +46,7 @@
     "vue-router": "^5.3.1"
   },
   "dependencies": {
-    "@comark/nuxt": "^0.6.2",
+    "@comark/nuxt": "^0.7.0",
     "@iconify-json/simple-icons": "^1.2.97",
     "@iconify-json/solar": "^1.2.12",
     "@nuxt/content": "^3.16.1",
