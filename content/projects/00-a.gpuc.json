@@ -1,0 +1,15 @@
+{
+  "url": "https://gpuc.akshara.dev/",
+  "thumbnail": "/projects/logo/gpuc.svg",
+  "thumbnailBg": "bg-slate-900",
+  "thumbnailAlt": "gpu-components icon",
+  "category": "development",
+  "heading": "gpu-components",
+  "description": "17 GPU-accelerated data visualization and interaction components sharing one WebGPU runtime, rendering 250k+ points at 60fps.",
+  "tech": ["WebGPU", "React", "TypeScript", "WGSL"],
+  "updated": "Updated just now",
+  "stars": "0",
+  "forks": "0",
+  "status": "active",
+  "role": "Author"
+}

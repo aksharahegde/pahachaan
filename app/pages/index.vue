@@ -153,7 +153,7 @@ const { data: contactData } = await useAsyncData("contact-home", () =>
 );
 
 const { data: selectedProjects } = await useAsyncData("home-selected-projects", () =>
-  queryCollection("projects").where("status", "==", "active").limit(5).all()
+  queryCollection("projects").where("status", "==", "active").order("stem", "ASC").limit(4).all()
 );
 
 const { data: articles } = await useAsyncData("home-writing", () =>

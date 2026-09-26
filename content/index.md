@@ -4,10 +4,10 @@ title: Home
 
 ::announcement
 ---
-description: "Crawl4AI-powered CLI: nested sitemaps → one clean .md per URL.
-  Built for docs mirrors, search, and RAG."
-image: /projects/logo/crawlboy.svg
-title: Crawlboy is live — sitemap in, Markdown out
-url: https://crawlboy.aksharahegde.xyz/?ref=aksharahegde.xyz
+description: "17 GPU-accelerated components on one shared WebGPU runtime.
+  Renders 250k+ points at 60fps."
+image: /projects/logo/gpuc.svg
+title: gpu-components is live — WebGPU viz, one runtime
+url: https://gpuc.akshara.dev/
 ---
 ::
