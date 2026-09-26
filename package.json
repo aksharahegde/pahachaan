@@ -28,6 +28,7 @@
     "picomatch": "2.3.2",
     "nuxt-og-image": "^6.7.5",
     "nuxtseo-shared": "5.3.16",
+    "nuxt-component-meta": "0.18.0",
     "estree-walker": "2.0.2"
   },
   "devDependencies": {
