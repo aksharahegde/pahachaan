@@ -18,6 +18,13 @@
             "url": "https://dub.sh/cursor",
             "cta": "Try Cursor",
             "testId": "portfolio-cursor-referral-link"
+        },
+        {
+            "title": "Stop overpaying for email",
+            "description": "Good email shouldn't eat your side-project budget. Try MailCheap.",
+            "url": "https://mailcheap.ai/?via=akshara",
+            "cta": "Try MailCheap",
+            "testId": "portfolio-mailcheap-referral-link"
         }
     ]
 }

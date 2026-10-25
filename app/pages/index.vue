@@ -137,36 +137,6 @@
           />
         </NuxtLink>
       </div>
-
-      <div>
-        <a
-          href="https://mailcheap.ai/?via=akshara"
-          target="_blank"
-          rel="sponsored noopener noreferrer"
-          data-testid="portfolio-affiliate-mailcheap"
-          class="group block rounded-lg border border-zinc-200 p-5 transition hover:bg-white/40 dark:border-zinc-800 dark:hover:bg-white/5"
-        >
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
-            What I use
-          </p>
-          <h2 class="mt-2 font-serif text-2xl tracking-[-0.04em] text-zinc-950 dark:text-zinc-50">
-            Stop overpaying for email.
-          </h2>
-          <p class="mt-2 max-w-xl text-[13px] leading-6 text-zinc-700 dark:text-zinc-300">
-            Good email shouldn't eat your side-project budget. MailCheap gets your messages delivered for a fraction of the usual price.
-          </p>
-          <span class="mt-4 inline-flex items-center gap-1.5 text-[12px] font-semibold text-zinc-950 dark:text-zinc-50">
-            Try MailCheap
-            <UIcon
-              name="i-solar-arrow-right-up-linear"
-              class="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </span>
-          <span class="mt-3 block text-[10px] text-zinc-400 dark:text-zinc-500">
-            Affiliate link. I may earn a commission at no cost to you.
-          </span>
-        </a>
-      </div>
     </section>
   </main>
 </template>

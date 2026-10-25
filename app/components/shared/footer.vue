@@ -47,6 +47,10 @@
       </NuxtLink>
     </section>
 
+    <p v-if="footerContent.affiliates?.length" class="-mt-3 mb-6 text-[10px] text-zinc-400 dark:text-zinc-500">
+      Affiliate links. I may earn a commission at no cost to you.
+    </p>
+
     <div class="flex flex-col gap-3 border-t border-zinc-200 pt-4 dark:border-zinc-800 md:flex-row md:items-center md:justify-between">
       <div class="flex items-center gap-4">
         <SharedOpenstatusWidget />
