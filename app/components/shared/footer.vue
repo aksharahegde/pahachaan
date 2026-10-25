@@ -29,20 +29,23 @@
         target="_blank"
         external
         data-testid="portfolio-template-download-link"
-        class="group grid grid-cols-[1fr_20px] gap-4 rounded-xl border border-zinc-200 p-4 text-[12px] transition hover:bg-white/40 dark:border-zinc-800 dark:hover:bg-white/5"
+        class="group grid grid-cols-[1fr_20px] gap-4 rounded-xl bg-zinc-950 p-4 text-[12px] text-zinc-300 transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-600 dark:hover:bg-white"
       >
         <div>
-          <p class="font-semibold text-zinc-950 dark:text-zinc-50">Use this template</p>
-          <p class="mt-1 text-zinc-500 dark:text-zinc-400">
-            This site is an open-source portfolio template and free to use.
+          <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-400 dark:text-zinc-500">
+            Open source
           </p>
-          <p class="mt-3 text-zinc-700 transition group-hover:text-zinc-950 dark:text-zinc-300 dark:group-hover:text-white">
-            Click to get the template
+          <p class="mt-1 font-semibold text-white dark:text-zinc-950">Use this template</p>
+          <p class="mt-1 text-zinc-400 dark:text-zinc-600">
+            This site is a free portfolio template. Fork it and make it yours.
+          </p>
+          <p class="mt-3 font-semibold text-white dark:text-zinc-950">
+            Get the template
           </p>
         </div>
         <UIcon
           name="i-simple-icons-github"
-          class="size-4 justify-self-end text-zinc-400 transition group-hover:text-zinc-900 dark:group-hover:text-white"
+          class="size-4 justify-self-end text-zinc-400 transition group-hover:text-white dark:text-zinc-500 dark:group-hover:text-zinc-950"
         />
       </NuxtLink>
     </section>
