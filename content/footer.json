@@ -6,22 +6,22 @@
     "twitter": "https://x.com/akshara_dev",
     "affiliates": [
         {
-            "title": "20% off for 3 months",
-            "description": "Signup to Dub.co and get 20% off for 3 months",
+            "title": "Short links that look like a brand",
+            "description": "Custom domains, click analytics and clean links with Dub.",
             "url": "https://refer.dub.co/akshara-hegde",
-            "cta": "Signup to Dub",
+            "cta": "Get 20% off for 3 months",
             "testId": "portfolio-dub-signup-link"
         },
         {
-            "title": "50% off for first month",
-            "description": "Sign up to Cursor and get 50% off for the first month",
+            "title": "Ship faster with an AI pair programmer",
+            "description": "The editor I write code with every day.",
             "url": "https://dub.sh/cursor",
-            "cta": "Try Cursor",
+            "cta": "Get 50% off your first month",
             "testId": "portfolio-cursor-referral-link"
         },
         {
-            "title": "Stop overpaying for email",
-            "description": "Good email shouldn't eat your side-project budget. Try MailCheap.",
+            "title": "Email that doesn't drain your side-project budget",
+            "description": "Send email without overpaying for it.",
             "url": "https://mailcheap.ai/?via=akshara",
             "cta": "Try MailCheap",
             "testId": "portfolio-mailcheap-referral-link"
