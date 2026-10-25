@@ -163,7 +163,7 @@
             />
           </span>
           <span class="mt-3 block text-[10px] text-zinc-400 dark:text-zinc-500">
-            Affiliate link — I may earn a commission at no cost to you.
+            Affiliate link. I may earn a commission at no cost to you.
           </span>
         </a>
       </div>
