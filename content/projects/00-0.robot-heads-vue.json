@@ -1,0 +1,15 @@
+{
+  "url": "https://github.com/aksharahegde/robot-heads-vue",
+  "thumbnail": "/projects/logo/robot-heads-vue.svg",
+  "thumbnailBg": "bg-slate-900",
+  "thumbnailAlt": "robot-heads-vue icon",
+  "category": "development",
+  "heading": "robot-heads-vue",
+  "description": "Animated 3D robot heads for Vue. A Vue 3 port of robot-heads with an LED-matrix face that shows what your agent is doing, drawn on a 2D canvas with zero dependencies.",
+  "tech": ["Vue", "TypeScript", "Canvas"],
+  "updated": "Updated just now",
+  "stars": "0",
+  "forks": "0",
+  "status": "active",
+  "role": "Author"
+}
