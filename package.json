@@ -27,7 +27,8 @@
   "overrides": {
     "picomatch": "2.3.2",
     "nuxt-component-meta": "0.18.0",
-    "estree-walker": "2.0.2"
+    "estree-walker": "2.0.2",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
@@ -39,7 +40,7 @@
     "@vueuse/nuxt": "^15.0.0",
     "nuxt": "^4.6.3",
     "nuxt-studio": "^1.8.0",
-    "to-ico": "^1.1.5",
+    "sharp": "^0.35.5",
     "vue": "^3.5.44",
     "vue-router": "^5.4.0"
   },
