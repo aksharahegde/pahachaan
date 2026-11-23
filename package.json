@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
-    "@nuxt/devtools": "4.1.0",
+    "@nuxt/devtools": "4.2.0",
     "@nuxt/fonts": "^1.2.0",
     "@nuxtjs/seo": "^6.1.0",
     "@types/bun": "^1.4.5",
@@ -45,7 +45,7 @@
     "vue-router": "^5.5.1"
   },
   "dependencies": {
-    "@comark/nuxt": "^0.8.1",
+    "@comark/nuxt": "^0.9.2",
     "@iconify-json/simple-icons": "^1.2.103",
     "@iconify-json/solar": "^1.2.17",
     "@nuxt/content": "^3.17.0",
